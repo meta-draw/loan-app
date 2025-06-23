@@ -70,13 +70,19 @@ const Header: React.FC = () => {
           </div>
           
           {/* Right side buttons */}
-          <div className="hidden md:flex items-center space-x-6">
-            <button className="text-wise-content-primary hover:text-wise-bright-green transition-all duration-200 text-sm font-medium">
+          <div className="hidden md:flex items-center space-x-4">
+            <Link 
+              to="/application" 
+              className="btn-wise-primary btn-wise-small"
+            >
+              Apply Now
+            </Link>
+            <Link 
+              to="/login" 
+              className="text-wise-content-primary hover:text-wise-bright-green transition-all duration-200 text-sm font-medium"
+            >
               Log in
-            </button>
-            <button className="btn-wise-primary btn-wise-small">
-              Register
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -112,7 +118,7 @@ const Header: React.FC = () => {
               <Link
                 to="/loans"
                 className={`block px-3 py-2 text-base font-medium rounded-md ${
-                  isActive('/loans') ? 'text-wise-text-primary bg-wise-gray50' : 'text-wise-text-secondary hover:text-wise-text-primary'
+                  isActive('/loans') ? 'text-wise-content-primary bg-wise-gray50' : 'text-wise-content-secondary hover:text-wise-content-primary'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -121,7 +127,7 @@ const Header: React.FC = () => {
               <Link
                 to="/about"
                 className={`block px-3 py-2 text-base font-medium rounded-md ${
-                  isActive('/about') ? 'text-wise-text-primary bg-wise-gray50' : 'text-wise-text-secondary hover:text-wise-text-primary'
+                  isActive('/about') ? 'text-wise-content-primary bg-wise-gray50' : 'text-wise-content-secondary hover:text-wise-content-primary'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -130,19 +136,27 @@ const Header: React.FC = () => {
               <Link
                 to="/contact"
                 className={`block px-3 py-2 text-base font-medium rounded-md ${
-                  isActive('/contact') ? 'text-wise-text-primary bg-wise-gray50' : 'text-wise-text-secondary hover:text-wise-text-primary'
+                  isActive('/contact') ? 'text-wise-content-primary bg-wise-gray50' : 'text-wise-content-secondary hover:text-wise-content-primary'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Help
               </Link>
-              <div className="pt-4 pb-3 border-t border-wise-gray200">
-                <button className="block w-full text-left px-3 py-2 text-base font-medium text-wise-content-primary hover:text-wise-bright-green rounded-md">
+              <div className="pt-4 pb-3 border-t border-wise-gray200 space-y-3">
+                <Link 
+                  to="/application" 
+                  className="btn-wise-primary w-full block text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Apply Now
+                </Link>
+                <Link 
+                  to="/login" 
+                  className="block w-full text-center px-3 py-2 text-base font-medium text-wise-content-primary hover:text-wise-bright-green rounded-md"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Log in
-                </button>
-                <button className="btn-wise-primary w-full mt-2">
-                  Register
-                </button>
+                </Link>
               </div>
             </div>
           </div>

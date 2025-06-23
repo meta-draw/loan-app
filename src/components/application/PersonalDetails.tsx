@@ -100,7 +100,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+      <div className="bg-white rounded-xl shadow-sm border border-wise-gray200 p-8">
         <div className="mb-8">
           <h2 className="text-4xl font-bold text-wise-forest-green mb-4">
             Personal details
@@ -123,7 +123,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   value={formData.title}
                   onChange={(e) => setFormData({...formData, title: e.target.value})}
                   className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                    errors.title ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-bright-green'
+                    errors.title ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 >
                   <option value="">Select</option>
@@ -131,7 +131,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                     <option key={title} value={title}>{title}</option>
                   ))}
                 </select>
-                {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
+                {errors.title && <p className="text-wise-error text-sm mt-1">{errors.title}</p>}
               </div>
               
               <div>
@@ -143,10 +143,10 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   value={formData.firstName}
                   onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                   className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                    errors.firstName ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                    errors.firstName ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
-                {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
+                {errors.firstName && <p className="text-wise-error text-sm mt-1">{errors.firstName}</p>}
               </div>
               
               <div>
@@ -158,10 +158,10 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   value={formData.lastName}
                   onChange={(e) => setFormData({...formData, lastName: e.target.value})}
                   className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                    errors.lastName ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                    errors.lastName ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
-                {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
+                {errors.lastName && <p className="text-wise-error text-sm mt-1">{errors.lastName}</p>}
               </div>
             </div>
 
@@ -175,10 +175,10 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 value={formData.dateOfBirth}
                 onChange={(e) => setFormData({...formData, dateOfBirth: e.target.value})}
                 className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                  errors.dateOfBirth ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                  errors.dateOfBirth ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
               />
-              {errors.dateOfBirth && <p className="text-red-500 text-xs mt-1">{errors.dateOfBirth}</p>}
+              {errors.dateOfBirth && <p className="text-wise-error text-xs mt-1">{errors.dateOfBirth}</p>}
             </div>
 
             <div>
@@ -190,11 +190,11 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                 className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                  errors.email ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                  errors.email ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="your.email@example.com"
               />
-              {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+              {errors.email && <p className="text-wise-error text-xs mt-1">{errors.email}</p>}
             </div>
 
             <div>
@@ -206,11 +206,11 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 value={formData.mobile}
                 onChange={(e) => setFormData({...formData, mobile: e.target.value})}
                 className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                  errors.mobile ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                  errors.mobile ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="04XX XXX XXX"
               />
-              {errors.mobile && <p className="text-red-500 text-xs mt-1">{errors.mobile}</p>}
+              {errors.mobile && <p className="text-wise-error text-xs mt-1">{errors.mobile}</p>}
             </div>
           </div>
 
@@ -225,7 +225,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 value={formData.residentialStatus}
                 onChange={(e) => setFormData({...formData, residentialStatus: e.target.value})}
                 className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                  errors.residentialStatus ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                  errors.residentialStatus ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
               >
                 <option value="">Select residential status</option>
@@ -233,7 +233,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   <option key={status} value={status}>{status}</option>
                 ))}
               </select>
-              {errors.residentialStatus && <p className="text-red-500 text-xs mt-1">{errors.residentialStatus}</p>}
+              {errors.residentialStatus && <p className="text-wise-error text-xs mt-1">{errors.residentialStatus}</p>}
             </div>
 
             <div>
@@ -245,11 +245,11 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 value={formData.address.street}
                 onChange={(e) => setFormData({...formData, address: {...formData.address, street: e.target.value}})}
                 className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                  errors.street ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                  errors.street ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="123 Main Street"
               />
-              {errors.street && <p className="text-red-500 text-xs mt-1">{errors.street}</p>}
+              {errors.street && <p className="text-wise-error text-xs mt-1">{errors.street}</p>}
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -262,10 +262,10 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   value={formData.address.suburb}
                   onChange={(e) => setFormData({...formData, address: {...formData.address, suburb: e.target.value}})}
                   className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                    errors.suburb ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                    errors.suburb ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
-                {errors.suburb && <p className="text-red-500 text-xs mt-1">{errors.suburb}</p>}
+                {errors.suburb && <p className="text-wise-error text-xs mt-1">{errors.suburb}</p>}
               </div>
               
               <div>
@@ -276,7 +276,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   value={formData.address.state}
                   onChange={(e) => setFormData({...formData, address: {...formData.address, state: e.target.value}})}
                   className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                    errors.state ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                    errors.state ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 >
                   <option value="">State</option>
@@ -284,7 +284,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                     <option key={state} value={state}>{state}</option>
                   ))}
                 </select>
-                {errors.state && <p className="text-red-500 text-xs mt-1">{errors.state}</p>}
+                {errors.state && <p className="text-wise-error text-xs mt-1">{errors.state}</p>}
               </div>
             </div>
 
@@ -297,11 +297,11 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 value={formData.address.postcode}
                 onChange={(e) => setFormData({...formData, address: {...formData.address, postcode: e.target.value}})}
                 className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                  errors.postcode ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                  errors.postcode ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="2000"
               />
-              {errors.postcode && <p className="text-red-500 text-xs mt-1">{errors.postcode}</p>}
+              {errors.postcode && <p className="text-wise-error text-xs mt-1">{errors.postcode}</p>}
             </div>
 
             <div>
@@ -312,7 +312,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 value={formData.timeAtAddress}
                 onChange={(e) => setFormData({...formData, timeAtAddress: e.target.value})}
                 className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                  errors.timeAtAddress ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                  errors.timeAtAddress ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
               >
                 <option value="">Select time period</option>
@@ -320,7 +320,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   <option key={option} value={option}>{option}</option>
                 ))}
               </select>
-              {errors.timeAtAddress && <p className="text-red-500 text-xs mt-1">{errors.timeAtAddress}</p>}
+              {errors.timeAtAddress && <p className="text-wise-error text-xs mt-1">{errors.timeAtAddress}</p>}
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -332,7 +332,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   value={formData.maritalStatus}
                   onChange={(e) => setFormData({...formData, maritalStatus: e.target.value})}
                   className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                    errors.maritalStatus ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                    errors.maritalStatus ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 >
                   <option value="">Select status</option>
@@ -340,7 +340,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                     <option key={status} value={status}>{status}</option>
                   ))}
                 </select>
-                {errors.maritalStatus && <p className="text-red-500 text-xs mt-1">{errors.maritalStatus}</p>}
+                {errors.maritalStatus && <p className="text-wise-error text-xs mt-1">{errors.maritalStatus}</p>}
               </div>
               
               <div>
@@ -350,7 +350,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <select
                   value={formData.dependents}
                   onChange={(e) => setFormData({...formData, dependents: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-bright-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
                 >
                   {[0,1,2,3,4,5].map(num => (
                     <option key={num} value={num.toString()}>{num}</option>
@@ -362,7 +362,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+        <div className="flex justify-between items-center mt-8 pt-6 border-t border-wise-gray200">
           <div className="text-sm text-wise-content-secondary">
             Step 2 of 6 - Personal Details
           </div>
@@ -370,7 +370,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
           <div className="flex space-x-4">
             <button
               onClick={onBack}
-              className="btn-wise-secondary btn-wise-small"
+              className="btn-wise-secondary"
             >
               Back
             </button>

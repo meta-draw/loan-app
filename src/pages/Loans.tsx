@@ -175,7 +175,7 @@ const Loans: React.FC = () => {
                   </ul>
                 </div>
 
-                <button className="bg-wise-green text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-wise-darkgreen transition-colors duration-200">
+                <button className="btn-wise-primary btn-wise-large">
                   Apply for {selectedLoanData.name}
                 </button>
               </div>
@@ -226,7 +226,7 @@ const Loans: React.FC = () => {
 
                     <button 
                       type="submit"
-                      className="w-full bg-wise-green text-white py-3 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors duration-200"
+                      className="btn-wise-primary btn-wise-large btn-wise-full"
                     >
                       Check My Rate
                     </button>

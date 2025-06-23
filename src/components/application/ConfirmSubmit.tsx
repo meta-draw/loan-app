@@ -61,7 +61,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+      <div className="bg-white rounded-xl shadow-sm border border-wise-gray200 p-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-wise-forest-green mb-4">
             Review and submit
@@ -114,7 +114,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-xl p-6">
+            <div className="bg-wise-gray50 rounded-xl p-6">
               <h3 className="text-xl font-semibold text-wise-forest-green mb-4">
                 Personal Details
               </h3>
@@ -143,7 +143,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-xl p-6">
+            <div className="bg-wise-gray50 rounded-xl p-6">
               <h3 className="text-xl font-semibold text-wise-forest-green mb-4">
                 Income & Employment
               </h3>
@@ -178,7 +178,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
                     id="terms"
                     checked={acceptedTerms}
                     onChange={(e) => setAcceptedTerms(e.target.checked)}
-                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-gray-300 rounded focus:ring-wise-bright-green"
+                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-wise-gray200 rounded focus:ring-wise-bright-green"
                   />
                   <label htmlFor="terms" className="text-sm text-wise-content-secondary leading-relaxed">
                     I have read and agree to the{' '}
@@ -193,7 +193,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
                     id="privacy"
                     checked={acceptedPrivacy}
                     onChange={(e) => setAcceptedPrivacy(e.target.checked)}
-                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-gray-300 rounded focus:ring-wise-bright-green"
+                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-wise-gray200 rounded focus:ring-wise-bright-green"
                   />
                   <label htmlFor="privacy" className="text-sm text-wise-content-secondary leading-relaxed">
                     I have read and accept the{' '}
@@ -208,7 +208,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
                     id="credit"
                     checked={acceptedCredit}
                     onChange={(e) => setAcceptedCredit(e.target.checked)}
-                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-gray-300 rounded focus:ring-wise-bright-green"
+                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-wise-gray200 rounded focus:ring-wise-bright-green"
                   />
                   <label htmlFor="credit" className="text-sm text-wise-content-secondary leading-relaxed">
                     I authorize QuickLoan to perform credit checks and verify my information with credit bureaus, 
@@ -218,14 +218,14 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
               </div>
             </div>
 
-            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+            <div className="bg-wise-warning/10 border border-wise-warning rounded-xl p-6">
               <div className="flex items-start">
-                <div className="text-yellow-600 text-xl mr-3">⚠️</div>
+                <div className="text-wise-warning text-xl mr-3">⚠️</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-yellow-800 mb-2">
+                  <h4 className="text-lg font-semibold text-wise-forest-green mb-2">
                     Important Information
                   </h4>
-                  <ul className="text-sm text-yellow-700 space-y-1">
+                  <ul className="text-sm text-wise-content-primary space-y-1">
                     <li>• This is a credit application and not a guarantee of approval</li>
                     <li>• Credit assessment will be performed based on responsible lending criteria</li>
                     <li>• Loan approval and terms are subject to our credit policy</li>
@@ -259,7 +259,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+        <div className="flex justify-between items-center mt-8 pt-6 border-t border-wise-gray200">
           <div className="text-sm text-wise-content-secondary">
             Step 6 of 6 - Confirm & Submit
           </div>
@@ -268,14 +268,14 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
             <button
               onClick={onBack}
               disabled={isSubmitting}
-              className="btn-wise-secondary btn-wise-small disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-wise-secondary disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Back
             </button>
             <button
               onClick={handleSubmit}
               disabled={!canSubmit || isSubmitting}
-              className="btn-wise-primary disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center"
+              className="btn-wise-primary disabled:bg-wise-gray200 disabled:cursor-not-allowed flex items-center"
             >
               {isSubmitting ? (
                 <>

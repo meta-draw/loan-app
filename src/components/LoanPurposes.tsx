@@ -114,7 +114,7 @@ const LoanPurposes: React.FC = () => {
           </p>
           <button 
             onClick={() => handleApplyNow('other')}
-            className="bg-wise-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors duration-200 text-lg"
+            className="btn-wise-primary btn-wise-large"
           >
             Apply for any purpose
           </button>

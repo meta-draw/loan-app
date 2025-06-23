@@ -127,11 +127,11 @@ const Features: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => window.location.href = '/application'}
-              className="btn-wise-secondary btn-wise-auto text-xl px-10 py-5 bg-white text-wise-bright-green hover:bg-gray-50 hover:text-wise-bright-green font-semibold"
+              className="btn-wise-primary btn-wise-large"
             >
               Start your application
             </button>
-            <button className="btn-wise-secondary btn-wise-auto text-xl px-10 py-5 border-2 border-white text-white hover:bg-white hover:text-wise-bright-green font-semibold">
+            <button className="btn-wise-secondary btn-wise-large text-xl px-10 py-5 border-2 border-white text-white hover:bg-white hover:text-wise-bright-green font-semibold">
               Learn more
             </button>
           </div>

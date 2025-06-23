@@ -216,7 +216,7 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
             <button
               onClick={handleNext}
               disabled={!formData.amount || !formData.term || !formData.purpose}
-              className="bg-wise-green text-white px-10 py-4 rounded-md font-semibold hover:bg-wise-darkgreen transition-all duration-200 shadow-button hover:shadow-lg disabled:bg-wise-gray200 disabled:cursor-not-allowed disabled:shadow-none"
+              className="btn-wise-primary btn-wise-large disabled:bg-wise-gray200 disabled:cursor-not-allowed"
             >
               Continue to Personal Details
             </button>

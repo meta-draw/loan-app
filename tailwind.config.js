@@ -21,11 +21,19 @@ module.exports = {
           // Support colors (Neutral/Base)
           'base-dark': '#121511',       // Deep gray/near black for dark themes
           'neutral-bg': 'rgba(22, 51, 0, 0.08)', // Background Neutral - very light gray
+          'gray50': '#F7F9FC',          // Light background
+          'gray100': '#EBEEF2',         // Card backgrounds  
+          'gray200': '#D0D8E0',         // Borders
           
           // Content hierarchy (text colors)
           'content-primary': '#163300',    // Primary text - Forest Green
           'content-secondary': '#2F5711',  // Secondary text - darker green
           'content-tertiary': 'rgba(22, 51, 0, 0.6)', // Tertiary text - muted
+          
+          // Text colors (legacy aliases)
+          'text-primary': '#163300',    // Alias for content-primary
+          'text-secondary': '#2F5711',  // Alias for content-secondary
+          'text-muted': 'rgba(22, 51, 0, 0.6)', // Alias for content-tertiary
           
           // Legacy support colors
           green: '#9FE870',             // Alias for bright-green
@@ -42,7 +50,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'averta-standard',
+          'Inter',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',

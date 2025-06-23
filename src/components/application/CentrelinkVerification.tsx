@@ -43,7 +43,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+      <div className="bg-white rounded-xl shadow-sm border border-wise-gray200 p-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-wise-navy mb-4">
             Centrelink verification
@@ -65,7 +65,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
               className={`p-6 rounded-xl border-2 text-left transition-colors ${
                 formData.receivesBenefits === 'yes'
                   ? 'border-wise-green bg-wise-green/5'
-                  : 'border-gray-200 hover:border-wise-green/50'
+                  : 'border-wise-gray200 hover:border-wise-green/50'
               }`}
             >
               <div className="flex items-center mb-3">
@@ -82,7 +82,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
               className={`p-6 rounded-xl border-2 text-left transition-colors ${
                 formData.receivesBenefits === 'no'
                   ? 'border-wise-green bg-wise-green/5'
-                  : 'border-gray-200 hover:border-wise-green/50'
+                  : 'border-wise-gray200 hover:border-wise-green/50'
               }`}
             >
               <div className="flex items-center mb-3">
@@ -112,14 +112,14 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                     className={`p-4 rounded-lg border-2 text-left transition-colors ${
                       formData.benefitTypes.includes(benefit)
                         ? 'border-wise-green bg-wise-green/5 text-wise-navy'
-                        : 'border-gray-200 hover:border-wise-green/50 text-wise-gray'
+                        : 'border-wise-gray200 hover:border-wise-green/50 text-wise-gray'
                     }`}
                   >
                     <div className="flex items-center">
                       <div className={`w-4 h-4 rounded border-2 mr-3 flex items-center justify-center ${
                         formData.benefitTypes.includes(benefit)
                           ? 'border-wise-green bg-wise-green'
-                          : 'border-gray-300'
+                          : 'border-wise-gray200'
                       }`}>
                         {formData.benefitTypes.includes(benefit) && (
                           <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,12 +143,12 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                 Your CRN is found on any Centrelink letter or in your myGov account.
               </p>
               
-              <div className="max-w-md">
+              <div>
                 <input
                   type="text"
                   value={formData.crnNumber}
                   onChange={(e) => setFormData({...formData, crnNumber: e.target.value})}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-green focus:outline-none transition-colors text-lg font-mono"
+                  className="w-full px-4 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors text-lg font-mono"
                   placeholder="123 456 789A"
                   maxLength={12}
                 />
@@ -170,7 +170,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                   className={`p-6 rounded-xl border-2 text-left transition-colors ${
                     formData.verificationMethod === 'mygov'
                       ? 'border-wise-green bg-wise-green/5'
-                      : 'border-gray-200 hover:border-wise-green/50'
+                      : 'border-wise-gray200 hover:border-wise-green/50'
                   }`}
                 >
                   <div className="flex items-center mb-4">
@@ -195,7 +195,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                   className={`p-6 rounded-xl border-2 text-left transition-colors ${
                     formData.verificationMethod === 'documents'
                       ? 'border-wise-green bg-wise-green/5'
-                      : 'border-gray-200 hover:border-wise-green/50'
+                      : 'border-wise-gray200 hover:border-wise-green/50'
                   }`}
                 >
                   <div className="flex items-center mb-4">
@@ -235,7 +235,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                   <p className="text-wise-gray mb-4">
                     or click to browse your files
                   </p>
-                  <button className="bg-wise-green text-white px-6 py-2 rounded-lg hover:bg-wise-darkgreen transition-colors">
+                  <button className="btn-wise-primary">
                     Choose Files
                   </button>
                   <p className="text-xs text-wise-gray mt-4">
@@ -258,7 +258,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                     Your login credentials are never shared with us.
                   </p>
                   
-                  <button className="bg-wise-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors">
+                  <button className="btn-wise-primary">
                     Connect to myGov
                   </button>
                   
@@ -275,7 +275,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
 
         {/* No Benefits Selected */}
         {formData.receivesBenefits === 'no' && (
-          <div className="bg-gray-50 rounded-xl p-6 mb-8">
+          <div className="bg-wise-gray50 rounded-xl p-6 mb-8">
             <div className="text-center">
               <div className="text-4xl mb-4">👍</div>
               <h4 className="text-xl font-semibold text-wise-navy mb-4">
@@ -290,7 +290,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
         )}
 
         {/* Navigation */}
-        <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+        <div className="flex justify-between items-center mt-8 pt-6 border-t border-wise-gray200">
           <div className="text-sm text-wise-gray">
             Step 5 of 6 - Centrelink Verification
           </div>
@@ -298,14 +298,14 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
           <div className="flex space-x-4">
             <button
               onClick={onBack}
-              className="border border-wise-navy text-wise-navy px-6 py-3 rounded-lg font-semibold hover:bg-wise-navy hover:text-white transition-colors"
+              className="btn-wise-secondary"
             >
               Back
             </button>
             <button
               onClick={handleNext}
               disabled={!formData.receivesBenefits}
-              className="bg-wise-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+              className="btn-wise-primary disabled:bg-wise-gray200 disabled:cursor-not-allowed"
             >
               Continue to Review
             </button>

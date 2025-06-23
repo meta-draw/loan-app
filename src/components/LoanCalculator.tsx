@@ -27,7 +27,7 @@ const LoanCalculator: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-neutral-50">
+    <section className="py-20 bg-wise-gray50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-wise-forest-green mb-4">
@@ -53,7 +53,7 @@ const LoanCalculator: React.FC = () => {
                       type="number"
                       value={loanData.amount}
                       onChange={(e) => setLoanData({...loanData, amount: parseInt(e.target.value) || 0})}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-wise-bright-green focus:border-transparent"
+                      className="w-full px-4 py-3 border border-wise-gray200 rounded-lg focus:ring-2 focus:ring-wise-bright-green focus:border-transparent"
                     />
                     <span className="absolute right-3 top-3 text-wise-content-tertiary">$</span>
                   </div>
@@ -81,7 +81,7 @@ const LoanCalculator: React.FC = () => {
                   <select
                     value={loanData.term}
                     onChange={(e) => setLoanData({...loanData, term: parseInt(e.target.value)})}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent"
+                    className="w-full px-4 py-3 border border-wise-gray200 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent"
                   >
                     <option value={3}>3 months</option>
                     <option value={6}>6 months</option>
@@ -101,7 +101,7 @@ const LoanCalculator: React.FC = () => {
                       step="0.1"
                       value={loanData.rate}
                       onChange={(e) => setLoanData({...loanData, rate: parseFloat(e.target.value) || 0})}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-wise-bright-green focus:border-transparent"
+                      className="w-full px-4 py-3 border border-wise-gray200 rounded-lg focus:ring-2 focus:ring-wise-bright-green focus:border-transparent"
                     />
                     <span className="absolute right-3 top-3 text-wise-content-tertiary">%</span>
                   </div>
@@ -123,13 +123,13 @@ const LoanCalculator: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-neutral-50 rounded-lg p-4">
+                  <div className="bg-wise-gray50 rounded-lg p-4">
                     <p className="text-sm text-wise-content-secondary mb-1">Loan Amount</p>
                     <p className="text-xl font-semibold text-wise-forest-green">
                       ${loanData.amount.toLocaleString()}
                     </p>
                   </div>
-                  <div className="bg-neutral-50 rounded-lg p-4">
+                  <div className="bg-wise-gray50 rounded-lg p-4">
                     <p className="text-sm text-wise-content-secondary mb-1">Total Interest</p>
                     <p className="text-xl font-semibold text-wise-forest-green">
                       ${totalInterest()}
@@ -137,14 +137,14 @@ const LoanCalculator: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-neutral-50 rounded-lg p-4">
-                  <p className="text-sm text-neutral-600 mb-1">Total Repayment</p>
+                <div className="bg-wise-gray50 rounded-lg p-4">
+                  <p className="text-sm text-wise-content-secondary mb-1">Total Repayment</p>
                   <p className="text-xl font-semibold text-primary-dark">
                     ${(loanData.amount + parseFloat(totalInterest())).toLocaleString()}
                   </p>
                 </div>
 
-                <button className="btn-wise-primary btn-wise-full">
+                <button className="btn-wise-primary btn-wise-large btn-wise-full">
                   Apply for This Loan
                 </button>
               </div>

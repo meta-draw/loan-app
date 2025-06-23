@@ -58,7 +58,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+      <div className="bg-white rounded-xl shadow-sm border border-wise-gray200 p-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-wise-navy mb-4">
             Bank verification
@@ -82,7 +82,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                 className={`relative border-2 rounded-xl p-6 cursor-pointer transition-all ${
                   formData.method === method.id
                     ? 'border-wise-green bg-wise-green/5'
-                    : 'border-gray-200 hover:border-wise-green/50'
+                    : 'border-wise-gray200 hover:border-wise-green/50'
                 }`}
               >
                 {method.popular && (
@@ -137,7 +137,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                     className={`p-4 rounded-lg border-2 transition-colors ${
                       formData.bankName === bank
                         ? 'border-wise-green bg-white text-wise-navy'
-                        : 'border-gray-200 bg-white text-wise-gray hover:border-wise-green/50'
+                        : 'border-wise-gray200 bg-white text-wise-content-secondary hover:border-wise-green/50'
                     }`}
                   >
                     <div className="text-sm font-medium">{bank}</div>
@@ -145,7 +145,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                 ))}
               </div>
               
-              <button className="bg-wise-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors">
+              <button className="btn-wise-primary">
                 Connect to {formData.bankName || 'your bank'}
               </button>
             </div>
@@ -169,7 +169,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
               <p className="text-wise-gray mb-4">
                 or click to browse your files
               </p>
-              <button className="bg-wise-green text-white px-6 py-2 rounded-lg hover:bg-wise-darkgreen transition-colors">
+              <button className="btn-wise-primary">
                 Choose Files
               </button>
               <p className="text-xs text-wise-gray mt-4">
@@ -193,7 +193,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                 <select
                   value={formData.bankName}
                   onChange={(e) => setFormData({...formData, bankName: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
                 >
                   <option value="">Select your bank</option>
                   {banks.map(bank => (
@@ -209,7 +209,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                 <select
                   value={formData.accountType}
                   onChange={(e) => setFormData({...formData, accountType: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
                 >
                   <option value="">Select account type</option>
                   {accountTypes.map(type => (
@@ -226,7 +226,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                   type="text"
                   value={formData.bsb}
                   onChange={(e) => setFormData({...formData, bsb: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
                   placeholder="123-456"
                   maxLength={7}
                 />
@@ -240,7 +240,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                   type="text"
                   value={formData.accountNumber}
                   onChange={(e) => setFormData({...formData, accountNumber: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
                   placeholder="12345678"
                 />
               </div>
@@ -253,7 +253,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                   type="text"
                   value={formData.accountHolder}
                   onChange={(e) => setFormData({...formData, accountHolder: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
                   placeholder="Full name as it appears on your account"
                 />
               </div>
@@ -262,7 +262,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
         )}
 
         {/* Security Info */}
-        <div className="bg-gray-50 rounded-xl p-6 mb-8">
+        <div className="bg-wise-gray50 rounded-xl p-6 mb-8">
           <div className="flex items-start">
             <div className="text-2xl mr-4">🔒</div>
             <div>
@@ -281,7 +281,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+        <div className="flex justify-between items-center mt-8 pt-6 border-t border-wise-gray200">
           <div className="text-sm text-wise-gray">
             Step 4 of 6 - Bank Verification
           </div>
@@ -289,14 +289,14 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
           <div className="flex space-x-4">
             <button
               onClick={onBack}
-              className="border border-wise-navy text-wise-navy px-6 py-3 rounded-lg font-semibold hover:bg-wise-navy hover:text-white transition-colors"
+              className="btn-wise-secondary"
             >
               Back
             </button>
             <button
               onClick={handleNext}
               disabled={!formData.method}
-              className="bg-wise-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+              className="btn-wise-primary disabled:bg-wise-gray200 disabled:cursor-not-allowed"
             >
               Continue to Centrelink Verification
             </button>
