@@ -27,65 +27,65 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-wise-lightblue to-white py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center">
+    <section className="bg-wise-gray50 py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start lg:items-center">
           {/* Left side - Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center bg-wise-green/10 text-wise-green px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center bg-wise-bright-green/5 text-wise-bright-green px-4 py-2 rounded-full text-sm font-medium mb-8 border border-wise-bright-green/20">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               Same day approval available
             </div>
             
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-wise-navy leading-tight mb-6">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-wise-content-primary leading-tight mb-8">
               Quick loans from
-              <span className="text-wise-green"> $500 to $50,000</span>
+              <span className="text-wise-bright-green"> $500 to $50,000</span>
             </h1>
-            <p className="text-lg lg:text-xl text-wise-gray mb-8 leading-relaxed max-w-lg">
+            <p className="text-lg lg:text-xl text-wise-content-secondary mb-10 leading-relaxed max-w-lg">
               Get approved in minutes, not days. No hidden fees, transparent rates, 
               and funds deposited as soon as the next business day.
             </p>
             
             {/* Key Benefits */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-wise-green/10 rounded-full flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-8 h-8 bg-wise-bright-green/10 rounded-full flex items-center justify-center mr-3">
+                  <svg className="w-4 h-4 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-wise-gray">No hidden fees</span>
+                <span className="text-wise-content-secondary font-medium">No hidden fees</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-wise-green/10 rounded-full flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-8 h-8 bg-wise-bright-green/10 rounded-full flex items-center justify-center mr-3">
+                  <svg className="w-4 h-4 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <span className="text-wise-gray">100% secure & safe</span>
+                <span className="text-wise-content-secondary font-medium">100% secure & safe</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-wise-green/10 rounded-full flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-8 h-8 bg-wise-bright-green/10 rounded-full flex items-center justify-center mr-3">
+                  <svg className="w-4 h-4 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <span className="text-wise-gray">Fast approval</span>
+                <span className="text-wise-content-secondary font-medium">Fast approval</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-wise-green/10 rounded-full flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-8 h-8 bg-wise-bright-green/10 rounded-full flex items-center justify-center mr-3">
+                  <svg className="w-4 h-4 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
                 </div>
-                <span className="text-wise-gray">Rates from 3.5%</span>
+                <span className="text-wise-content-secondary font-medium">Rates from 3.5%</span>
               </div>
             </div>
             
             {/* Trust indicators */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8 mb-10">
               <div className="flex items-center">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
@@ -94,49 +94,49 @@ const Hero: React.FC = () => {
                     </svg>
                   ))}
                 </div>
-                <span className="ml-2 text-sm text-wise-gray">4.8/5 on Trustpilot</span>
+                <span className="ml-2 text-sm text-wise-content-secondary font-medium">4.8/5 on Trustpilot</span>
               </div>
-              <div className="text-sm text-wise-gray">
+              <div className="text-sm text-wise-content-secondary font-medium">
                 🔒 Bank-level security
               </div>
-              <div className="text-sm text-wise-green font-medium">
+              <div className="text-sm text-wise-bright-green font-medium">
                 🎉 We approved 127 loans in the last 24 hours
               </div>
             </div>
 
             <button 
               onClick={handleApplyNow}
-              className="bg-wise-green text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-wise-darkgreen transition-colors duration-200 shadow-lg"
+              className="btn-wise-primary text-lg"
             >
               Apply now - 5 min application
             </button>
           </div>
 
           {/* Right side - Calculator */}
-          <div className="relative z-10 mt-8 lg:mt-0">
-            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-100 max-w-lg mx-auto lg:mx-0">
+          <div className="relative z-10 mt-12 lg:mt-0">
+            <div className="bg-white rounded-xl p-8 shadow-card border border-wise-gray200 max-w-lg mx-auto lg:mx-0">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-wise-navy mb-2">
+                <h3 className="text-2xl font-bold text-wise-content-primary mb-3">
                   How much do you need?
                 </h3>
-                <p className="text-wise-gray">
+                <p className="text-wise-content-secondary">
                   Get an instant quote and see your monthly payments
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Amount selector */}
                 <div>
-                  <label className="block text-sm font-medium text-wise-navy mb-3">
+                  <label className="block text-sm font-semibold text-wise-content-primary mb-4">
                     Loan amount
                   </label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-wise-gray text-lg">$</span>
+                    <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-wise-content-secondary text-lg font-medium">$</span>
                     <input
                       type="number"
                       value={amount}
                       onChange={(e) => setAmount(parseInt(e.target.value) || 0)}
-                      className="w-full pl-8 pr-4 py-4 text-2xl font-semibold border-2 border-gray-200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                      className="w-full pl-8 pr-4 py-4 text-2xl font-semibold border-2 border-wise-gray200 rounded-md focus:border-wise-bright-green focus:outline-none transition-all duration-200 bg-white"
                       placeholder="1,000"
                     />
                   </div>
@@ -147,9 +147,9 @@ const Hero: React.FC = () => {
                     step="500"
                     value={amount}
                     onChange={(e) => setAmount(parseInt(e.target.value))}
-                    className="w-full mt-3 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                    className="w-full mt-4 h-2 bg-wise-gray200 rounded-full appearance-none cursor-pointer slider"
                   />
-                  <div className="flex justify-between text-sm text-wise-gray mt-1">
+                  <div className="flex justify-between text-sm text-wise-content-tertiary mt-2 font-medium">
                     <span>$500</span>
                     <span>$50,000</span>
                   </div>
@@ -157,34 +157,34 @@ const Hero: React.FC = () => {
 
                 {/* Term selector */}
                 <div>
-                  <label className="block text-sm font-medium text-wise-navy mb-3">
+                  <label className="block text-sm font-semibold text-wise-content-primary mb-4">
                     Repayment period
                   </label>
-                  <div className="grid grid-cols-4 gap-2">
+                  <div className="grid grid-cols-4 gap-3">
                     {[6, 12, 24, 36].map((months) => (
                       <button
                         key={months}
                         onClick={() => setTerm(months)}
-                        className={`p-2 lg:p-3 rounded-lg text-center transition-colors ${
+                        className={`p-3 lg:p-4 rounded-md text-center transition-all duration-200 border-2 ${
                           term === months
-                            ? 'bg-wise-green text-white'
-                            : 'bg-gray-100 text-wise-gray hover:bg-gray-200'
+                            ? 'bg-wise-bright-green text-white border-wise-bright-green shadow-button'
+                            : 'bg-wise-gray50 text-wise-content-secondary border-wise-gray200 hover:border-wise-bright-green/50 hover:bg-white'
                         }`}
                       >
-                        <div className="font-semibold text-xs lg:text-sm">{months}m</div>
+                        <div className="font-semibold text-sm">{months}m</div>
                       </button>
                     ))}
                   </div>
                 </div>
 
                 {/* Results */}
-                <div className="bg-wise-lightblue rounded-lg p-6">
+                <div className="bg-wise-gray50 rounded-lg p-6 border border-wise-gray200">
                   <div className="text-center">
-                    <div className="text-sm text-wise-gray mb-1">Monthly payment</div>
-                    <div className="text-3xl font-bold text-wise-navy">
+                    <div className="text-sm text-wise-content-secondary mb-2 font-medium">Monthly payment</div>
+                    <div className="text-3xl font-bold text-wise-content-primary">
                       ${calculateMonthlyPayment()}
                     </div>
-                    <div className="text-sm text-wise-gray mt-2">
+                    <div className="text-sm text-wise-content-tertiary mt-2">
                       Representative example at 3.5% p.a.
                     </div>
                   </div>
@@ -192,20 +192,20 @@ const Hero: React.FC = () => {
 
                 <button 
                   onClick={handleApplyNow}
-                  className="w-full bg-wise-green text-white py-4 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors duration-200"
+                  className="btn-wise-primary w-full"
                 >
                   Apply for this loan
                 </button>
                 
-                <p className="text-xs text-wise-gray text-center">
+                <p className="text-xs text-wise-content-tertiary text-center">
                   Representative example only. Your rate may vary based on personal circumstances.
                 </p>
               </div>
             </div>
 
             {/* Floating elements for visual interest */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-wise-green opacity-10 rounded-full -z-10"></div>
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-wise-navy opacity-5 rounded-full -z-10"></div>
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-wise-bright-green opacity-5 rounded-full -z-10"></div>
+            <div className="absolute -bottom-10 -left-10 w-36 h-36 bg-wise-purple opacity-10 rounded-full -z-10"></div>
           </div>
         </div>
       </div>

@@ -20,8 +20,8 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep, compl
   };
 
   return (
-    <div className="w-full bg-white border-b border-gray-200 py-6">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-white border-b border-wise-gray200 py-8">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <nav aria-label="Progress">
           <ol className="flex items-center justify-between">
             {steps.map((step, index) => {
@@ -33,21 +33,21 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep, compl
                   {!isLast && (
                     <div className="absolute inset-0 flex items-center" aria-hidden="true">
                       <div className={`h-0.5 w-full ${
-                        completedSteps.includes(step.id) ? 'bg-wise-green' : 'bg-gray-200'
+                        completedSteps.includes(step.id) ? 'bg-wise-green' : 'bg-wise-gray200'
                       }`} />
                     </div>
                   )}
                   
                   <div className="relative flex items-center group">
-                    <span className={`h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold ${
+                    <span className={`h-12 w-12 rounded-full flex items-center justify-center text-sm font-semibold shadow-sm ${
                       status === 'completed' 
-                        ? 'bg-wise-green text-white' 
+                        ? 'bg-wise-green text-white shadow-button' 
                         : status === 'current'
-                        ? 'bg-wise-green text-white border-2 border-wise-green'
-                        : 'bg-white text-gray-500 border-2 border-gray-300'
+                        ? 'bg-wise-green text-white border-2 border-wise-green shadow-button'
+                        : 'bg-white text-wise-text-muted border-2 border-wise-gray200'
                     }`}>
                       {status === 'completed' ? (
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       ) : (
@@ -56,13 +56,13 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep, compl
                     </span>
                     
                     <div className="ml-4 min-w-0 hidden sm:block">
-                      <p className={`text-sm font-medium ${
-                        status === 'current' ? 'text-wise-navy' : 'text-gray-500'
+                      <p className={`text-sm font-semibold ${
+                        status === 'current' ? 'text-wise-text-primary' : status === 'completed' ? 'text-wise-text-primary' : 'text-wise-text-muted'
                       }`}>
                         {step.title}
                       </p>
                       {step.description && (
-                        <p className="text-xs text-gray-400">{step.description}</p>
+                        <p className="text-xs text-wise-text-muted font-medium">{step.description}</p>
                       )}
                     </div>
                   </div>
@@ -73,8 +73,8 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep, compl
         </nav>
         
         {/* Mobile step indicator */}
-        <div className="mt-4 block sm:hidden">
-          <p className="text-sm font-medium text-wise-navy">
+        <div className="mt-6 block sm:hidden">
+          <p className="text-sm font-semibold text-wise-text-primary">
             Step {steps.findIndex(s => s.id === currentStep) + 1} of {steps.length}: {' '}
             {steps.find(s => s.id === currentStep)?.title}
           </p>

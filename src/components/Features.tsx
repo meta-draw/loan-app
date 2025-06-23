@@ -4,7 +4,7 @@ const Features: React.FC = () => {
   const features = [
     {
       icon: (
-        <svg className="w-12 h-12 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
@@ -13,7 +13,7 @@ const Features: React.FC = () => {
     },
     {
       icon: (
-        <svg className="w-12 h-12 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
         </svg>
       ),
@@ -22,7 +22,7 @@ const Features: React.FC = () => {
     },
     {
       icon: (
-        <svg className="w-12 h-12 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
         </svg>
       ),
@@ -31,7 +31,7 @@ const Features: React.FC = () => {
     },
     {
       icon: (
-        <svg className="w-12 h-12 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -40,7 +40,7 @@ const Features: React.FC = () => {
     },
     {
       icon: (
-        <svg className="w-12 h-12 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
@@ -49,7 +49,7 @@ const Features: React.FC = () => {
     },
     {
       icon: (
-        <svg className="w-12 h-12 text-wise-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ),
@@ -64,10 +64,10 @@ const Features: React.FC = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-wise-navy mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-wise-forest-green mb-4">
               Trusted by thousands of customers
             </h2>
-            <p className="text-xl text-wise-gray max-w-3xl mx-auto">
+            <p className="text-xl text-wise-content-secondary max-w-3xl mx-auto">
               We're committed to providing fast, secure, and transparent lending solutions that put you first.
             </p>
           </div>
@@ -78,10 +78,10 @@ const Features: React.FC = () => {
                 <div className="flex justify-center mb-4">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-wise-navy mb-3">
+                <h3 className="text-xl font-semibold text-wise-forest-green mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-wise-gray leading-relaxed">
+                <p className="text-wise-content-secondary leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -91,11 +91,11 @@ const Features: React.FC = () => {
       </section>
 
       {/* Stats section */}
-      <section className="py-16 bg-wise-navy">
+      <section className="py-16 bg-wise-forest-green">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-wise-green mb-2">$2B+</div>
+              <div className="text-4xl font-bold text-wise-bright-green mb-2">$2B+</div>
               <div className="text-white/80">Loans funded</div>
             </div>
             <div>
@@ -115,7 +115,7 @@ const Features: React.FC = () => {
       </section>
 
       {/* CTA section */}
-      <section className="py-20 bg-gradient-to-r from-wise-green to-wise-darkgreen">
+      <section className="py-20 bg-gradient-to-r from-wise-bright-green to-wise-success">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to get started?
@@ -127,11 +127,11 @@ const Features: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => window.location.href = '/application'}
-              className="bg-white text-wise-green px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors duration-200"
+              className="btn-wise-secondary text-lg px-8 py-4 bg-white text-wise-bright-green hover:bg-gray-50 hover:text-wise-bright-green"
             >
               Start your application
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-wise-green transition-colors duration-200">
+            <button className="btn-wise-secondary text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-wise-bright-green">
               Learn more
             </button>
           </div>

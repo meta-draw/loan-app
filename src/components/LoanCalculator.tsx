@@ -30,10 +30,10 @@ const LoanCalculator: React.FC = () => {
     <section className="py-20 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-wise-forest-green mb-4">
             Loan Calculator
           </h2>
-          <p className="text-xl text-neutral-600">
+          <p className="text-xl text-wise-content-secondary">
             Enter your loan information to get an accurate repayment plan
           </p>
         </div>
@@ -41,11 +41,11 @@ const LoanCalculator: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white rounded-2xl p-8 shadow-card">
-              <h3 className="text-2xl font-bold text-primary-dark mb-6">Loan Details</h3>
+              <h3 className="text-2xl font-bold text-wise-forest-green mb-6">Loan Details</h3>
               
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label className="block text-sm font-medium text-wise-content-primary mb-2">
                     Loan Amount
                   </label>
                   <div className="relative">
@@ -53,9 +53,9 @@ const LoanCalculator: React.FC = () => {
                       type="number"
                       value={loanData.amount}
                       onChange={(e) => setLoanData({...loanData, amount: parseInt(e.target.value) || 0})}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-wise-bright-green focus:border-transparent"
                     />
-                    <span className="absolute right-3 top-3 text-neutral-500">$</span>
+                    <span className="absolute right-3 top-3 text-wise-content-tertiary">$</span>
                   </div>
                   <div className="mt-2">
                     <input
@@ -67,7 +67,7 @@ const LoanCalculator: React.FC = () => {
                       onChange={(e) => setLoanData({...loanData, amount: parseInt(e.target.value)})}
                       className="w-full"
                     />
-                    <div className="flex justify-between text-sm text-neutral-500 mt-1">
+                    <div className="flex justify-between text-sm text-wise-content-tertiary mt-1">
                       <span>$1,000</span>
                       <span>$100,000</span>
                     </div>
@@ -75,7 +75,7 @@ const LoanCalculator: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label className="block text-sm font-medium text-wise-content-primary mb-2">
                     Loan Term
                   </label>
                   <select
@@ -92,7 +92,7 @@ const LoanCalculator: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label className="block text-sm font-medium text-wise-content-primary mb-2">
                     Annual Interest Rate
                   </label>
                   <div className="relative">
@@ -101,22 +101,22 @@ const LoanCalculator: React.FC = () => {
                       step="0.1"
                       value={loanData.rate}
                       onChange={(e) => setLoanData({...loanData, rate: parseFloat(e.target.value) || 0})}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-wise-bright-green focus:border-transparent"
                     />
-                    <span className="absolute right-3 top-3 text-neutral-500">%</span>
+                    <span className="absolute right-3 top-3 text-wise-content-tertiary">%</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-card">
-              <h3 className="text-2xl font-bold text-primary-dark mb-6">Payment Plan</h3>
+              <h3 className="text-2xl font-bold text-wise-forest-green mb-6">Payment Plan</h3>
               
               <div className="space-y-6">
-                <div className="bg-primary-blue/5 rounded-lg p-6">
+                <div className="bg-wise-bright-green/5 rounded-lg p-6">
                   <div className="text-center">
-                    <p className="text-sm text-neutral-600 mb-2">Monthly Payment</p>
-                    <p className="text-3xl font-bold text-primary-blue">
+                    <p className="text-sm text-wise-content-secondary mb-2">Monthly Payment</p>
+                    <p className="text-3xl font-bold text-wise-bright-green">
                       ${calculateMonthlyPayment()}
                     </p>
                   </div>
@@ -124,14 +124,14 @@ const LoanCalculator: React.FC = () => {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-neutral-50 rounded-lg p-4">
-                    <p className="text-sm text-neutral-600 mb-1">Loan Amount</p>
-                    <p className="text-xl font-semibold text-primary-dark">
+                    <p className="text-sm text-wise-content-secondary mb-1">Loan Amount</p>
+                    <p className="text-xl font-semibold text-wise-forest-green">
                       ${loanData.amount.toLocaleString()}
                     </p>
                   </div>
                   <div className="bg-neutral-50 rounded-lg p-4">
-                    <p className="text-sm text-neutral-600 mb-1">Total Interest</p>
-                    <p className="text-xl font-semibold text-primary-dark">
+                    <p className="text-sm text-wise-content-secondary mb-1">Total Interest</p>
+                    <p className="text-xl font-semibold text-wise-forest-green">
                       ${totalInterest()}
                     </p>
                   </div>
@@ -144,7 +144,7 @@ const LoanCalculator: React.FC = () => {
                   </p>
                 </div>
 
-                <button className="w-full bg-primary-green text-white py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors duration-200">
+                <button className="w-full btn-wise-primary">
                   Apply for This Loan
                 </button>
               </div>

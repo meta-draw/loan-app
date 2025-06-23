@@ -6,41 +6,47 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          dark: '#37517e',
-          blue: '#00d4aa',
-          green: '#00d4aa',
-        },
+        // Wise brand colors - Official design system
         wise: {
-          green: '#00d4aa',
-          darkgreen: '#00b894',
-          navy: '#37517e',
-          lightblue: '#f0f9ff',
-          gray: '#6b7280',
-          lightgray: '#f3f4f6',
+          // Core brand colors (Primary Palette)
+          'bright-green': '#9FE870',    // Bright Green (Sulu) - main brand color
+          'forest-green': '#163300',    // Forest Green (Deep Fir) - logo, titles
+          'white': '#FFFFFF',           // Base Light - page backgrounds
+          
+          // Semantic colors (Sentiment/Feedback)
+          'success': '#2F5711',         // Sentiment Positive - success states
+          'error': '#A8200D',           // Sentiment Negative - error states  
+          'warning': '#EDC843',         // Sentiment Warning - warning states
+          
+          // Support colors (Neutral/Base)
+          'base-dark': '#121511',       // Deep gray/near black for dark themes
+          'neutral-bg': 'rgba(22, 51, 0, 0.08)', // Background Neutral - very light gray
+          
+          // Content hierarchy (text colors)
+          'content-primary': '#163300',    // Primary text - Forest Green
+          'content-secondary': '#2F5711',  // Secondary text - darker green
+          'content-tertiary': 'rgba(22, 51, 0, 0.6)', // Tertiary text - muted
+          
+          // Legacy support colors
+          green: '#9FE870',             // Alias for bright-green
+          darkgreen: '#2F5711',         // Darker green for hover states
+          navy: '#163300',              // Alias for forest-green
         },
-        accent: {
-          success: '#00d4aa',
-          error: '#ef4444',
-        },
-        neutral: {
-          50: '#F9FAFB',
-          100: '#F3F4F6',
-          200: '#E5E7EB',
-          300: '#D1D5DB',
-          400: '#9CA3AF',
-          500: '#6B7280',
-          600: '#4B5563',
-          700: '#374151',
-          800: '#1F2937',
-          900: '#111827',
+        
+        // Keep existing structure for backward compatibility
+        primary: {
+          dark: '#163300',
+          blue: '#9FE870',
+          green: '#9FE870',
         }
       },
       fontFamily: {
         sans: [
+          'averta-standard',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
+          'system-ui',
           'Roboto',
           '"Helvetica Neue"',
           'Arial',
@@ -48,24 +54,64 @@ module.exports = {
         ],
       },
       fontSize: {
-        'xs': ['0.75rem', { lineHeight: '1.5' }],
-        'sm': ['0.875rem', { lineHeight: '1.5' }],
-        'base': ['1rem', { lineHeight: '1.5' }],
-        'lg': ['1.125rem', { lineHeight: '1.4' }],
-        'xl': ['1.25rem', { lineHeight: '1.4' }],
-        '2xl': ['1.5rem', { lineHeight: '1.4' }],
-        '3xl': ['1.875rem', { lineHeight: '1.4' }],
-        '4xl': ['2.25rem', { lineHeight: '1.2' }],
+        // Wise's typography scale
+        'xs': ['0.75rem', { lineHeight: '1.5', fontWeight: '400' }],
+        'sm': ['0.875rem', { lineHeight: '1.43', fontWeight: '400' }],
+        'base': ['1rem', { lineHeight: '1.5', fontWeight: '400' }],
+        'lg': ['1.125rem', { lineHeight: '1.44', fontWeight: '400' }],
+        'xl': ['1.25rem', { lineHeight: '1.4', fontWeight: '500' }],
+        '2xl': ['1.5rem', { lineHeight: '1.33', fontWeight: '600' }],
+        '3xl': ['1.875rem', { lineHeight: '1.27', fontWeight: '600' }],
+        '4xl': ['2.25rem', { lineHeight: '1.22', fontWeight: '700' }],
+        '5xl': ['3rem', { lineHeight: '1.17', fontWeight: '700' }],
+      },
+      spacing: {
+        // Wise's spacing system (4px base)
+        '1': '0.25rem',    // 4px
+        '2': '0.5rem',     // 8px
+        '3': '0.75rem',    // 12px
+        '4': '1rem',       // 16px
+        '5': '1.25rem',    // 20px
+        '6': '1.5rem',     // 24px
+        '8': '2rem',       // 32px
+        '10': '2.5rem',    // 40px
+        '12': '3rem',      // 48px
+        '16': '4rem',      // 64px
+        '20': '5rem',      // 80px
+        '24': '6rem',      // 96px
       },
       borderRadius: {
-        'sm': '0.25rem',
-        'md': '0.375rem',
-        'lg': '0.5rem',
-        'xl': '0.75rem',
+        'none': '0',
+        'sm': '0.25rem',    // 4px - small elements
+        'md': '0.5rem',     // 8px - buttons, inputs
+        'lg': '0.75rem',    // 12px - cards
+        'xl': '1rem',       // 16px - large cards
+        '2xl': '1.5rem',    // 24px - hero sections
+        'full': '9999px',
       },
       boxShadow: {
-        'soft': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        // Wise's shadow system
+        'none': 'none',
+        'sm': '0 1px 2px 0 rgba(22, 54, 92, 0.05)',
+        'md': '0 4px 6px -1px rgba(22, 54, 92, 0.1), 0 2px 4px -1px rgba(22, 54, 92, 0.06)',
+        'lg': '0 10px 15px -3px rgba(22, 54, 92, 0.1), 0 4px 6px -2px rgba(22, 54, 92, 0.05)',
+        'xl': '0 20px 25px -5px rgba(22, 54, 92, 0.1), 0 10px 10px -5px rgba(22, 54, 92, 0.04)',
+        'card': '0 4px 16px rgba(22, 54, 92, 0.08)',
+        'button': '0 2px 4px rgba(22, 54, 92, 0.1)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
       }
     },
   },

@@ -2,21 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Wise-inspired typography and base styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'system-ui', 'Roboto', 
+    'Helvetica Neue', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFFFF;
+  color: #163300;
+  line-height: 1.5;
+  font-size: 16px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Custom slider styles */
+/* Wise-style custom slider */
 input[type="range"].slider {
   -webkit-appearance: none;
   appearance: none;
@@ -25,7 +28,7 @@ input[type="range"].slider {
 }
 
 input[type="range"].slider::-webkit-slider-track {
-  background: #e5e7eb;
+  background: #D0D8E0;
   height: 8px;
   border-radius: 4px;
 }
@@ -33,27 +36,259 @@ input[type="range"].slider::-webkit-slider-track {
 input[type="range"].slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  background: #00d4aa;
-  height: 20px;
-  width: 20px;
+  background: #9FE870;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(159, 232, 112, 0.3);
+  transition: all 0.2s ease;
+}
+
+input[type="range"].slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(159, 232, 112, 0.4);
 }
 
 input[type="range"].slider::-moz-range-track {
-  background: #e5e7eb;
+  background: #D0D8E0;
   height: 8px;
   border-radius: 4px;
   border: none;
 }
 
 input[type="range"].slider::-moz-range-thumb {
-  background: #00d4aa;
-  height: 20px;
-  width: 20px;
+  background: #9FE870;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
   cursor: pointer;
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(159, 232, 112, 0.3);
+  transition: all 0.2s ease;
+}
+
+input[type="range"].slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(159, 232, 112, 0.4);
+}
+
+/* Focus styles for accessibility */
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #9FE870;
+  outline-offset: 2px;
+}
+
+/* Custom button animations */
+.btn-wise {
+  transition: all 0.2s ease;
+  transform: translateY(0);
+}
+
+.btn-wise:hover {
+  transform: translateY(-1px);
+}
+
+.btn-wise:active {
+  transform: translateY(0);
+}
+
+/* Wise-style button designs */
+.btn-wise-primary {
+  background-color: rgb(159, 232, 112);
+  background-image: none;
+  border: 1px solid rgb(159, 232, 112);
+  border-radius: 9999px;
+  box-sizing: border-box;
+  color: rgb(22, 51, 0);
+  cursor: pointer;
+  display: block;
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-feature-settings: "calt";
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  letter-spacing: -0.176px;
+  line-height: 24px;
+  margin-bottom: 0px;
+  padding: 11px 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: nowrap;
+  touch-action: manipulation;
+  transition: color 0s ease, background-color 0.15s ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-wise-primary:hover {
+  background-color: #2F5711;
+  border-color: #2F5711;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-wise-primary:active {
+  transform: translateY(0);
+}
+
+.btn-wise-secondary {
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid rgb(159, 232, 112);
+  border-radius: 9999px;
+  box-sizing: border-box;
+  color: rgb(22, 51, 0);
+  cursor: pointer;
+  display: block;
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-feature-settings: "calt";
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  letter-spacing: -0.176px;
+  line-height: 24px;
+  margin-bottom: 0px;
+  padding: 11px 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: nowrap;
+  touch-action: manipulation;
+  transition: color 0s ease, background-color 0.15s ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-wise-secondary:hover {
+  background-color: rgba(159, 232, 112, 0.1);
+  border-color: #2F5711;
+  color: #163300;
+  transform: translateY(-1px);
+}
+
+.btn-wise-secondary:active {
+  transform: translateY(0);
+}
+
+/* Wise-style card designs */
+.card-wise {
+  background-color: #FFFFFF;
+  border: 1px solid #EBEEF2;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(22, 54, 92, 0.08);
+  transition: all 0.2s ease;
+}
+
+.card-wise:hover {
+  border-color: #D0D8E0;
+  box-shadow: 0 8px 25px rgba(22, 54, 92, 0.12);
+  transform: translateY(-2px);
+}
+
+.card-wise-large {
+  background-color: #FFFFFF;
+  border: 1px solid #EBEEF2;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(22, 54, 92, 0.08);
+  transition: all 0.2s ease;
+}
+
+.card-wise-large:hover {
+  border-color: #D0D8E0;
+  box-shadow: 0 12px 32px rgba(22, 54, 92, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Input field styling */
+.input-wise {
+  background-color: #FFFFFF;
+  border: 2px solid #EBEEF2;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #16365C;
+  transition: all 0.2s ease;
+}
+
+.input-wise:focus {
+  outline: none;
+  border-color: #9FE870;
+  box-shadow: 0 0 0 3px rgba(159, 232, 112, 0.1);
+}
+
+.input-wise:hover {
+  border-color: #D0D8E0;
+}
+
+/* Semantic colors for feedback and status */
+.text-success {
+  color: #2F5711;
+}
+
+.text-error {
+  color: #A8200D;
+}
+
+.text-warning {
+  color: #EDC843;
+}
+
+.bg-success {
+  background-color: #2F5711;
+}
+
+.bg-error {
+  background-color: #A8200D;
+}
+
+.bg-warning {
+  background-color: #EDC843;
+}
+
+.border-success {
+  border-color: #2F5711;
+}
+
+.border-error {
+  border-color: #A8200D;
+}
+
+.border-warning {
+  border-color: #EDC843;
+}
+
+/* Content hierarchy text colors */
+.text-content-primary {
+  color: #163300;
+}
+
+.text-content-secondary {
+  color: #2F5711;
+}
+
+.text-content-tertiary {
+  color: rgba(22, 51, 0, 0.6);
+}
+
+/* Background neutral for subtle separations */
+.bg-neutral {
+  background-color: rgba(22, 51, 0, 0.08);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }

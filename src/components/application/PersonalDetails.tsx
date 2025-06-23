@@ -102,10 +102,10 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
     <div className="max-w-4xl mx-auto">
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-wise-navy mb-4">
+          <h2 className="text-3xl font-bold text-wise-forest-green mb-4">
             Personal details
           </h2>
-          <p className="text-wise-gray text-lg">
+          <p className="text-wise-content-secondary text-lg">
             We need some basic information to verify your identity and process your application.
           </p>
         </div>
@@ -116,14 +116,14 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
             {/* Name */}
             <div className="grid grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-wise-navy mb-2">
+                <label className="block text-sm font-medium text-wise-forest-green mb-2">
                   Title *
                 </label>
                 <select
                   value={formData.title}
                   onChange={(e) => setFormData({...formData, title: e.target.value})}
                   className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
-                    errors.title ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
+                    errors.title ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-bright-green'
                   }`}
                 >
                   <option value="">Select</option>
@@ -135,7 +135,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-wise-navy mb-2">
+                <label className="block text-sm font-medium text-wise-forest-green mb-2">
                   First name *
                 </label>
                 <input
@@ -150,7 +150,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-wise-navy mb-2">
+                <label className="block text-sm font-medium text-wise-forest-green mb-2">
                   Last name *
                 </label>
                 <input
@@ -254,7 +254,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-wise-navy mb-2">
+                <label className="block text-sm font-medium text-wise-forest-green mb-2">
                   Suburb *
                 </label>
                 <input
@@ -269,7 +269,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-wise-navy mb-2">
+                <label className="block text-sm font-medium text-wise-forest-green mb-2">
                   State *
                 </label>
                 <select
@@ -325,7 +325,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-wise-navy mb-2">
+                <label className="block text-sm font-medium text-wise-forest-green mb-2">
                   Marital status *
                 </label>
                 <select
@@ -344,13 +344,13 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-wise-navy mb-2">
+                <label className="block text-sm font-medium text-wise-forest-green mb-2">
                   Number of dependents
                 </label>
                 <select
                   value={formData.dependents}
                   onChange={(e) => setFormData({...formData, dependents: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-wise-bright-green focus:outline-none transition-colors"
                 >
                   {[0,1,2,3,4,5].map(num => (
                     <option key={num} value={num.toString()}>{num}</option>
@@ -363,20 +363,20 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
-          <div className="text-sm text-wise-gray">
+          <div className="text-sm text-wise-content-secondary">
             Step 2 of 6 - Personal Details
           </div>
           
           <div className="flex space-x-4">
             <button
               onClick={onBack}
-              className="border border-wise-navy text-wise-navy px-6 py-3 rounded-lg font-semibold hover:bg-wise-navy hover:text-white transition-colors"
+              className="btn-wise-secondary"
             >
               Back
             </button>
             <button
               onClick={handleNext}
-              className="bg-wise-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors"
+              className="btn-wise-primary"
             >
               Continue to Income & Expenses
             </button>

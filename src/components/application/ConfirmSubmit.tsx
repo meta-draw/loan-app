@@ -63,10 +63,10 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
     <div className="max-w-4xl mx-auto">
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-wise-navy mb-4">
+          <h2 className="text-3xl font-bold text-wise-forest-green mb-4">
             Review and submit
           </h2>
-          <p className="text-wise-gray text-lg">
+          <p className="text-wise-content-secondary text-lg">
             Please review your application details before submitting. Once submitted, our team will process your application.
           </p>
         </div>
@@ -75,37 +75,37 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
           {/* Application Summary */}
           <div className="space-y-6">
             <div className="bg-wise-lightblue rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-wise-navy mb-4">
+              <h3 className="text-xl font-semibold text-wise-forest-green mb-4">
                 Loan Summary
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Loan amount:</span>
-                  <span className="font-semibold text-wise-navy">
+                  <span className="text-wise-content-secondary">Loan amount:</span>
+                  <span className="font-semibold text-wise-forest-green">
                     ${data.loanDetails?.amount?.toLocaleString() || '0'}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Loan term:</span>
-                  <span className="font-semibold text-wise-navy">
+                  <span className="text-wise-content-secondary">Loan term:</span>
+                  <span className="font-semibold text-wise-forest-green">
                     {data.loanDetails?.term || 0} months
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Purpose:</span>
-                  <span className="font-semibold text-wise-navy">
+                  <span className="text-wise-content-secondary">Purpose:</span>
+                  <span className="font-semibold text-wise-forest-green">
                     {purposes.find(p => p.value === data.loanDetails?.purpose)?.label || 'Not specified'}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Interest rate:</span>
-                  <span className="font-semibold text-wise-navy">3.5% p.a.</span>
+                  <span className="text-wise-content-secondary">Interest rate:</span>
+                  <span className="font-semibold text-wise-forest-green">3.5% p.a.</span>
                 </div>
-                <div className="border-t border-wise-green/20 pt-3">
+                <div className="border-t border-wise-bright-green/20 pt-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-wise-gray">Monthly payment:</span>
+                    <span className="text-wise-content-secondary">Monthly payment:</span>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-wise-navy">
+                      <div className="text-2xl font-bold text-wise-forest-green">
                         ${calculateMonthlyPayment()}
                       </div>
                     </div>
@@ -115,26 +115,26 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
             </div>
 
             <div className="bg-gray-50 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-wise-navy mb-4">
+              <h3 className="text-xl font-semibold text-wise-forest-green mb-4">
                 Personal Details
               </h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Name:</span>
+                  <span className="text-wise-content-secondary">Name:</span>
                   <span className="font-medium">
                     {data.personalDetails?.title} {data.personalDetails?.firstName} {data.personalDetails?.lastName}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Email:</span>
+                  <span className="text-wise-content-secondary">Email:</span>
                   <span className="font-medium">{data.personalDetails?.email}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Mobile:</span>
+                  <span className="text-wise-content-secondary">Mobile:</span>
                   <span className="font-medium">{data.personalDetails?.mobile}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Address:</span>
+                  <span className="text-wise-content-secondary">Address:</span>
                   <span className="font-medium text-right">
                     {data.personalDetails?.address?.street}<br/>
                     {data.personalDetails?.address?.suburb} {data.personalDetails?.address?.state} {data.personalDetails?.address?.postcode}
@@ -144,20 +144,20 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
             </div>
 
             <div className="bg-gray-50 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-wise-navy mb-4">
+              <h3 className="text-xl font-semibold text-wise-forest-green mb-4">
                 Income & Employment
               </h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Employment:</span>
+                  <span className="text-wise-content-secondary">Employment:</span>
                   <span className="font-medium">{data.incomeExpenses?.employmentStatus}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Monthly income:</span>
+                  <span className="text-wise-content-secondary">Monthly income:</span>
                   <span className="font-medium">${data.incomeExpenses?.netIncome}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-wise-gray">Employer:</span>
+                  <span className="text-wise-content-secondary">Employer:</span>
                   <span className="font-medium">{data.incomeExpenses?.employer || 'N/A'}</span>
                 </div>
               </div>
@@ -167,7 +167,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
           {/* Terms and Conditions */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold text-wise-navy mb-6">
+              <h3 className="text-xl font-semibold text-wise-forest-green mb-6">
                 Terms and Conditions
               </h3>
               
@@ -178,11 +178,11 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
                     id="terms"
                     checked={acceptedTerms}
                     onChange={(e) => setAcceptedTerms(e.target.checked)}
-                    className="mt-1 mr-3 w-4 h-4 text-wise-green border-gray-300 rounded focus:ring-wise-green"
+                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-gray-300 rounded focus:ring-wise-bright-green"
                   />
-                  <label htmlFor="terms" className="text-sm text-wise-gray leading-relaxed">
+                  <label htmlFor="terms" className="text-sm text-wise-content-secondary leading-relaxed">
                     I have read and agree to the{' '}
-                    <a href="#" className="text-wise-green hover:underline">Terms and Conditions</a>{' '}
+                    <a href="#" className="text-wise-bright-green hover:underline">Terms and Conditions</a>{' '}
                     and understand the loan terms, interest rates, fees, and repayment obligations.
                   </label>
                 </div>
@@ -193,11 +193,11 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
                     id="privacy"
                     checked={acceptedPrivacy}
                     onChange={(e) => setAcceptedPrivacy(e.target.checked)}
-                    className="mt-1 mr-3 w-4 h-4 text-wise-green border-gray-300 rounded focus:ring-wise-green"
+                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-gray-300 rounded focus:ring-wise-bright-green"
                   />
-                  <label htmlFor="privacy" className="text-sm text-wise-gray leading-relaxed">
+                  <label htmlFor="privacy" className="text-sm text-wise-content-secondary leading-relaxed">
                     I have read and accept the{' '}
-                    <a href="#" className="text-wise-green hover:underline">Privacy Policy</a>{' '}
+                    <a href="#" className="text-wise-bright-green hover:underline">Privacy Policy</a>{' '}
                     and consent to the collection, use, and disclosure of my personal information as described.
                   </label>
                 </div>
@@ -208,9 +208,9 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
                     id="credit"
                     checked={acceptedCredit}
                     onChange={(e) => setAcceptedCredit(e.target.checked)}
-                    className="mt-1 mr-3 w-4 h-4 text-wise-green border-gray-300 rounded focus:ring-wise-green"
+                    className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-gray-300 rounded focus:ring-wise-bright-green"
                   />
-                  <label htmlFor="credit" className="text-sm text-wise-gray leading-relaxed">
+                  <label htmlFor="credit" className="text-sm text-wise-content-secondary leading-relaxed">
                     I authorize QuickLoan to perform credit checks and verify my information with credit bureaus, 
                     employers, and financial institutions as necessary for loan assessment.
                   </label>
@@ -237,20 +237,20 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
             </div>
 
             <div className="bg-wise-lightblue rounded-xl p-6">
-              <h4 className="text-lg font-semibold text-wise-navy mb-4">
+              <h4 className="text-lg font-semibold text-wise-forest-green mb-4">
                 What happens next?
               </h4>
-              <div className="space-y-3 text-sm text-wise-gray">
+              <div className="space-y-3 text-sm text-wise-content-secondary">
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-wise-green text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</div>
+                  <div className="w-6 h-6 bg-wise-bright-green text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</div>
                   <span>We'll review your application (usually within 2 hours)</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-wise-green text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">2</div>
+                  <div className="w-6 h-6 bg-wise-bright-green text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">2</div>
                   <span>You'll receive an SMS and email with the decision</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-wise-green text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">3</div>
+                  <div className="w-6 h-6 bg-wise-bright-green text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">3</div>
                   <span>If approved, funds will be deposited within 24 hours</span>
                 </div>
               </div>
@@ -260,7 +260,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
-          <div className="text-sm text-wise-gray">
+          <div className="text-sm text-wise-content-secondary">
             Step 6 of 6 - Confirm & Submit
           </div>
           
@@ -268,14 +268,14 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
             <button
               onClick={onBack}
               disabled={isSubmitting}
-              className="border border-wise-navy text-wise-navy px-6 py-3 rounded-lg font-semibold hover:bg-wise-navy hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-wise-secondary disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Back
             </button>
             <button
               onClick={handleSubmit}
               disabled={!canSubmit || isSubmitting}
-              className="bg-wise-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center"
+              className="btn-wise-primary disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center"
             >
               {isSubmitting ? (
                 <>
