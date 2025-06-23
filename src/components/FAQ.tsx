@@ -51,13 +51,13 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-wise-neutral-bg">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-wise-navy mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-wise-navy mb-4">
             Frequently asked questions
           </h2>
-          <p className="text-xl text-wise-gray">
+          <p className="text-2xl text-wise-gray">
             Got questions? We've got answers. Here are the most common questions about our loans.
           </p>
         </div>
@@ -73,7 +73,7 @@ const FAQ: React.FC = () => {
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold text-wise-navy pr-4">
+                  <h3 className="text-xl font-semibold text-wise-navy pr-4">
                     {faq.question}
                   </h3>
                   <svg
@@ -97,7 +97,7 @@ const FAQ: React.FC = () => {
               {openIndex === index && (
                 <div className="px-6 pb-4">
                   <div className="border-t border-gray-100 pt-4">
-                    <p className="text-wise-gray leading-relaxed">
+                    <p className="text-wise-gray leading-relaxed text-lg">
                       {faq.answer}
                     </p>
                   </div>

@@ -144,7 +144,7 @@ const LoanCalculator: React.FC = () => {
                   </p>
                 </div>
 
-                <button className="w-full btn-wise-primary">
+                <button className="btn-wise-primary btn-wise-full">
                   Apply for This Loan
                 </button>
               </div>

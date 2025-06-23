@@ -102,10 +102,10 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
     <div className="max-w-4xl mx-auto">
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-wise-forest-green mb-4">
+          <h2 className="text-4xl font-bold text-wise-forest-green mb-4">
             Personal details
           </h2>
-          <p className="text-wise-content-secondary text-lg">
+          <p className="text-wise-content-secondary text-xl">
             We need some basic information to verify your identity and process your application.
           </p>
         </div>
@@ -116,7 +116,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
             {/* Name */}
             <div className="grid grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-wise-forest-green mb-2">
+                <label className="block text-base font-medium text-wise-forest-green mb-2">
                   Title *
                 </label>
                 <select
@@ -131,11 +131,11 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                     <option key={title} value={title}>{title}</option>
                   ))}
                 </select>
-                {errors.title && <p className="text-red-500 text-xs mt-1">{errors.title}</p>}
+                {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-wise-forest-green mb-2">
+                <label className="block text-base font-medium text-wise-forest-green mb-2">
                   First name *
                 </label>
                 <input
@@ -146,11 +146,11 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                     errors.firstName ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
                   }`}
                 />
-                {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
+                {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-wise-forest-green mb-2">
+                <label className="block text-base font-medium text-wise-forest-green mb-2">
                   Last name *
                 </label>
                 <input
@@ -161,13 +161,13 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                     errors.lastName ? 'border-red-300 focus:border-red-500' : 'border-gray-200 focus:border-wise-green'
                   }`}
                 />
-                {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
+                {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
               </div>
             </div>
 
             {/* Contact details */}
             <div>
-              <label className="block text-sm font-medium text-wise-navy mb-2">
+              <label className="block text-base font-medium text-wise-navy mb-2">
                 Date of birth *
               </label>
               <input
@@ -182,7 +182,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-wise-navy mb-2">
+              <label className="block text-base font-medium text-wise-navy mb-2">
                 Email address *
               </label>
               <input
@@ -198,7 +198,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-wise-navy mb-2">
+              <label className="block text-base font-medium text-wise-navy mb-2">
                 Mobile number *
               </label>
               <input
@@ -218,7 +218,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
           <div className="space-y-6">
             {/* Address */}
             <div>
-              <label className="block text-sm font-medium text-wise-navy mb-2">
+              <label className="block text-base font-medium text-wise-navy mb-2">
                 Residential status *
               </label>
               <select
@@ -237,7 +237,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-wise-navy mb-2">
+              <label className="block text-base font-medium text-wise-navy mb-2">
                 Street address *
               </label>
               <input
@@ -254,7 +254,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-wise-forest-green mb-2">
+                <label className="block text-base font-medium text-wise-forest-green mb-2">
                   Suburb *
                 </label>
                 <input
@@ -269,7 +269,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-wise-forest-green mb-2">
+                <label className="block text-base font-medium text-wise-forest-green mb-2">
                   State *
                 </label>
                 <select
@@ -289,7 +289,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-wise-navy mb-2">
+              <label className="block text-base font-medium text-wise-navy mb-2">
                 Postcode *
               </label>
               <input
@@ -305,7 +305,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-wise-navy mb-2">
+              <label className="block text-base font-medium text-wise-navy mb-2">
                 Time at current address *
               </label>
               <select
@@ -325,7 +325,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-wise-forest-green mb-2">
+                <label className="block text-base font-medium text-wise-forest-green mb-2">
                   Marital status *
                 </label>
                 <select
@@ -344,7 +344,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-wise-forest-green mb-2">
+                <label className="block text-base font-medium text-wise-forest-green mb-2">
                   Number of dependents
                 </label>
                 <select
@@ -370,7 +370,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
           <div className="flex space-x-4">
             <button
               onClick={onBack}
-              className="btn-wise-secondary"
+              className="btn-wise-secondary btn-wise-small"
             >
               Back
             </button>

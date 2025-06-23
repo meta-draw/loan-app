@@ -68,13 +68,13 @@ const LoanPurposes: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-wise-neutral-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-wise-navy mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-wise-navy mb-4">
             What do you need a loan for?
           </h2>
-          <p className="text-xl text-wise-gray max-w-3xl mx-auto">
+          <p className="text-2xl text-wise-gray max-w-3xl mx-auto">
             Whether it's planned or unexpected, we're here to help with life's expenses. 
             Here are some of the most common reasons our customers apply for loans.
           </p>
@@ -89,13 +89,13 @@ const LoanPurposes: React.FC = () => {
             >
               <div className="text-center">
                 <div className="text-4xl mb-4">{purpose.icon}</div>
-                <h3 className="text-lg font-semibold text-wise-navy mb-2 group-hover:text-wise-green transition-colors">
+                <h3 className="text-xl font-semibold text-wise-navy mb-2 group-hover:text-wise-green transition-colors">
                   {purpose.title}
                 </h3>
-                <p className="text-wise-gray text-sm mb-4 leading-relaxed">
+                <p className="text-wise-gray text-base mb-4 leading-relaxed">
                   {purpose.description}
                 </p>
-                <div className="text-xs text-wise-gray">
+                <div className="text-sm text-wise-gray">
                   <p className="font-medium mb-1">Popular for:</p>
                   <ul className="space-y-1">
                     {purpose.examples.slice(0, 2).map((example, idx) => (
@@ -109,12 +109,12 @@ const LoanPurposes: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-wise-gray mb-6">
+          <p className="text-wise-gray mb-6 text-lg">
             Don't see your reason listed? No problem! We offer loans for almost any legal purpose.
           </p>
           <button 
             onClick={() => handleApplyNow('other')}
-            className="bg-wise-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors duration-200"
+            className="bg-wise-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-wise-darkgreen transition-colors duration-200 text-lg"
           >
             Apply for any purpose
           </button>

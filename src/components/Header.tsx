@@ -74,7 +74,7 @@ const Header: React.FC = () => {
             <button className="text-wise-content-primary hover:text-wise-bright-green transition-all duration-200 text-sm font-medium">
               Log in
             </button>
-            <button className="btn-wise-primary text-sm">
+            <button className="btn-wise-primary btn-wise-small">
               Register
             </button>
           </div>

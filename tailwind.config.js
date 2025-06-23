@@ -54,16 +54,16 @@ module.exports = {
         ],
       },
       fontSize: {
-        // Wise's typography scale
-        'xs': ['0.75rem', { lineHeight: '1.5', fontWeight: '400' }],
-        'sm': ['0.875rem', { lineHeight: '1.43', fontWeight: '400' }],
-        'base': ['1rem', { lineHeight: '1.5', fontWeight: '400' }],
-        'lg': ['1.125rem', { lineHeight: '1.44', fontWeight: '400' }],
-        'xl': ['1.25rem', { lineHeight: '1.4', fontWeight: '500' }],
-        '2xl': ['1.5rem', { lineHeight: '1.33', fontWeight: '600' }],
-        '3xl': ['1.875rem', { lineHeight: '1.27', fontWeight: '600' }],
-        '4xl': ['2.25rem', { lineHeight: '1.22', fontWeight: '700' }],
-        '5xl': ['3rem', { lineHeight: '1.17', fontWeight: '700' }],
+        // Wise's typography scale - enhanced for better readability
+        'xs': ['0.875rem', { lineHeight: '1.6', fontWeight: '400' }],    // 14px
+        'sm': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],        // 16px
+        'base': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],  // 18px
+        'lg': ['1.25rem', { lineHeight: '1.5', fontWeight: '400' }],     // 20px
+        'xl': ['1.375rem', { lineHeight: '1.5', fontWeight: '500' }],    // 22px
+        '2xl': ['1.625rem', { lineHeight: '1.4', fontWeight: '600' }],   // 26px
+        '3xl': ['2rem', { lineHeight: '1.3', fontWeight: '600' }],       // 32px
+        '4xl': ['2.5rem', { lineHeight: '1.25', fontWeight: '700' }],    // 40px
+        '5xl': ['3.25rem', { lineHeight: '1.2', fontWeight: '700' }],    // 52px
       },
       spacing: {
         // Wise's spacing system (4px base)

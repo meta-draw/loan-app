@@ -268,7 +268,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
             <button
               onClick={onBack}
               disabled={isSubmitting}
-              className="btn-wise-secondary disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-wise-secondary btn-wise-small disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Back
             </button>

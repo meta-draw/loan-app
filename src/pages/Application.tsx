@@ -98,7 +98,7 @@ const Application: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-wise-gray50">
+    <div className="min-h-screen bg-wise-neutral-bg">
       <StepIndicator 
         steps={steps} 
         currentStep={currentStep} 

@@ -64,10 +64,10 @@ const Features: React.FC = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-wise-forest-green mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-wise-forest-green mb-4">
               Trusted by thousands of customers
             </h2>
-            <p className="text-xl text-wise-content-secondary max-w-3xl mx-auto">
+            <p className="text-2xl text-wise-content-secondary max-w-3xl mx-auto">
               We're committed to providing fast, secure, and transparent lending solutions that put you first.
             </p>
           </div>
@@ -78,10 +78,10 @@ const Features: React.FC = () => {
                 <div className="flex justify-center mb-4">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-wise-forest-green mb-3">
+                <h3 className="text-2xl font-semibold text-wise-forest-green mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-wise-content-secondary leading-relaxed">
+                <p className="text-wise-content-secondary leading-relaxed text-lg">
                   {feature.description}
                 </p>
               </div>
@@ -91,24 +91,24 @@ const Features: React.FC = () => {
       </section>
 
       {/* Stats section */}
-      <section className="py-16 bg-wise-forest-green">
+      <section className="py-16 bg-wise-neutral-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-wise-bright-green mb-2">$2B+</div>
-              <div className="text-white/80">Loans funded</div>
+              <div className="text-5xl font-bold text-wise-bright-green mb-2">$2B+</div>
+              <div className="text-wise-content-secondary text-lg">Loans funded</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-wise-green mb-2">500K+</div>
-              <div className="text-white/80">Happy customers</div>
+              <div className="text-5xl font-bold text-wise-bright-green mb-2">500K+</div>
+              <div className="text-wise-content-secondary text-lg">Happy customers</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-wise-green mb-2">4.8★</div>
-              <div className="text-white/80">Customer rating</div>
+              <div className="text-5xl font-bold text-wise-bright-green mb-2">4.8★</div>
+              <div className="text-wise-content-secondary text-lg">Customer rating</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-wise-green mb-2">24hrs</div>
-              <div className="text-white/80">Average approval time</div>
+              <div className="text-5xl font-bold text-wise-bright-green mb-2">24hrs</div>
+              <div className="text-wise-content-secondary text-lg">Average approval time</div>
             </div>
           </div>
         </div>
@@ -117,21 +117,21 @@ const Features: React.FC = () => {
       {/* CTA section */}
       <section className="py-20 bg-gradient-to-r from-wise-bright-green to-wise-success">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to get started?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
             Join thousands of customers who trust us with their financial needs. 
             Apply today and get approved in minutes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => window.location.href = '/application'}
-              className="btn-wise-secondary text-lg px-8 py-4 bg-white text-wise-bright-green hover:bg-gray-50 hover:text-wise-bright-green"
+              className="btn-wise-secondary btn-wise-auto text-xl px-10 py-5 bg-white text-wise-bright-green hover:bg-gray-50 hover:text-wise-bright-green font-semibold"
             >
               Start your application
             </button>
-            <button className="btn-wise-secondary text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-wise-bright-green">
+            <button className="btn-wise-secondary btn-wise-auto text-xl px-10 py-5 border-2 border-white text-white hover:bg-white hover:text-wise-bright-green font-semibold">
               Learn more
             </button>
           </div>

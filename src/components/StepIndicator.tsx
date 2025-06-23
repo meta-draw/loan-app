@@ -39,7 +39,7 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep, compl
                   )}
                   
                   <div className="relative flex items-center group">
-                    <span className={`h-12 w-12 rounded-full flex items-center justify-center text-sm font-semibold shadow-sm ${
+                    <span className={`h-12 w-12 rounded-full flex items-center justify-center text-base font-semibold shadow-sm ${
                       status === 'completed' 
                         ? 'bg-wise-green text-white shadow-button' 
                         : status === 'current'
@@ -56,13 +56,13 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep, compl
                     </span>
                     
                     <div className="ml-4 min-w-0 hidden sm:block">
-                      <p className={`text-sm font-semibold ${
+                      <p className={`text-base font-semibold ${
                         status === 'current' ? 'text-wise-text-primary' : status === 'completed' ? 'text-wise-text-primary' : 'text-wise-text-muted'
                       }`}>
                         {step.title}
                       </p>
                       {step.description && (
-                        <p className="text-xs text-wise-text-muted font-medium">{step.description}</p>
+                        <p className="text-sm text-wise-text-muted font-medium">{step.description}</p>
                       )}
                     </div>
                   </div>
