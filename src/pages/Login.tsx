@@ -60,31 +60,31 @@ const Login: React.FC = () => {
         <Link to="/" className="flex justify-center">
           <div className="flex items-center">
             <div className="w-10 h-10 bg-wise-bright-green rounded-full flex items-center justify-center mr-3">
-              <span className="text-white font-bold text-lg">QL</span>
+              <span className="text-wise-content-primary font-bold text-wise-title-body">QL</span>
             </div>
-            <h1 className="text-2xl font-semibold text-wise-content-primary">QuickLoan</h1>
+            <h1 className="text-wise-title-section font-semibold text-wise-content-primary">QuickLoan</h1>
           </div>
         </Link>
         
         {/* Header */}
         <div className="mt-8 text-center">
-          <h2 className="text-3xl font-bold text-wise-forest-green">
+          <h2 className="text-wise-heading-2 font-bold text-wise-forest-green">
             Welcome back
           </h2>
-          <p className="mt-2 text-base text-wise-content-secondary">
+          <p className="mt-2 text-wise-body-large text-wise-content-secondary">
             Sign in to your account to continue
           </p>
         </div>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-6 shadow-card rounded-xl border border-wise-gray200">
+        <div className="bg-white py-8 px-6 shadow-card rounded-wise-large border border-wise-gray200">
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* General error */}
             {errors.general && (
-              <div className="bg-wise-error/10 border border-wise-error rounded-lg p-4">
+              <div className="bg-wise-error/10 border border-wise-error rounded-wise-medium p-4">
                 <div className="flex">
-                  <div className="text-wise-error text-sm">
+                  <div className="text-wise-error text-wise-body-default">
                     <svg className="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                     </svg>
@@ -96,7 +96,7 @@ const Login: React.FC = () => {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-wise-content-primary mb-2">
+              <label htmlFor="email" className="block text-wise-body-default-bold text-wise-content-primary mb-2">
                 Email address
               </label>
               <input
@@ -106,7 +106,7 @@ const Login: React.FC = () => {
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleInputChange('email')}
-                className={`w-full px-3 py-3 border-2 rounded-lg text-base placeholder-wise-content-tertiary focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-[10px] text-wise-body-large placeholder-wise-content-tertiary focus:outline-none transition-colors ${
                   errors.email 
                     ? 'border-wise-error focus:border-wise-error' 
                     : 'border-wise-gray200 focus:border-wise-bright-green'
@@ -114,13 +114,13 @@ const Login: React.FC = () => {
                 placeholder="your.email@example.com"
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-wise-error">{errors.email}</p>
+                <p className="mt-1 text-wise-body-default text-wise-error">{errors.email}</p>
               )}
             </div>
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-wise-content-primary mb-2">
+              <label htmlFor="password" className="block text-wise-body-default-bold text-wise-content-primary mb-2">
                 Password
               </label>
               <div className="relative">
@@ -131,7 +131,7 @@ const Login: React.FC = () => {
                   autoComplete="current-password"
                   value={formData.password}
                   onChange={handleInputChange('password')}
-                  className={`w-full px-3 py-3 pr-10 border-2 rounded-lg text-base placeholder-wise-content-tertiary focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 pr-10 border-2 rounded-[10px] text-wise-body-large placeholder-wise-content-tertiary focus:outline-none transition-colors ${
                     errors.password 
                       ? 'border-wise-error focus:border-wise-error' 
                       : 'border-wise-gray200 focus:border-wise-bright-green'
@@ -158,7 +158,7 @@ const Login: React.FC = () => {
                 </button>
               </div>
               {errors.password && (
-                <p className="mt-1 text-sm text-wise-error">{errors.password}</p>
+                <p className="mt-1 text-wise-body-default text-wise-error">{errors.password}</p>
               )}
             </div>
 
@@ -171,12 +171,12 @@ const Login: React.FC = () => {
                   type="checkbox"
                   className="h-4 w-4 text-wise-bright-green focus:ring-wise-bright-green border-wise-gray200 rounded"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-wise-content-secondary">
+                <label htmlFor="remember-me" className="ml-2 block text-wise-body-default text-wise-content-secondary">
                   Remember me
                 </label>
               </div>
 
-              <div className="text-sm">
+              <div className="text-wise-body-default">
                 <a href="#" className="font-medium text-wise-bright-green hover:text-wise-success transition-colors">
                   Trouble logging in?
                 </a>
@@ -188,11 +188,11 @@ const Login: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-button text-base font-semibold text-white bg-wise-bright-green hover:bg-wise-success focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-wise-bright-green disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-wise-medium shadow-button text-wise-body-large-bold bg-wise-bright-green hover:bg-wise-success focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-wise-bright-green disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
               >
                 {isLoading ? (
                   <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -210,7 +210,7 @@ const Login: React.FC = () => {
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-wise-gray200" />
                 </div>
-                <div className="relative flex justify-center text-sm">
+                <div className="relative flex justify-center text-wise-body-default">
                   <span className="px-2 bg-white text-wise-content-tertiary">Or continue with</span>
                 </div>
               </div>
@@ -220,7 +220,7 @@ const Login: React.FC = () => {
             <div className="mt-6 grid grid-cols-2 gap-3">
               <button
                 type="button"
-                className="w-full inline-flex justify-center py-3 px-4 border border-wise-gray200 rounded-lg shadow-sm text-sm font-medium text-wise-content-secondary bg-white hover:bg-wise-gray50 transition-colors"
+                className="w-full inline-flex justify-center py-3 px-4 border border-wise-gray200 rounded-wise-medium shadow-sm text-wise-body-default-bold text-wise-content-secondary bg-white hover:bg-wise-gray50 transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -233,7 +233,7 @@ const Login: React.FC = () => {
 
               <button
                 type="button"
-                className="w-full inline-flex justify-center py-3 px-4 border border-wise-gray200 rounded-lg shadow-sm text-sm font-medium text-wise-content-secondary bg-white hover:bg-wise-gray50 transition-colors"
+                className="w-full inline-flex justify-center py-3 px-4 border border-wise-gray200 rounded-wise-medium shadow-sm text-wise-body-default-bold text-wise-content-secondary bg-white hover:bg-wise-gray50 transition-colors"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -245,7 +245,7 @@ const Login: React.FC = () => {
 
           {/* Security notice */}
           <div className="mt-6 text-center">
-            <p className="text-xs text-wise-content-tertiary">
+            <p className="text-wise-body-default text-wise-content-tertiary">
               By signing in, you agree to our{' '}
               <Link to="/privacy" className="text-wise-bright-green hover:text-wise-success transition-colors">
                 Privacy Policy
@@ -262,7 +262,7 @@ const Login: React.FC = () => {
         <div className="mt-6 text-center">
           <Link 
             to="/" 
-            className="text-sm font-medium text-wise-content-secondary hover:text-wise-content-primary transition-colors"
+            className="text-wise-body-default-bold text-wise-content-secondary hover:text-wise-content-primary transition-colors"
           >
             ← Back to home
           </Link>

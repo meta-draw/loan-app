@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Button } from '../ui';
 
 interface IncomeExpensesProps {
   data: any;
@@ -26,6 +27,29 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
     existingLoans: data.incomeExpenses?.existingLoans || '',
     creditCards: data.incomeExpenses?.creditCards || ''
   });
+
+  // Update form data when props change (for data restoration from localStorage)
+  useEffect(() => {
+    if (data.incomeExpenses) {
+      setFormData({
+        employmentStatus: data.incomeExpenses.employmentStatus || '',
+        employer: data.incomeExpenses.employer || '',
+        occupation: data.incomeExpenses.occupation || '',
+        grossIncome: data.incomeExpenses.grossIncome || '',
+        netIncome: data.incomeExpenses.netIncome || '',
+        timeWithEmployer: data.incomeExpenses.timeWithEmployer || '',
+        otherIncome: data.incomeExpenses.otherIncome || '',
+        rent: data.incomeExpenses.rent || '',
+        utilities: data.incomeExpenses.utilities || '',
+        groceries: data.incomeExpenses.groceries || '',
+        transport: data.incomeExpenses.transport || '',
+        insurance: data.incomeExpenses.insurance || '',
+        otherExpenses: data.incomeExpenses.otherExpenses || '',
+        existingLoans: data.incomeExpenses.existingLoans || '',
+        creditCards: data.incomeExpenses.creditCards || ''
+      });
+    }
+  }, [data.incomeExpenses]);
 
   const employmentStatuses = [
     'Full-time employee',
@@ -94,7 +118,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
               <select
                 value={formData.employmentStatus}
                 onChange={(e) => setFormData({...formData, employmentStatus: e.target.value})}
-                className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
               >
                 <option value="">Select employment status</option>
                 {employmentStatuses.map(status => (
@@ -113,7 +137,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="text"
                     value={formData.employer}
                     onChange={(e) => setFormData({...formData, employer: e.target.value})}
-                    className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="Company name"
                   />
                 </div>
@@ -126,7 +150,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="text"
                     value={formData.occupation}
                     onChange={(e) => setFormData({...formData, occupation: e.target.value})}
-                    className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="Your job title"
                   />
                 </div>
@@ -138,7 +162,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                   <select
                     value={formData.timeWithEmployer}
                     onChange={(e) => setFormData({...formData, timeWithEmployer: e.target.value})}
-                    className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                   >
                     <option value="">Select time period</option>
                     {timeOptions.map(option => (
@@ -160,7 +184,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.grossIncome}
                     onChange={(e) => setFormData({...formData, grossIncome: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="5,000"
                   />
                 </div>
@@ -176,7 +200,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.netIncome}
                     onChange={(e) => setFormData({...formData, netIncome: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="4,000"
                   />
                 </div>
@@ -193,7 +217,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                   type="number"
                   value={formData.otherIncome}
                   onChange={(e) => setFormData({...formData, otherIncome: e.target.value})}
-                  className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                   placeholder="0"
                 />
               </div>
@@ -218,7 +242,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.rent}
                     onChange={(e) => setFormData({...formData, rent: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="1,500"
                   />
                 </div>
@@ -234,7 +258,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.utilities}
                     onChange={(e) => setFormData({...formData, utilities: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="200"
                   />
                 </div>
@@ -250,7 +274,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.groceries}
                     onChange={(e) => setFormData({...formData, groceries: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="400"
                   />
                 </div>
@@ -266,7 +290,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.transport}
                     onChange={(e) => setFormData({...formData, transport: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="300"
                   />
                 </div>
@@ -282,7 +306,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.insurance}
                     onChange={(e) => setFormData({...formData, insurance: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="150"
                   />
                 </div>
@@ -298,7 +322,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.otherExpenses}
                     onChange={(e) => setFormData({...formData, otherExpenses: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="200"
                   />
                 </div>
@@ -318,7 +342,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.existingLoans}
                     onChange={(e) => setFormData({...formData, existingLoans: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="0"
                   />
                 </div>
@@ -334,7 +358,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
                     type="number"
                     value={formData.creditCards}
                     onChange={(e) => setFormData({...formData, creditCards: e.target.value})}
-                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                     placeholder="0"
                   />
                 </div>
@@ -342,7 +366,7 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
             </div>
 
             {/* Summary */}
-            <div className="bg-wise-lightblue rounded-lg p-4 mt-6">
+            <div className="bg-wise-lightblue rounded-[10px] p-4 mt-6">
               <h4 className="font-semibold text-wise-navy mb-2">Financial summary</h4>
               <div className="space-y-1 text-sm">
                 <div className="flex justify-between">
@@ -380,18 +404,18 @@ const IncomeExpenses: React.FC<IncomeExpensesProps> = ({ data, onNext, onBack })
           </div>
           
           <div className="flex space-x-4">
-            <button
+            <Button
               onClick={onBack}
-              className="btn-wise-secondary"
+              variant="fourth"
             >
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={handleNext}
-              className="btn-wise-primary"
+              variant="primary"
             >
               Continue to Bank Verification
-            </button>
+            </Button>
           </div>
         </div>
       </div>

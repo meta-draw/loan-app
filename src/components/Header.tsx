@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { LinkButton } from './ui';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,9 +17,9 @@ const Header: React.FC = () => {
             <Link to="/" className="flex-shrink-0">
               <div className="flex items-center">
                 <div className="w-8 h-8 bg-wise-bright-green rounded-full flex items-center justify-center mr-2">
-                  <span className="text-white font-bold text-sm">QL</span>
+                  <span className="text-wise-content-primary font-bold text-wise-body-default">QL</span>
                 </div>
-                <h1 className="text-xl font-semibold text-wise-content-primary">QuickLoan</h1>
+                <h1 className="text-wise-title-body font-semibold text-wise-content-primary">QuickLoan</h1>
               </div>
             </Link>
           </div>
@@ -26,60 +27,92 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-6">
-              <Link 
-                to="/" 
-                className={`px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                  isActive('/') 
-                    ? 'text-wise-content-primary border-b-2 border-wise-bright-green' 
-                    : 'text-wise-content-secondary hover:text-wise-content-primary'
-                }`}
-              >
-                Personal
-              </Link>
-              <Link 
-                to="/loans" 
-                className={`px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                  isActive('/loans') 
-                    ? 'text-wise-content-primary border-b-2 border-wise-bright-green' 
-                    : 'text-wise-content-secondary hover:text-wise-content-primary'
-                }`}
-              >
-                Loans
-              </Link>
-              <Link 
-                to="/about" 
-                className={`px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                  isActive('/about') 
-                    ? 'text-wise-content-primary border-b-2 border-wise-bright-green' 
-                    : 'text-wise-content-secondary hover:text-wise-content-primary'
-                }`}
-              >
-                About
-              </Link>
-              <Link 
-                to="/contact" 
-                className={`px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                  isActive('/contact') 
-                    ? 'text-wise-content-primary border-b-2 border-wise-bright-green' 
-                    : 'text-wise-content-secondary hover:text-wise-content-primary'
-                }`}
-              >
-                Help
-              </Link>
+              {isActive('/') ? (
+                <LinkButton
+                  to="/"
+                  variant="third"
+                  size="small"
+                  className="rounded-full"
+                >
+                  Personal
+                </LinkButton>
+              ) : (
+                <Link 
+                  to="/" 
+                  className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
+                >
+                  Personal
+                </Link>
+              )}
+              
+              {isActive('/loans') ? (
+                <LinkButton
+                  to="/loans"
+                  variant="third"
+                  size="small"
+                  className="rounded-full"
+                >
+                  Loans
+                </LinkButton>
+              ) : (
+                <Link 
+                  to="/loans" 
+                  className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
+                >
+                  Loans
+                </Link>
+              )}
+              
+              {isActive('/about') ? (
+                <LinkButton
+                  to="/about"
+                  variant="third"
+                  size="small"
+                  className="rounded-full"
+                >
+                  About
+                </LinkButton>
+              ) : (
+                <Link 
+                  to="/about" 
+                  className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
+                >
+                  About
+                </Link>
+              )}
+              
+              {isActive('/contact') ? (
+                <LinkButton
+                  to="/contact"
+                  variant="third"
+                  size="small"
+                  className="rounded-full"
+                >
+                  Help
+                </LinkButton>
+              ) : (
+                <Link 
+                  to="/contact" 
+                  className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
+                >
+                  Help
+                </Link>
+              )}
             </div>
           </div>
           
           {/* Right side buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link 
+            <LinkButton 
               to="/application" 
-              className="btn-wise-primary btn-wise-small"
+              variant="primary"
+              size="small"
             >
               Apply Now
-            </Link>
+            </LinkButton>
             <Link 
               to="/login" 
-              className="text-wise-content-primary hover:text-wise-bright-green transition-all duration-200 text-sm font-medium"
+              className="text-wise-content-primary hover:text-wise-bright-green transition-all duration-200 text-wise-body-default-bold"
             >
               Log in
             </Link>
@@ -105,55 +138,94 @@ const Header: React.FC = () => {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-wise-gray200">
-              <Link
-                to="/"
-                className={`block px-3 py-2 text-base font-medium rounded-md ${
-                  isActive('/') ? 'text-wise-content-primary bg-wise-gray50' : 'text-wise-content-secondary hover:text-wise-content-primary'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Personal
-              </Link>
-              <Link
-                to="/loans"
-                className={`block px-3 py-2 text-base font-medium rounded-md ${
-                  isActive('/loans') ? 'text-wise-content-primary bg-wise-gray50' : 'text-wise-content-secondary hover:text-wise-content-primary'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Loans
-              </Link>
-              <Link
-                to="/about"
-                className={`block px-3 py-2 text-base font-medium rounded-md ${
-                  isActive('/about') ? 'text-wise-content-primary bg-wise-gray50' : 'text-wise-content-secondary hover:text-wise-content-primary'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                to="/contact"
-                className={`block px-3 py-2 text-base font-medium rounded-md ${
-                  isActive('/contact') ? 'text-wise-content-primary bg-wise-gray50' : 'text-wise-content-secondary hover:text-wise-content-primary'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Help
-              </Link>
-              <div className="pt-4 pb-3 border-t border-wise-gray200 space-y-3">
-                <Link 
+            <div className="px-2 pt-2 pb-3 space-y-3 sm:px-3 border-t border-wise-gray200" onClick={() => setIsMenuOpen(false)}>
+              {isActive('/') ? (
+                <LinkButton
+                  to="/"
+                  variant="third"
+                  size="medium"
+                  fullWidth
+                  className="rounded-full"
+                >
+                  Personal
+                </LinkButton>
+              ) : (
+                <Link
+                  to="/"
+                  className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
+                >
+                  Personal
+                </Link>
+              )}
+              
+              {isActive('/loans') ? (
+                <LinkButton
+                  to="/loans"
+                  variant="third"
+                  size="medium"
+                  fullWidth
+                  className="rounded-full"
+                >
+                  Loans
+                </LinkButton>
+              ) : (
+                <Link
+                  to="/loans"
+                  className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
+                >
+                  Loans
+                </Link>
+              )}
+              
+              {isActive('/about') ? (
+                <LinkButton
+                  to="/about"
+                  variant="third"
+                  size="medium"
+                  fullWidth
+                  className="rounded-full"
+                >
+                  About
+                </LinkButton>
+              ) : (
+                <Link
+                  to="/about"
+                  className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
+                >
+                  About
+                </Link>
+              )}
+              
+              {isActive('/contact') ? (
+                <LinkButton
+                  to="/contact"
+                  variant="third"
+                  size="medium"
+                  fullWidth
+                  className="rounded-full"
+                >
+                  Help
+                </LinkButton>
+              ) : (
+                <Link
+                  to="/contact"
+                  className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
+                >
+                  Help
+                </Link>
+              )}
+              <div className="pt-4 pb-3 border-t border-wise-gray200 space-y-3" onClick={() => setIsMenuOpen(false)}>
+                <LinkButton 
                   to="/application" 
-                  className="btn-wise-primary w-full block text-center"
-                  onClick={() => setIsMenuOpen(false)}
+                  variant="primary"
+                  size="medium"
+                  fullWidth
                 >
                   Apply Now
-                </Link>
+                </LinkButton>
                 <Link 
                   to="/login" 
-                  className="block w-full text-center px-3 py-2 text-base font-medium text-wise-content-primary hover:text-wise-bright-green rounded-md"
-                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full text-center px-3 py-2 text-wise-body-large-bold text-wise-content-primary hover:text-wise-bright-green rounded-wise-small"
                 >
                   Log in
                 </Link>

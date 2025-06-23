@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button, Card } from './ui';
 
 const LoanPurposes: React.FC = () => {
   const navigate = useNavigate();
@@ -71,10 +72,10 @@ const LoanPurposes: React.FC = () => {
     <section className="py-20 bg-wise-neutral-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-wise-navy mb-4">
+          <h2 className="text-wise-heading-1 lg:text-wise-display-medium font-bold text-wise-navy mb-4">
             What do you need a loan for?
           </h2>
-          <p className="text-2xl text-wise-gray max-w-3xl mx-auto">
+          <p className="text-wise-title-section text-wise-gray max-w-3xl mx-auto">
             Whether it's planned or unexpected, we're here to help with life's expenses. 
             Here are some of the most common reasons our customers apply for loans.
           </p>
@@ -82,20 +83,22 @@ const LoanPurposes: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {purposes.map((purpose, index) => (
-            <div 
-              key={index} 
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-wise-green/30 transition-all duration-200 group cursor-pointer"
+            <Card 
+              key={index}
+              size="small"
+              interactive={true}
               onClick={() => handleApplyNow(purpose.title)}
+              className="group"
             >
               <div className="text-center">
                 <div className="text-4xl mb-4">{purpose.icon}</div>
-                <h3 className="text-xl font-semibold text-wise-navy mb-2 group-hover:text-wise-green transition-colors">
+                <h3 className="text-wise-title-body font-semibold text-wise-navy mb-2 group-hover:text-wise-forest-green transition-colors">
                   {purpose.title}
                 </h3>
-                <p className="text-wise-gray text-base mb-4 leading-relaxed">
+                <p className="text-wise-gray text-wise-body-large mb-4 leading-relaxed">
                   {purpose.description}
                 </p>
-                <div className="text-sm text-wise-gray">
+                <div className="text-wise-body-default text-wise-gray">
                   <p className="font-medium mb-1">Popular for:</p>
                   <ul className="space-y-1">
                     {purpose.examples.slice(0, 2).map((example, idx) => (
@@ -104,20 +107,21 @@ const LoanPurposes: React.FC = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-wise-gray mb-6 text-lg">
+          <p className="text-wise-gray mb-6 text-wise-title-body">
             Don't see your reason listed? No problem! We offer loans for almost any legal purpose.
           </p>
-          <button 
+          <Button 
             onClick={() => handleApplyNow('other')}
-            className="btn-wise-primary btn-wise-large"
+            variant="primary"
+            size="large"
           >
             Apply for any purpose
-          </button>
+          </Button>
         </div>
       </div>
     </section>

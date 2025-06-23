@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './ui';
 
 const Features: React.FC = () => {
   const features = [
@@ -125,15 +126,19 @@ const Features: React.FC = () => {
             Apply today and get approved in minutes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+            <Button 
               onClick={() => window.location.href = '/application'}
-              className="btn-wise-primary btn-wise-large"
+              variant="primary"
+              size="large"
             >
               Start your application
-            </button>
-            <button className="btn-wise-secondary btn-wise-large text-xl px-10 py-5 border-2 border-white text-white hover:bg-white hover:text-wise-bright-green font-semibold">
+            </Button>
+            <Button 
+              variant="secondary"
+              size="large"
+            >
               Learn more
-            </button>
+            </Button>
           </div>
         </div>
       </section>

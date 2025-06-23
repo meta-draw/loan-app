@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '../ui';
 import { useNavigate } from 'react-router-dom';
 
 interface ConfirmSubmitProps {
@@ -61,7 +62,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-xl shadow-sm border border-wise-gray200 p-8">
+      <div className="bg-white rounded-wise-large shadow-sm border border-wise-gray200 p-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-wise-forest-green mb-4">
             Review and submit
@@ -74,7 +75,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Application Summary */}
           <div className="space-y-6">
-            <div className="bg-wise-lightblue rounded-xl p-6">
+            <div className="bg-wise-lightblue rounded-wise-large p-6">
               <h3 className="text-xl font-semibold text-wise-forest-green mb-4">
                 Loan Summary
               </h3>
@@ -114,7 +115,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
               </div>
             </div>
 
-            <div className="bg-wise-gray50 rounded-xl p-6">
+            <div className="bg-wise-gray50 rounded-wise-large p-6">
               <h3 className="text-xl font-semibold text-wise-forest-green mb-4">
                 Personal Details
               </h3>
@@ -143,7 +144,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
               </div>
             </div>
 
-            <div className="bg-wise-gray50 rounded-xl p-6">
+            <div className="bg-wise-gray50 rounded-wise-large p-6">
               <h3 className="text-xl font-semibold text-wise-forest-green mb-4">
                 Income & Employment
               </h3>
@@ -218,7 +219,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
               </div>
             </div>
 
-            <div className="bg-wise-warning/10 border border-wise-warning rounded-xl p-6">
+            <div className="bg-wise-warning/10 border border-wise-warning rounded-wise-large p-6">
               <div className="flex items-start">
                 <div className="text-wise-warning text-xl mr-3">⚠️</div>
                 <div>
@@ -236,7 +237,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
               </div>
             </div>
 
-            <div className="bg-wise-lightblue rounded-xl p-6">
+            <div className="bg-wise-lightblue rounded-wise-large p-6">
               <h4 className="text-lg font-semibold text-wise-forest-green mb-4">
                 What happens next?
               </h4>
@@ -265,30 +266,21 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
           </div>
           
           <div className="flex space-x-4">
-            <button
+            <Button
               onClick={onBack}
               disabled={isSubmitting}
-              className="btn-wise-secondary disabled:opacity-50 disabled:cursor-not-allowed"
+              variant="fourth"
             >
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={handleSubmit}
               disabled={!canSubmit || isSubmitting}
-              className="btn-wise-primary disabled:bg-wise-gray200 disabled:cursor-not-allowed flex items-center"
+              variant="primary"
+              loading={isSubmitting}
             >
-              {isSubmitting ? (
-                <>
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Submitting Application...
-                </>
-              ) : (
-                'Submit Application'
-              )}
-            </button>
+              {isSubmitting ? 'Submitting Application...' : 'Submit Application'}
+            </Button>
           </div>
         </div>
       </div>

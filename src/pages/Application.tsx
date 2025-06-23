@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import StepIndicator from '../components/StepIndicator';
 import LoanDetails from '../components/application/LoanDetails';
@@ -18,14 +18,53 @@ const Application: React.FC = () => {
     purpose: 'personal'
   };
 
-  const [currentStep, setCurrentStep] = useState('loan-details');
-  const [completedSteps, setCompletedSteps] = useState<string[]>([]);
-  const [applicationData, setApplicationData] = useState({
-    loanDetails: initialLoanData,
-    personalDetails: {},
-    incomeExpenses: {},
-    bankVerification: {},
-    centrelinkVerification: {},
+  const [currentStep, setCurrentStep] = useState(() => {
+    try {
+      return localStorage.getItem('quickloan-current-step') || 'loan-details';
+    } catch {
+      return 'loan-details';
+    }
+  });
+  
+  const [completedSteps, setCompletedSteps] = useState<string[]>(() => {
+    try {
+      const saved = localStorage.getItem('quickloan-completed-steps');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+  
+  const [applicationData, setApplicationData] = useState(() => {
+    try {
+      const savedData = localStorage.getItem('quickloan-application-data');
+      
+      if (savedData) {
+        const parsedData = JSON.parse(savedData);
+        // Merge with initial loan data if coming from calculator
+        return {
+          ...parsedData,
+          loanDetails: { ...parsedData.loanDetails, ...initialLoanData }
+        };
+      }
+      
+      return {
+        loanDetails: initialLoanData,
+        personalDetails: {},
+        incomeExpenses: {},
+        bankVerification: {},
+        centrelinkVerification: {},
+      };
+    } catch (error) {
+      console.error('Error loading saved application data:', error);
+      return {
+        loanDetails: initialLoanData,
+        personalDetails: {},
+        incomeExpenses: {},
+        bankVerification: {},
+        centrelinkVerification: {},
+      };
+    }
   });
 
   const steps = [
@@ -37,16 +76,46 @@ const Application: React.FC = () => {
     { id: 'confirm-submit', title: 'Confirm & Submit', description: 'Review and submit' },
   ];
 
+  // Save data to localStorage whenever applicationData changes
+  useEffect(() => {
+    try {
+      localStorage.setItem('quickloan-application-data', JSON.stringify(applicationData));
+    } catch (error) {
+      console.error('Error saving application data:', error);
+    }
+  }, [applicationData]);
+
+  // Save current step to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem('quickloan-current-step', currentStep);
+    } catch (error) {
+      console.error('Error saving current step:', error);
+    }
+  }, [currentStep]);
+
+  // Save completed steps to localStorage whenever they change
+  useEffect(() => {
+    try {
+      localStorage.setItem('quickloan-completed-steps', JSON.stringify(completedSteps));
+    } catch (error) {
+      console.error('Error saving completed steps:', error);
+    }
+  }, [completedSteps]);
+
   const handleNext = (stepData: any) => {
+    // Fix the key mapping issue: convert 'loan-details' to 'loanDetails' properly
+    const stepKey = currentStep.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+    
     // Update application data
-    setApplicationData(prev => ({
+    setApplicationData((prev: any) => ({
       ...prev,
-      [currentStep.replace('-', '')]: stepData
+      [stepKey]: stepData
     }));
 
     // Mark current step as completed
     if (!completedSteps.includes(currentStep)) {
-      setCompletedSteps(prev => [...prev, currentStep]);
+      setCompletedSteps((prev: string[]) => [...prev, currentStep]);
     }
 
     // Move to next step
@@ -63,6 +132,17 @@ const Application: React.FC = () => {
     }
   };
 
+  // Clear saved application data (call this when application is successfully submitted)
+  const clearSavedData = () => {
+    try {
+      localStorage.removeItem('quickloan-application-data');
+      localStorage.removeItem('quickloan-current-step');
+      localStorage.removeItem('quickloan-completed-steps');
+    } catch (error) {
+      console.error('Error clearing saved application data:', error);
+    }
+  };
+
   // const handleStepClick = (stepId: string) => {
   //   // Allow navigation to completed steps or current step
   //   if (completedSteps.includes(stepId) || stepId === currentStep) {
@@ -75,6 +155,7 @@ const Application: React.FC = () => {
       data: applicationData,
       onNext: handleNext,
       onBack: handleBack,
+      onSubmitSuccess: clearSavedData, // Add this for the final step
       isFirstStep: currentStep === 'loan-details',
       isLastStep: currentStep === 'confirm-submit'
     };

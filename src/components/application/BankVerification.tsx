@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Button } from '../ui';
 
 interface BankVerificationProps {
   data: any;
@@ -17,6 +18,20 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
     accountNumber: data.bankVerification?.accountNumber || '',
     accountHolder: data.bankVerification?.accountHolder || ''
   });
+
+  // Update form data when props change (for data restoration from localStorage)
+  useEffect(() => {
+    if (data.bankVerification) {
+      setFormData({
+        method: data.bankVerification.method || '',
+        bankName: data.bankVerification.bankName || '',
+        accountType: data.bankVerification.accountType || '',
+        bsb: data.bankVerification.bsb || '',
+        accountNumber: data.bankVerification.accountNumber || '',
+        accountHolder: data.bankVerification.accountHolder || ''
+      });
+    }
+  }, [data.bankVerification]);
 
   const methods = [
     {
@@ -134,7 +149,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                   <button
                     key={bank}
                     onClick={() => setFormData({...formData, bankName: bank})}
-                    className={`p-4 rounded-lg border-2 transition-colors ${
+                    className={`p-4 rounded-[10px] border-2 transition-colors ${
                       formData.bankName === bank
                         ? 'border-wise-green bg-white text-wise-navy'
                         : 'border-wise-gray200 bg-white text-wise-content-secondary hover:border-wise-green/50'
@@ -145,9 +160,9 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                 ))}
               </div>
               
-              <button className="btn-wise-primary">
+              <Button variant="primary">
                 Connect to {formData.bankName || 'your bank'}
-              </button>
+              </Button>
             </div>
           </div>
         )}
@@ -169,9 +184,9 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
               <p className="text-wise-gray mb-4">
                 or click to browse your files
               </p>
-              <button className="btn-wise-primary">
+              <Button variant="primary">
                 Choose Files
-              </button>
+              </Button>
               <p className="text-xs text-wise-gray mt-4">
                 Accepted formats: PDF • Max file size: 10MB each
               </p>
@@ -193,7 +208,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                 <select
                   value={formData.bankName}
                   onChange={(e) => setFormData({...formData, bankName: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                 >
                   <option value="">Select your bank</option>
                   {banks.map(bank => (
@@ -209,7 +224,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                 <select
                   value={formData.accountType}
                   onChange={(e) => setFormData({...formData, accountType: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                 >
                   <option value="">Select account type</option>
                   {accountTypes.map(type => (
@@ -226,7 +241,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                   type="text"
                   value={formData.bsb}
                   onChange={(e) => setFormData({...formData, bsb: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                   placeholder="123-456"
                   maxLength={7}
                 />
@@ -240,7 +255,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                   type="text"
                   value={formData.accountNumber}
                   onChange={(e) => setFormData({...formData, accountNumber: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                   placeholder="12345678"
                 />
               </div>
@@ -253,7 +268,7 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
                   type="text"
                   value={formData.accountHolder}
                   onChange={(e) => setFormData({...formData, accountHolder: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                   placeholder="Full name as it appears on your account"
                 />
               </div>
@@ -287,19 +302,19 @@ const BankVerification: React.FC<BankVerificationProps> = ({ data, onNext, onBac
           </div>
           
           <div className="flex space-x-4">
-            <button
+            <Button
               onClick={onBack}
-              className="btn-wise-secondary"
+              variant="fourth"
             >
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={handleNext}
               disabled={!formData.method}
-              className="btn-wise-primary disabled:bg-wise-gray200 disabled:cursor-not-allowed"
+              variant="primary"
             >
               Continue to Centrelink Verification
-            </button>
+            </Button>
           </div>
         </div>
       </div>

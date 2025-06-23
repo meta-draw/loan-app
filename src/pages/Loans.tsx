@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Chip, ChipGroup } from '../components/ui';
 
 const Loans: React.FC = () => {
   const [selectedLoan, setSelectedLoan] = useState('personal');
@@ -103,22 +104,20 @@ const Loans: React.FC = () => {
       {/* Loan Types Navigation */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
+          <ChipGroup className="justify-center" scrollable={false}>
             {loanTypes.map((loan) => (
-              <button
+              <Chip
                 key={loan.id}
+                variant="choice"
+                size="large"
+                selected={selectedLoan === loan.id}
                 onClick={() => setSelectedLoan(loan.id)}
-                className={`flex items-center px-6 py-3 rounded-lg transition-colors ${
-                  selectedLoan === loan.id
-                    ? 'bg-wise-green text-white'
-                    : 'bg-gray-100 text-wise-gray hover:bg-gray-200'
-                }`}
+                icon={loan.icon}
               >
-                <span className="mr-2">{loan.icon}</span>
                 {loan.name}
-              </button>
+              </Chip>
             ))}
-          </div>
+          </ChipGroup>
         </div>
       </section>
 
@@ -129,7 +128,7 @@ const Loans: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-wise-green/10 rounded-lg flex items-center justify-center mr-4 text-wise-green">
+                  <div className="w-16 h-16 bg-wise-green/10 rounded-wise-medium flex items-center justify-center mr-4 text-wise-green">
                     {selectedLoanData.icon}
                   </div>
                   <div>
@@ -141,19 +140,19 @@ const Loans: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-wise-lightblue p-6 rounded-lg">
+                  <div className="bg-wise-lightblue p-6 rounded-wise-medium">
                     <div className="text-sm text-wise-gray mb-1">Interest Rates</div>
                     <div className="text-xl font-bold text-wise-navy">
                       {selectedLoanData.rates}
                     </div>
                   </div>
-                  <div className="bg-wise-lightblue p-6 rounded-lg">
+                  <div className="bg-wise-lightblue p-6 rounded-wise-medium">
                     <div className="text-sm text-wise-gray mb-1">Loan Amounts</div>
                     <div className="text-xl font-bold text-wise-navy">
                       {selectedLoanData.amounts}
                     </div>
                   </div>
-                  <div className="bg-wise-lightblue p-6 rounded-lg">
+                  <div className="bg-wise-lightblue p-6 rounded-wise-medium">
                     <div className="text-sm text-wise-gray mb-1">Loan Terms</div>
                     <div className="text-xl font-bold text-wise-navy">
                       {selectedLoanData.terms}
@@ -175,13 +174,16 @@ const Loans: React.FC = () => {
                   </ul>
                 </div>
 
-                <button className="btn-wise-primary btn-wise-large">
+                <Button 
+                  variant="primary" 
+                  size="large"
+                >
                   Apply for {selectedLoanData.name}
-                </button>
+                </Button>
               </div>
 
               <div className="relative">
-                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+                <div className="bg-white rounded-wise-x-large p-8 shadow-xl border border-gray-100">
                   <h3 className="text-2xl font-bold text-wise-navy mb-6">
                     Quick Rate Check
                   </h3>
@@ -197,7 +199,7 @@ const Loans: React.FC = () => {
                       <input
                         type="text"
                         placeholder="$10,000"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-wise-green focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-[10px] focus:ring-2 focus:ring-wise-green focus:border-transparent"
                       />
                     </div>
 
@@ -205,7 +207,7 @@ const Loans: React.FC = () => {
                       <label className="block text-sm font-medium text-wise-navy mb-2">
                         Credit Score Range
                       </label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-wise-green focus:border-transparent">
+                      <select className="w-full px-4 py-3 border border-gray-300 rounded-[10px] focus:ring-2 focus:ring-wise-green focus:border-transparent">
                         <option>Excellent (720+)</option>
                         <option>Good (680-719)</option>
                         <option>Fair (640-679)</option>
@@ -220,16 +222,18 @@ const Loans: React.FC = () => {
                       <input
                         type="text"
                         placeholder="$50,000"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-wise-green focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-[10px] focus:ring-2 focus:ring-wise-green focus:border-transparent"
                       />
                     </div>
 
-                    <button 
+                    <Button 
                       type="submit"
-                      className="btn-wise-primary btn-wise-large btn-wise-full"
+                      variant="primary" 
+                      size="large" 
+                      fullWidth
                     >
                       Check My Rate
-                    </button>
+                    </Button>
 
                     <p className="text-xs text-wise-gray text-center">
                       Checking your rate won't affect your credit score

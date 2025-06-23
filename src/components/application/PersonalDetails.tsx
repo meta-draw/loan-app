@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Button } from '../ui';
 
 interface PersonalDetailsProps {
   data: any;
@@ -29,6 +30,30 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
   });
 
   const [errors, setErrors] = useState<any>({});
+
+  // Update form data when props change (for data restoration from localStorage)
+  useEffect(() => {
+    if (data.personalDetails) {
+      setFormData({
+        title: data.personalDetails.title || '',
+        firstName: data.personalDetails.firstName || '',
+        lastName: data.personalDetails.lastName || '',
+        dateOfBirth: data.personalDetails.dateOfBirth || '',
+        email: data.personalDetails.email || '',
+        mobile: data.personalDetails.mobile || '',
+        residentialStatus: data.personalDetails.residentialStatus || '',
+        address: {
+          street: data.personalDetails.address?.street || '',
+          suburb: data.personalDetails.address?.suburb || '',
+          state: data.personalDetails.address?.state || '',
+          postcode: data.personalDetails.address?.postcode || ''
+        },
+        timeAtAddress: data.personalDetails.timeAtAddress || '',
+        maritalStatus: data.personalDetails.maritalStatus || '',
+        dependents: data.personalDetails.dependents || '0'
+      });
+    }
+  }, [data.personalDetails]);
 
   const titles = ['Mr', 'Mrs', 'Ms', 'Miss', 'Dr', 'Prof'];
   const states = ['NSW', 'VIC', 'QLD', 'WA', 'SA', 'TAS', 'ACT', 'NT'];
@@ -122,7 +147,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <select
                   value={formData.title}
                   onChange={(e) => setFormData({...formData, title: e.target.value})}
-                  className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                     errors.title ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 >
@@ -142,7 +167,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   type="text"
                   value={formData.firstName}
                   onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                  className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                     errors.firstName ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
@@ -157,7 +182,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   type="text"
                   value={formData.lastName}
                   onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                  className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                     errors.lastName ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
@@ -174,7 +199,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="date"
                 value={formData.dateOfBirth}
                 onChange={(e) => setFormData({...formData, dateOfBirth: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                   errors.dateOfBirth ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
               />
@@ -189,7 +214,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                   errors.email ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="your.email@example.com"
@@ -205,7 +230,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="tel"
                 value={formData.mobile}
                 onChange={(e) => setFormData({...formData, mobile: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                   errors.mobile ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="04XX XXX XXX"
@@ -224,7 +249,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               <select
                 value={formData.residentialStatus}
                 onChange={(e) => setFormData({...formData, residentialStatus: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                   errors.residentialStatus ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
               >
@@ -244,7 +269,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="text"
                 value={formData.address.street}
                 onChange={(e) => setFormData({...formData, address: {...formData.address, street: e.target.value}})}
-                className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                   errors.street ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="123 Main Street"
@@ -261,7 +286,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   type="text"
                   value={formData.address.suburb}
                   onChange={(e) => setFormData({...formData, address: {...formData.address, suburb: e.target.value}})}
-                  className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                     errors.suburb ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
@@ -275,7 +300,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <select
                   value={formData.address.state}
                   onChange={(e) => setFormData({...formData, address: {...formData.address, state: e.target.value}})}
-                  className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                     errors.state ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 >
@@ -296,7 +321,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="text"
                 value={formData.address.postcode}
                 onChange={(e) => setFormData({...formData, address: {...formData.address, postcode: e.target.value}})}
-                className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                   errors.postcode ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="2000"
@@ -311,7 +336,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               <select
                 value={formData.timeAtAddress}
                 onChange={(e) => setFormData({...formData, timeAtAddress: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                   errors.timeAtAddress ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
               >
@@ -331,7 +356,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <select
                   value={formData.maritalStatus}
                   onChange={(e) => setFormData({...formData, maritalStatus: e.target.value})}
-                  className={`w-full px-3 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
                     errors.maritalStatus ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 >
@@ -350,7 +375,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <select
                   value={formData.dependents}
                   onChange={(e) => setFormData({...formData, dependents: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors"
+                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
                 >
                   {[0,1,2,3,4,5].map(num => (
                     <option key={num} value={num.toString()}>{num}</option>
@@ -368,18 +393,18 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
           </div>
           
           <div className="flex space-x-4">
-            <button
+            <Button
               onClick={onBack}
-              className="btn-wise-secondary"
+              variant="fourth"
             >
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={handleNext}
-              className="btn-wise-primary"
+              variant="primary"
             >
               Continue to Income & Expenses
-            </button>
+            </Button>
           </div>
         </div>
       </div>

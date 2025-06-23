@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from './ui';
 
 const CustomerReviews: React.FC = () => {
   const reviews = [
@@ -56,10 +57,10 @@ const CustomerReviews: React.FC = () => {
     <section className="py-20 bg-wise-neutral-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-wise-navy mb-4">
+          <h2 className="text-wise-heading-1 lg:text-wise-display-medium font-bold text-wise-navy mb-4">
             What our customers say
           </h2>
-          <p className="text-2xl text-wise-gray max-w-3xl mx-auto">
+          <p className="text-wise-title-section text-wise-gray max-w-3xl mx-auto">
             Join thousands of satisfied customers who trust us for their lending needs
           </p>
           
@@ -74,16 +75,16 @@ const CustomerReviews: React.FC = () => {
                 ))}
               </div>
               <div className="ml-3 text-left">
-                <div className="text-3xl font-bold text-wise-navy">4.8/5</div>
-                <div className="text-base text-wise-gray">Based on 12,000+ reviews</div>
+                <div className="text-wise-heading-2 font-bold text-wise-navy">4.8/5</div>
+                <div className="text-wise-body-large text-wise-gray">Based on 12,000+ reviews</div>
               </div>
             </div>
             
             <div className="flex items-center">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_logo.svg/1024px-Google_logo.svg.png" alt="Google" className="h-6 mr-2" />
               <div className="text-left">
-                <div className="text-3xl font-bold text-wise-navy">4.7/5</div>
-                <div className="text-base text-wise-gray">Google Reviews</div>
+                <div className="text-wise-heading-2 font-bold text-wise-navy">4.7/5</div>
+                <div className="text-wise-body-large text-wise-gray">Google Reviews</div>
               </div>
             </div>
             
@@ -92,8 +93,8 @@ const CustomerReviews: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <div className="text-left">
-                <div className="text-3xl font-bold text-wise-navy">98%</div>
-                <div className="text-base text-wise-gray">Customer satisfaction</div>
+                <div className="text-wise-heading-2 font-bold text-wise-navy">98%</div>
+                <div className="text-wise-body-large text-wise-gray">Customer satisfaction</div>
               </div>
             </div>
           </div>
@@ -101,16 +102,16 @@ const CustomerReviews: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+            <Card key={index} size="small">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-wise-green/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-wise-green font-semibold text-lg">
+                  <span className="text-wise-green font-semibold text-wise-title-body">
                     {review.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <div className="font-semibold text-wise-navy text-lg">{review.name}</div>
-                  <div className="text-base text-wise-gray">{review.location}</div>
+                  <div className="font-semibold text-wise-navy text-wise-title-body">{review.name}</div>
+                  <div className="text-wise-body-large text-wise-gray">{review.location}</div>
                 </div>
               </div>
               
@@ -122,34 +123,34 @@ const CustomerReviews: React.FC = () => {
                 ))}
               </div>
               
-              <p className="text-wise-gray text-base mb-4 leading-relaxed">
+              <p className="text-wise-gray text-wise-body-large mb-4 leading-relaxed">
                 "{review.review}"
               </p>
               
               <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                <div className="text-sm text-wise-gray">
+                <div className="text-wise-body-default text-wise-gray">
                   <span className="font-medium">{review.amount}</span> for {review.purpose}
                 </div>
-                <div className="text-sm text-wise-green font-medium">
+                <div className="text-wise-body-default text-wise-green font-medium">
                   Verified customer
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-wise-gray mb-6 text-lg">
+          <p className="text-wise-gray mb-6 text-wise-title-body">
             Want to see more reviews? Check out our profiles on review platforms
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="flex items-center bg-white text-wise-navy px-8 py-4 rounded-lg hover:shadow-md transition-shadow text-lg font-medium">
+            <button className="flex items-center bg-white text-wise-navy px-8 py-4 rounded-lg hover:shadow-md transition-shadow text-wise-title-body font-medium">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
               </svg>
               Trustpilot Reviews
             </button>
-            <button className="flex items-center bg-white text-wise-navy px-8 py-4 rounded-lg hover:shadow-md transition-shadow text-lg font-medium">
+            <button className="flex items-center bg-white text-wise-navy px-8 py-4 rounded-lg hover:shadow-md transition-shadow text-wise-title-body font-medium">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>

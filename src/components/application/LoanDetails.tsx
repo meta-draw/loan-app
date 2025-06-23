@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Button, Chip, ChipGroup } from '../ui';
 
 interface LoanDetailsProps {
   data: any;
@@ -15,6 +16,18 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
     purpose: data.loanDetails?.purpose || 'personal',
     description: data.loanDetails?.description || ''
   });
+
+  // Update form data when props change (for data restoration from localStorage)
+  useEffect(() => {
+    if (data.loanDetails) {
+      setFormData({
+        amount: data.loanDetails.amount || 10000,
+        term: data.loanDetails.term || 12,
+        purpose: data.loanDetails.purpose || 'personal',
+        description: data.loanDetails.description || ''
+      });
+    }
+  }, [data.loanDetails]);
 
   const calculateMonthlyPayment = () => {
     const rate = 3.5 / 100 / 12;
@@ -65,7 +78,7 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
                   type="number"
                   value={formData.amount}
                   onChange={(e) => setFormData({...formData, amount: parseInt(e.target.value) || 0})}
-                  className="w-full pl-8 pr-4 py-4 text-xl font-semibold border-2 border-wise-gray200 rounded-md focus:border-wise-green focus:outline-none transition-all duration-200 bg-white"
+                  className="w-full pl-8 pr-4 py-4 text-xl font-semibold border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none bg-white shadow-sm"
                   min="500"
                   max="50000"
                   step="100"
@@ -91,23 +104,24 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
               <label className="block text-sm font-semibold text-wise-text-primary mb-4">
                 How long do you need to repay? *
               </label>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {[6, 12, 24, 36].map((months) => (
-                  <button
-                    key={months}
-                    type="button"
-                    onClick={() => setFormData({...formData, term: months})}
-                    className={`p-4 rounded-md text-center transition-all duration-200 border-2 ${
-                      formData.term === months
-                        ? 'bg-wise-green text-white border-wise-green shadow-button'
-                        : 'bg-wise-gray50 text-wise-text-secondary border-wise-gray200 hover:border-wise-green/50 hover:bg-white'
-                    }`}
+              <ChipGroup scrollable={false} className="!flex-wrap">
+                {[
+                  { value: 6, label: '6 months' },
+                  { value: 12, label: '12 months' },
+                  { value: 24, label: '2 years' },
+                  { value: 36, label: '3 years' }
+                ].map((term) => (
+                  <Chip
+                    key={term.value}
+                    variant="choice"
+                    size="medium"
+                    selected={formData.term === term.value}
+                    onClick={() => setFormData({...formData, term: term.value})}
                   >
-                    <div className="font-semibold">{months}</div>
-                    <div className="text-sm">months</div>
-                  </button>
+                    {term.label}
+                  </Chip>
                 ))}
-              </div>
+              </ChipGroup>
             </div>
 
             {/* Loan Purpose */}
@@ -115,25 +129,20 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
               <label className="block text-sm font-semibold text-wise-text-primary mb-4">
                 What's the loan for? *
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <ChipGroup scrollable={false} className="!flex-wrap">
                 {purposes.map((purpose) => (
-                  <button
+                  <Chip
                     key={purpose.value}
-                    type="button"
+                    variant="choice"
+                    size="medium"
+                    selected={formData.purpose === purpose.value}
                     onClick={() => setFormData({...formData, purpose: purpose.value})}
-                    className={`p-4 rounded-md text-left transition-all duration-200 border-2 ${
-                      formData.purpose === purpose.value
-                        ? 'bg-wise-green/5 text-wise-text-primary border-wise-green'
-                        : 'bg-wise-gray50 text-wise-text-secondary border-wise-gray200 hover:border-wise-green/50 hover:bg-white'
-                    }`}
+                    icon={<span className="text-base">{purpose.icon}</span>}
                   >
-                    <div className="flex items-center">
-                      <span className="text-xl mr-3">{purpose.icon}</span>
-                      <span className="font-medium">{purpose.label}</span>
-                    </div>
-                  </button>
+                    {purpose.label}
+                  </Chip>
                 ))}
-              </div>
+              </ChipGroup>
             </div>
 
             {/* Description */}
@@ -145,7 +154,7 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
                 <textarea
                   value={formData.description}
                   onChange={(e) => setFormData({...formData, description: e.target.value})}
-                  className="w-full px-4 py-3 border-2 border-wise-gray200 rounded-md focus:border-wise-green focus:outline-none transition-all duration-200 bg-white"
+                  className="w-full px-4 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-all duration-200 bg-white"
                   rows={3}
                   placeholder="Tell us more about what you need the loan for..."
                 />
@@ -154,7 +163,7 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
           </div>
 
           {/* Right side - Summary */}
-          <div className="bg-wise-gray50 rounded-xl p-8 border border-wise-gray200">
+          <div className="bg-wise-gray50 rounded-[10px] p-8 border border-wise-gray200">
             <h3 className="text-xl font-semibold text-wise-text-primary mb-6">
               Loan summary
             </h3>
@@ -195,7 +204,7 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
                 </div>
               </div>
               
-              <div className="bg-white rounded-lg p-4 mt-6 border border-wise-gray200">
+              <div className="bg-white rounded-[10px] p-4 mt-6 border border-wise-gray200">
                 <div className="text-xs text-wise-text-muted space-y-1">
                   <p>• Representative example at 3.5% p.a.</p>
                   <p>• Total repayment: ${(parseFloat(calculateMonthlyPayment()) * formData.term).toFixed(2)}</p>
@@ -213,13 +222,14 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
           </div>
           
           <div className="flex space-x-4">
-            <button
+            <Button
               onClick={handleNext}
               disabled={!formData.amount || !formData.term || !formData.purpose}
-              className="btn-wise-primary btn-wise-large disabled:bg-wise-gray200 disabled:cursor-not-allowed"
+              variant="primary"
+              size="large"
             >
               Continue to Personal Details
-            </button>
+            </Button>
           </div>
         </div>
       </div>

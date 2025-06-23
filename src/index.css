@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Wise-inspired typography and base styles */
+/* Official Wise Design System Base Styles */
 body {
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'system-ui', 'Roboto', 
@@ -10,13 +10,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FFFFFF;
-  color: #163300;
-  line-height: 1.6;
-  font-size: 18px; /* Base font size already increased from 16px */
+  color: #0E0F0C; /* Updated to official Wise content-primary */
+  line-height: 1.5;
+  font-size: 16px; /* Standard Wise body text size */
+  font-weight: 400;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #0E0F0C;
+}
+
+/* Code and monospace elements */
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Number displays (amounts, rates, etc.) */
+.numeric {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Wise-style custom slider */
@@ -144,152 +161,123 @@ select:focus {
   transform: translateY(0);
 }
 
-/* Wise-style button designs */
-.btn-wise-primary {
-  background-color: rgb(159, 232, 112);
-  background-image: none;
-  border: 1px solid rgb(159, 232, 112);
-  border-radius: 12px;
-  box-sizing: border-box;
-  color: rgb(22, 51, 0);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Inter, Helvetica, Arial, sans-serif;
-  font-feature-settings: "calt";
-  font-size: 18px;
-  font-weight: 600;
-  height: 44px;
-  letter-spacing: -0.02em;
-  line-height: 1.5;
-  margin-bottom: 0px;
-  padding: 12px 20px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-wrap: nowrap;
-  touch-action: manipulation;
-  transition: all 0.2s ease;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  min-width: 120px;
-  max-width: 280px;
-  -webkit-font-smoothing: antialiased;
+/* All bright-green background elements use forest green text for proper contrast */
+.bg-wise-bright-green,
+.bg-wise-bright-green *,
+.bg-wise-bright-green svg {
+  color: #163300 !important;
 }
 
-.btn-wise-primary:hover {
-  background-color: #2F5711;
-  border-color: #2F5711;
-  color: #FFFFFF;
-  transform: translateY(-1px);
+/* Hover state for bright-green elements - use darker green text on lighter green background */
+.bg-wise-bright-green:hover,
+.bg-wise-bright-green:hover *,
+.bg-wise-bright-green:hover svg {
+  background-color: #80e142 !important;
+  color: #0d1f00 !important;
 }
 
-.btn-wise-primary:active {
-  transform: translateY(0);
-}
+/* Wise Design System Card Components - Based on Official Specs */
 
-.btn-wise-secondary {
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid rgb(159, 232, 112);
-  border-radius: 12px;
-  box-sizing: border-box;
-  color: rgb(22, 51, 0);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Inter, Helvetica, Arial, sans-serif;
-  font-feature-settings: "calt";
-  font-size: 18px;
-  font-weight: 600;
-  height: 44px;
-  letter-spacing: -0.02em;
-  line-height: 1.5;
-  margin-bottom: 0px;
-  padding: 12px 20px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-wrap: nowrap;
-  touch-action: manipulation;
-  transition: all 0.2s ease;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  min-width: 120px;
-  max-width: 280px;
-  -webkit-font-smoothing: antialiased;
-}
-
-.btn-wise-secondary:hover {
-  background-color: rgba(159, 232, 112, 0.1);
-  border-color: #2F5711;
-  color: #163300;
-  transform: translateY(-1px);
-}
-
-.btn-wise-secondary:active {
-  transform: translateY(0);
-}
-
-/* Button size variants */
-.btn-wise-small {
-  height: 36px;
-  padding: 8px 16px;
-  font-size: 16px;
-  min-width: 100px;
-  max-width: 200px;
-}
-
-.btn-wise-large {
-  height: 52px;
-  padding: 16px 32px;
-  font-size: 20px;
-  min-width: 160px;
-  max-width: 320px;
-}
-
-.btn-wise-full {
-  width: 100%;
-  max-width: none;
-}
-
-.btn-wise-auto {
-  width: auto;
-  min-width: auto;
-  max-width: none;
-}
-
-/* Wise-style card designs */
-.card-wise {
+/* Card Base Styles */
+.card-wise-base {
   background-color: #FFFFFF;
-  border: 1px solid #EBEEF2;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(22, 54, 92, 0.08);
-  transition: all 0.2s ease;
+  border: 1px solid #E8EAED;
+  transition: all 0.15s ease-out;
+  position: relative;
 }
 
-.card-wise:hover {
+/* Small Cards - For balance, alerts, nudges */
+.card-wise-small {
+  min-height: 88px;
+  max-height: 300px;
+  border-radius: 16px; /* wise-small: minimum Wise radius */
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.card-wise-small:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
   border-color: #D0D8E0;
-  box-shadow: 0 8px 25px rgba(22, 54, 92, 0.12);
-  transform: translateY(-2px);
 }
 
+/* Large Cards - For promotions, stronger hierarchy */
 .card-wise-large {
-  background-color: #FFFFFF;
-  border: 1px solid #EBEEF2;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(22, 54, 92, 0.08);
-  transition: all 0.2s ease;
+  min-height: 300px;
+  border-radius: 20px; /* wise-medium: 20px for larger prominence */
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
 }
 
 .card-wise-large:hover {
-  border-color: #D0D8E0;
-  box-shadow: 0 12px 32px rgba(22, 54, 92, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
   transform: translateY(-2px);
+  border-color: #D0D8E0;
+}
+
+/* Interactive Card States */
+.card-wise-clickable {
+  cursor: pointer;
+}
+
+.card-wise-clickable:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+/* Card Content Hierarchy */
+.card-wise-header {
+  margin-bottom: 12px;
+}
+
+.card-wise-body {
+  margin-bottom: 16px;
+}
+
+.card-wise-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #F1F3F4;
+}
+
+/* Card with dismiss functionality */
+.card-wise-dismissible {
+  padding-right: 40px; /* Space for X button */
+}
+
+.card-wise-dismiss {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #6A6C6A;
+  transition: all 0.15s ease;
+}
+
+.card-wise-dismiss:hover {
+  background-color: #F1F3F4;
+  color: #454745;
+}
+
+/* Legacy shadow classes for backwards compatibility */
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-card-large {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 /* Input field styling */
@@ -377,4 +365,14 @@ select:focus {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Scrollbar utilities for chip groups */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
 }

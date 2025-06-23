@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Button } from '../ui';
 
 interface CentrelinkVerificationProps {
   data: any;
@@ -15,6 +16,18 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
     crnNumber: data.centrelinkVerification?.crnNumber || '',
     verificationMethod: data.centrelinkVerification?.verificationMethod || ''
   });
+
+  // Update form data when props change (for data restoration from localStorage)
+  useEffect(() => {
+    if (data.centrelinkVerification) {
+      setFormData({
+        receivesBenefits: data.centrelinkVerification.receivesBenefits || '',
+        benefitTypes: data.centrelinkVerification.benefitTypes || [],
+        crnNumber: data.centrelinkVerification.crnNumber || '',
+        verificationMethod: data.centrelinkVerification.verificationMethod || ''
+      });
+    }
+  }, [data.centrelinkVerification]);
 
   const benefitOptions = [
     'JobSeeker Payment',
@@ -109,7 +122,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                   <button
                     key={benefit}
                     onClick={() => handleBenefitChange(benefit)}
-                    className={`p-4 rounded-lg border-2 text-left transition-colors ${
+                    className={`p-4 rounded-[10px] border-2 text-left transition-colors ${
                       formData.benefitTypes.includes(benefit)
                         ? 'border-wise-green bg-wise-green/5 text-wise-navy'
                         : 'border-wise-gray200 hover:border-wise-green/50 text-wise-gray'
@@ -148,7 +161,7 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                   type="text"
                   value={formData.crnNumber}
                   onChange={(e) => setFormData({...formData, crnNumber: e.target.value})}
-                  className="w-full px-4 py-3 border-2 border-wise-gray200 rounded-lg focus:border-wise-green focus:outline-none transition-colors text-lg font-mono"
+                  className="w-full px-4 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors text-lg font-mono"
                   placeholder="123 456 789A"
                   maxLength={12}
                 />
@@ -235,9 +248,9 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                   <p className="text-wise-gray mb-4">
                     or click to browse your files
                   </p>
-                  <button className="btn-wise-primary">
+                  <Button variant="primary">
                     Choose Files
-                  </button>
+                  </Button>
                   <p className="text-xs text-wise-gray mt-4">
                     Accepted formats: PDF, JPG, PNG • Max file size: 10MB
                   </p>
@@ -258,9 +271,9 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
                     Your login credentials are never shared with us.
                   </p>
                   
-                  <button className="btn-wise-primary">
+                  <Button variant="primary">
                     Connect to myGov
-                  </button>
+                  </Button>
                   
                   <div className="mt-6 text-xs text-wise-gray">
                     <p>• Secure connection protected by government-grade encryption</p>
@@ -296,19 +309,19 @@ const CentrelinkVerification: React.FC<CentrelinkVerificationProps> = ({ data, o
           </div>
           
           <div className="flex space-x-4">
-            <button
+            <Button
               onClick={onBack}
-              className="btn-wise-secondary"
+              variant="fourth"
             >
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={handleNext}
               disabled={!formData.receivesBenefits}
-              className="btn-wise-primary disabled:bg-wise-gray200 disabled:cursor-not-allowed"
+              variant="primary"
             >
               Continue to Review
-            </button>
+            </Button>
           </div>
         </div>
       </div>
