@@ -47,7 +47,7 @@ const About: React.FC = () => {
               <h2 className="text-wise-heading-2 font-bold text-wise-navy mb-6">Our story</h2>
               <div className="space-y-4 text-wise-gray leading-relaxed">
                 <p>
-                  QuickLoan was founded in 2020 with a simple idea: getting a loan 
+                  Middlepay was founded in 2020 with a simple idea: getting a loan 
                   shouldn't be complicated, time-consuming, or filled with hidden fees.
                 </p>
                 <p>

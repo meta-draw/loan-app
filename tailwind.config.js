@@ -108,6 +108,7 @@ module.exports = {
         ],
         // Display font for headings and prominent text
         'display': [
+          'Montserrat',
           'DM Sans',
           'Inter',
           '-apple-system',
@@ -158,14 +159,14 @@ module.exports = {
         
         // Marketing Typography (Wise Sans + Inter)
         'wise-display-small': ['2.5rem', { lineHeight: '0.85', fontWeight: '700', letterSpacing: '0.015em', textTransform: 'uppercase' }],   // 40px, Bold, 85% line height, 1.5% letter spacing
-        'wise-display-medium': ['4rem', { lineHeight: '0.85', fontWeight: '700', letterSpacing: '0.015em', textTransform: 'uppercase' }],    // 64px, Bold, 85% line height, 1.5% letter spacing  
+        'wise-display-medium': ['4rem', { lineHeight: '0.85', fontWeight: '900', letterSpacing: '0.015em', textTransform: 'uppercase', fontFamily: 'Montserrat' }],    // 64px, Black, 85% line height, 1.5% letter spacing, Montserrat  
         'wise-display-large': ['6rem', { lineHeight: '0.85', fontWeight: '700', letterSpacing: '0.02em', textTransform: 'uppercase' }],      // 96px, Bold, 85% line height, 2% letter spacing
         
         'wise-heading-5': ['1.25rem', { lineHeight: '1.6', fontWeight: '600' }],        // 20px, Semi-bold
         'wise-heading-4': ['1.5rem', { lineHeight: '1.5', fontWeight: '600' }],         // 24px, Semi-bold
-        'wise-heading-3': ['1.875rem', { lineHeight: '1.267', fontWeight: '600' }],     // 30px, Semi-bold
-        'wise-heading-2': ['2.25rem', { lineHeight: '1.222', fontWeight: '600' }],      // 36px, Semi-bold
-        'wise-heading-1': ['2.625rem', { lineHeight: '1.19', fontWeight: '600' }],      // 42px, Semi-bold
+        'wise-heading-3': ['1.875rem', { lineHeight: '1.267', fontWeight: '700', fontFamily: 'Montserrat' }],     // 30px, Bold, Montserrat
+        'wise-heading-2': ['2.25rem', { lineHeight: '1.222', fontWeight: '700', fontFamily: 'Montserrat' }],      // 36px, Bold, Montserrat
+        'wise-heading-1': ['2.625rem', { lineHeight: '1.19', fontWeight: '800', fontFamily: 'Montserrat' }],      // 42px, Extra-bold, Montserrat
         
         'wise-marketing-body-3': ['0.875rem', { lineHeight: '1.571', fontWeight: '400' }],  // 14px, Regular
         'wise-marketing-body-2': ['1rem', { lineHeight: '1.5', fontWeight: '400' }],        // 16px, Regular

@@ -206,7 +206,12 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
               
               <div className="bg-white rounded-[10px] p-4 mt-6 border border-wise-gray200">
                 <div className="text-xs text-wise-text-muted space-y-1">
-                  <p>• Secure & fast, 5-minute application</p>
+                  <div className="flex items-center">
+                    <svg className="w-3 h-3 text-wise-bright-green mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
+                    </svg>
+                    <span className="text-wise-navy font-medium">Secure & fast, 5-minute application</span>
+                  </div>
                   <p>• Total repayment: ${(parseFloat(calculateMonthlyPayment()) * formData.term).toFixed(2)}</p>
                   <p>• No hidden fees or charges</p>
                 </div>

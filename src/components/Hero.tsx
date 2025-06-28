@@ -196,9 +196,14 @@ const Hero: React.FC = () => {
                   Apply Now
                 </Button>
                 
-                <p className="text-wise-body-default text-wise-content-tertiary text-center">
-                  Secure & fast, 5-minute application
-                </p>
+                <div className="flex items-center justify-center">
+                  <svg className="w-5 h-5 text-wise-bright-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
+                  </svg>
+                  <p className="text-wise-navy font-medium text-wise-body-default">
+                    Secure & fast, 5-minute application
+                  </p>
+                </div>
               </div>
             </div>
 

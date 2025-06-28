@@ -47,7 +47,7 @@ const CustomerReviews: React.FC = () => {
       name: 'David R.',
       location: 'Gold Coast, QLD',
       rating: 5,
-      review: 'Needed money quickly for an emergency and QuickLoan delivered. Fast, reliable, and no hassle. Would definitely use again.',
+      review: 'Needed money quickly for an emergency and Middlepay delivered. Fast, reliable, and no hassle. Would definitely use again.',
       amount: '$1,800',
       purpose: 'Emergency'
     }

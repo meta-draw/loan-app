@@ -117,7 +117,7 @@ const FAQ: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <LinkButton 
-              to="tel:1800QUICKLOAN" 
+              to="tel:1800MIDDLEPAY" 
               external
               variant="primary"
               size="medium"

@@ -212,7 +212,7 @@ const ConfirmSubmit: React.FC<ConfirmSubmitProps> = ({ data, onBack }) => {
                     className="mt-1 mr-3 w-4 h-4 text-wise-bright-green border-wise-gray200 rounded focus:ring-wise-bright-green"
                   />
                   <label htmlFor="credit" className="text-sm text-wise-content-secondary leading-relaxed">
-                    I authorize QuickLoan to perform credit checks and verify my information with credit bureaus, 
+                    I authorize Middlepay to perform credit checks and verify my information with credit bureaus, 
                     employers, and financial institutions as necessary for loan assessment.
                   </label>
                 </div>

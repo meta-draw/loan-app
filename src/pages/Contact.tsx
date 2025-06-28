@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
               <p className="text-wise-body-large text-wise-content-secondary mb-4">
                 Speak with our loan specialists
               </p>
-              <p className="text-wise-body-large-bold text-wise-bright-green">1-800-QUICKLOAN</p>
+              <p className="text-wise-body-large-bold text-wise-bright-green">1-800-MIDDLEPAY</p>
               <p className="text-wise-body-default text-wise-content-tertiary">Mon-Fri: 8am-8pm EST</p>
             </div>
 
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
               <p className="text-wise-body-large text-wise-content-secondary mb-4">
                 Send us a detailed message
               </p>
-              <p className="text-wise-body-large-bold text-wise-bright-green">support@quickloan.com</p>
+              <p className="text-wise-body-large-bold text-wise-bright-green">support@middlepay.com</p>
               <p className="text-wise-body-default text-wise-content-tertiary">Response within 24 hours</p>
             </div>
           </div>

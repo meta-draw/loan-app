@@ -10,9 +10,9 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center mb-4">
               <div className="w-8 h-8 bg-wise-bright-green rounded-full flex items-center justify-center mr-2">
-                <span className="text-wise-forest-green font-bold text-sm">QL</span>
+                <span className="text-wise-forest-green font-bold text-sm">MP</span>
               </div>
-              <h3 className="text-xl font-bold text-white">QuickLoan</h3>
+              <h3 className="text-xl font-bold text-white">Middlepay</h3>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               Making loans accessible, transparent, and fast for everyone. 
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col lg:flex-row justify-between items-center">
             <div className="text-white/60 text-sm mb-4 lg:mb-0">
-              © 2024 QuickLoan. All rights reserved. NMLS ID: 1234567
+              © 2024 Middlepay. All rights reserved. NMLS ID: 1234567
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
               <a href="#" className="text-white/60 hover:text-wise-green transition-colors duration-200">
@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
           
           <div className="mt-6 text-xs text-white/40 leading-relaxed">
             <p>
-              QuickLoan is a financial technology company, not a bank. Banking services are provided by our partner banks. 
+              Middlepay is a financial technology company, not a bank. Banking services are provided by our partner banks. 
               Loans are made by partner lenders and may not be available in all states. The operator of this website is not a lender, 
               does not make credit decisions, and does not broker loans.
             </p>
