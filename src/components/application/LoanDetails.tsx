@@ -206,7 +206,7 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
               
               <div className="bg-white rounded-[10px] p-4 mt-6 border border-wise-gray200">
                 <div className="text-xs text-wise-text-muted space-y-1">
-                  <p>• Representative example at 3.5% p.a.</p>
+                  <p>• 安全快速，5分钟内完成申请</p>
                   <p>• Total repayment: ${(parseFloat(calculateMonthlyPayment()) * formData.term).toFixed(2)}</p>
                   <p>• No hidden fees or charges</p>
                 </div>

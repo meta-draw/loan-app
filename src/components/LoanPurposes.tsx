@@ -7,16 +7,16 @@ const LoanPurposes: React.FC = () => {
 
   const purposes = [
     {
-      icon: '🚗',
-      title: 'Car expenses',
-      description: 'Repairs, registration, or unexpected car costs',
-      examples: ['Car repairs', 'Registration', 'Insurance', 'Emergency breakdown']
+      icon: '⚡',
+      title: 'Same day funds',
+      description: 'Get your money fast when you need it most',
+      examples: ['Emergency expenses', 'Urgent payments', 'Time-sensitive needs', 'Quick solutions']
     },
     {
-      icon: '🏠',
-      title: 'Home improvements',
-      description: 'Make your house a home with renovations',
-      examples: ['Kitchen renovation', 'Bathroom upgrade', 'Painting', 'Garden landscaping']
+      icon: '🚀',
+      title: 'Lightning fast approval',
+      description: 'Swift decision making, no waiting around',
+      examples: ['Instant decisions', 'Quick processing', 'Fast approval', 'Rapid response']
     },
     {
       icon: '💊',
@@ -120,7 +120,7 @@ const LoanPurposes: React.FC = () => {
             variant="primary"
             size="large"
           >
-            Apply for any purpose
+            Apply Now
           </Button>
         </div>
       </div>

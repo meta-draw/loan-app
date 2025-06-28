@@ -80,8 +80,7 @@ const Hero: React.FC = () => {
               <div><span className="text-wise-forest-green">Loan.</span></div>
             </h1>
             <p className="text-wise-title-body lg:text-wise-title-section text-wise-content-secondary mb-10 leading-relaxed max-w-lg">
-              Same day funds up to $50,000. Quick approval, transparent rates, 
-              and money in your account when you need it most.
+              Quick approval, transparent rates, money when you need it most.
             </p>
             
             {/* Key Benefits */}
@@ -149,7 +148,7 @@ const Hero: React.FC = () => {
                 variant="primary"
                 size="large"
               >
-                Apply now - 5 min application
+                Apply Now
               </Button>
             </div>
           </div>
@@ -165,7 +164,7 @@ const Hero: React.FC = () => {
                   How much do you need?
                 </h3>
                 <p className="text-wise-content-secondary text-wise-title-body">
-                  Get an instant quote and see your monthly payments
+                  See your monthly payments
                 </p>
               </div>
 
@@ -234,7 +233,7 @@ const Hero: React.FC = () => {
                       ${calculateMonthlyPayment()}
                     </div>
                     <div className="text-wise-body-large text-wise-content-tertiary mt-2">
-                      Representative example at 3.5% p.a.
+                      安全快速，5分钟内完成申请
                     </div>
                   </div>
                 </div>
@@ -245,11 +244,11 @@ const Hero: React.FC = () => {
                   size="large"
                   fullWidth
                 >
-                  Apply for this loan
+                  Apply Now
                 </Button>
                 
                 <p className="text-wise-body-default text-wise-content-tertiary text-center">
-                  Representative example only. Your rate may vary based on personal circumstances.
+                  安全快速，5分钟内完成申请
                 </p>
               </div>
             </Card>
