@@ -19,7 +19,7 @@ const Header: React.FC = () => {
                 <div className="w-8 h-8 bg-wise-bright-green rounded-full flex items-center justify-center mr-2">
                   <span className="text-wise-content-primary font-bold text-wise-body-default">QL</span>
                 </div>
-                <h1 className="text-wise-title-body font-semibold text-wise-content-primary">QuickLoan</h1>
+                <h1 className="text-wise-title-body font-semibold text-wise-content-primary">Fundo</h1>
               </div>
             </Link>
           </div>
@@ -27,42 +27,6 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-6">
-              {isActive('/') ? (
-                <LinkButton
-                  to="/"
-                  variant="third"
-                  size="small"
-                  className="rounded-full"
-                >
-                  Personal
-                </LinkButton>
-              ) : (
-                <Link 
-                  to="/" 
-                  className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
-                >
-                  Personal
-                </Link>
-              )}
-              
-              {isActive('/loans') ? (
-                <LinkButton
-                  to="/loans"
-                  variant="third"
-                  size="small"
-                  className="rounded-full"
-                >
-                  Loans
-                </LinkButton>
-              ) : (
-                <Link 
-                  to="/loans" 
-                  className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
-                >
-                  Loans
-                </Link>
-              )}
-              
               {isActive('/about') ? (
                 <LinkButton
                   to="/about"
@@ -70,14 +34,14 @@ const Header: React.FC = () => {
                   size="small"
                   className="rounded-full"
                 >
-                  About
+                  How it works
                 </LinkButton>
               ) : (
                 <Link 
                   to="/about" 
                   className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
                 >
-                  About
+                  How it works
                 </Link>
               )}
               
@@ -88,14 +52,14 @@ const Header: React.FC = () => {
                   size="small"
                   className="rounded-full"
                 >
-                  Help
+                  Contact
                 </LinkButton>
               ) : (
                 <Link 
                   to="/contact" 
                   className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
                 >
-                  Help
+                  Contact
                 </Link>
               )}
             </div>
@@ -108,14 +72,8 @@ const Header: React.FC = () => {
               variant="primary"
               size="small"
             >
-              Apply Now
+              Get Started
             </LinkButton>
-            <Link 
-              to="/login" 
-              className="text-wise-content-primary hover:text-wise-bright-green transition-all duration-200 text-wise-body-default-bold"
-            >
-              Log in
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -139,44 +97,6 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-3 sm:px-3 border-t border-wise-gray200" onClick={() => setIsMenuOpen(false)}>
-              {isActive('/') ? (
-                <LinkButton
-                  to="/"
-                  variant="third"
-                  size="medium"
-                  fullWidth
-                  className="rounded-full"
-                >
-                  Personal
-                </LinkButton>
-              ) : (
-                <Link
-                  to="/"
-                  className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
-                >
-                  Personal
-                </Link>
-              )}
-              
-              {isActive('/loans') ? (
-                <LinkButton
-                  to="/loans"
-                  variant="third"
-                  size="medium"
-                  fullWidth
-                  className="rounded-full"
-                >
-                  Loans
-                </LinkButton>
-              ) : (
-                <Link
-                  to="/loans"
-                  className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
-                >
-                  Loans
-                </Link>
-              )}
-              
               {isActive('/about') ? (
                 <LinkButton
                   to="/about"
@@ -185,14 +105,14 @@ const Header: React.FC = () => {
                   fullWidth
                   className="rounded-full"
                 >
-                  About
+                  How it works
                 </LinkButton>
               ) : (
                 <Link
                   to="/about"
                   className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
                 >
-                  About
+                  How it works
                 </Link>
               )}
               
@@ -204,14 +124,14 @@ const Header: React.FC = () => {
                   fullWidth
                   className="rounded-full"
                 >
-                  Help
+                  Contact
                 </LinkButton>
               ) : (
                 <Link
                   to="/contact"
                   className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
                 >
-                  Help
+                  Contact
                 </Link>
               )}
               <div className="pt-4 pb-3 border-t border-wise-gray200 space-y-3" onClick={() => setIsMenuOpen(false)}>
@@ -221,14 +141,8 @@ const Header: React.FC = () => {
                   size="medium"
                   fullWidth
                 >
-                  Apply Now
+                  Get Started
                 </LinkButton>
-                <Link 
-                  to="/login" 
-                  className="block w-full text-center px-3 py-2 text-wise-body-large-bold text-wise-content-primary hover:text-wise-bright-green rounded-wise-small"
-                >
-                  Log in
-                </Link>
               </div>
             </div>
           </div>

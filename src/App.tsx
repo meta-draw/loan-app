@@ -5,10 +5,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Loans from './pages/Loans';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
-import Application from './pages/Application';
+import SimpleApplication from './pages/SimpleApplication';
 
 function App() {
   return (
@@ -20,10 +19,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/loans" element={<Loans />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/application" element={<Application />} />
+              <Route path="/application" element={<SimpleApplication />} />
             </Routes>
           </main>
           <Footer />
