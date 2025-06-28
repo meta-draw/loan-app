@@ -1,7 +1,7 @@
-# QuickLoan UI Design Patterns & Guidelines
+# Middlepay UI Design Patterns & Guidelines
 
 ## Overview
-This document outlines the comprehensive UI design patterns, components, and guidelines for the QuickLoan application. It follows the Wise Design System principles with customizations for financial services.
+This document outlines the comprehensive UI design patterns, components, and guidelines for the Middlepay application. It follows the Wise Design System principles with customizations for financial services.
 
 ---
 
@@ -456,13 +456,13 @@ const [hasAcceptedWarning, setHasAcceptedWarning] = useState(false)
 
 // Local storage for form data
 useEffect(() => {
-  localStorage.setItem('quickloan-application-data', JSON.stringify(data))
+  localStorage.setItem('middlepay-application-data', JSON.stringify(data))
 }, [data])
 
 // Data restoration
 const loadSavedData = () => {
   try {
-    const saved = localStorage.getItem('quickloan-application-data')
+    const saved = localStorage.getItem('middlepay-application-data')
     return saved ? JSON.parse(saved) : defaultData
   } catch {
     return defaultData

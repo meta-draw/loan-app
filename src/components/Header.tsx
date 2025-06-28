@@ -17,9 +17,9 @@ const Header: React.FC = () => {
             <Link to="/" className="flex-shrink-0">
               <div className="flex items-center">
                 <div className="w-8 h-8 bg-wise-bright-green rounded-full flex items-center justify-center mr-2">
-                  <span className="text-wise-content-primary font-bold text-wise-body-default">QL</span>
+                  <span className="text-wise-content-primary font-bold text-wise-body-default">MP</span>
                 </div>
-                <h1 className="text-wise-title-body font-semibold text-wise-content-primary">QuickLoan</h1>
+                <h1 className="text-wise-title-body font-semibold text-wise-content-primary">Middlepay</h1>
               </div>
             </Link>
           </div>
@@ -60,6 +60,24 @@ const Header: React.FC = () => {
                   className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
                 >
                   Loans
+                </Link>
+              )}
+              
+              {isActive('/estimate') ? (
+                <LinkButton
+                  to="/estimate"
+                  variant="third"
+                  size="small"
+                  className="rounded-full"
+                >
+                  Estimate
+                </LinkButton>
+              ) : (
+                <Link 
+                  to="/estimate" 
+                  className="px-4 py-2 text-wise-body-default-bold transition-all duration-200 text-wise-content-secondary hover:text-wise-content-primary"
+                >
+                  Estimate
                 </Link>
               )}
               
@@ -174,6 +192,25 @@ const Header: React.FC = () => {
                   className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
                 >
                   Loans
+                </Link>
+              )}
+              
+              {isActive('/estimate') ? (
+                <LinkButton
+                  to="/estimate"
+                  variant="third"
+                  size="medium"
+                  fullWidth
+                  className="rounded-full"
+                >
+                  Estimate
+                </LinkButton>
+              ) : (
+                <Link
+                  to="/estimate"
+                  className="block px-3 py-2 text-wise-body-large-bold rounded-wise-small text-wise-content-secondary hover:text-wise-content-primary hover:bg-wise-gray50"
+                >
+                  Estimate
                 </Link>
               )}
               

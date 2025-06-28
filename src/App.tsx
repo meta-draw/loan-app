@@ -9,6 +9,7 @@ import Loans from './pages/Loans';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Application from './pages/Application';
+import Estimate from './pages/Estimate';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/application" element={<Application />} />
+              <Route path="/estimate" element={<Estimate />} />
             </Routes>
           </main>
           <Footer />

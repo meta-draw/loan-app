@@ -16,20 +16,20 @@ const CardDemo: React.FC = () => {
               <div className="bg-white border border-wise-gray200 rounded-wise-medium p-6 shadow-card card-wise-small">
                 <div className="flex items-center mb-4">
                   <div className="text-2xl mr-3">🚗</div>
-                  <h3 className="text-lg font-semibold text-wise-content-primary">Car expenses</h3>
+                  <h3 className="text-lg font-semibold text-wise-content-primary">Same day funds</h3>
                 </div>
                 <p className="text-wise-content-secondary text-sm">
-                  Repairs, registration, or unexpected car costs
+                  Get your money fast when you need it most
                 </p>
               </div>
               
               <div className="bg-white border border-wise-gray200 rounded-wise-medium p-6 shadow-card card-wise-small">
                 <div className="flex items-center mb-4">
                   <div className="text-2xl mr-3">🏠</div>
-                  <h3 className="text-lg font-semibold text-wise-content-primary">Home improvements</h3>
+                  <h3 className="text-lg font-semibold text-wise-content-primary">Lightning fast approval</h3>
                 </div>
                 <p className="text-wise-content-secondary text-sm">
-                  Make your house a home with renovations
+                  Swift decision making, no waiting around
                 </p>
               </div>
               
@@ -54,7 +54,7 @@ const CardDemo: React.FC = () => {
                   Loan Calculator
                 </h3>
                 <p className="text-wise-content-secondary mb-6">
-                  Get an instant quote and see your monthly payments. Enter your loan information to get an accurate repayment plan.
+                  See your monthly payments. Enter your loan information to get an accurate repayment plan.
                 </p>
                 
                 <div className="bg-wise-gray50 rounded-lg p-4 mb-6">

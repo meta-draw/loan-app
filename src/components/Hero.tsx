@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Card, Chip, ChipGroup } from './ui';
+import { Button, Chip, ChipGroup } from './ui';
 import BorrowingWarningModal from './BorrowingWarningModal';
 
 const Hero: React.FC = () => {
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               <span className="text-wise-body-large-bold text-wise-button-secondary underline decoration-wise-button-secondary underline-offset-2">
-                Funds up to $50,000 today
+                Funds up to $5,000 today
               </span>
             </div>
             
@@ -80,12 +80,11 @@ const Hero: React.FC = () => {
               <div><span className="text-wise-forest-green">Loan.</span></div>
             </h1>
             <p className="text-wise-title-body lg:text-wise-title-section text-wise-content-secondary mb-10 leading-relaxed max-w-lg">
-              Same day funds up to $50,000. Quick approval, transparent rates, 
-              and money in your account when you need it most.
+              Quick approval, transparent rates, money when you need it most.
             </p>
             
             {/* Key Benefits */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-wise-bright-green/10 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-5 h-5 text-wise-bright-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +117,7 @@ const Hero: React.FC = () => {
                 </div>
                 <span className="text-wise-content-secondary text-wise-body-large-bold">100% secure & safe</span>
               </div>
-            </div>
+            </div> */}
             
             {/* Trust indicators */}
             <div className="space-y-4 mb-8">
@@ -143,30 +142,18 @@ const Hero: React.FC = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="text-center lg:text-left">
-              <Button 
-                onClick={handleApplyNow}
-                variant="primary"
-                size="large"
-              >
-                Apply now - 5 min application
-              </Button>
-            </div>
           </div>
 
           {/* Right side - Calculator */}
           <div className="relative z-10 mt-12 lg:mt-0">
-            <Card 
-              size="large"
-              className="max-w-lg mx-auto lg:mx-0 shadow-lg hover:shadow-lg transition-none"
-            >
+            <div className="max-w-lg mx-auto lg:mx-0 bg-white rounded-[20px] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-wise-gray200">
               <div className="mb-6">
                 <h3 className="text-wise-heading-2 font-bold text-wise-content-primary mb-3">
                   How much do you need?
                 </h3>
-                <p className="text-wise-content-secondary text-wise-title-body">
-                  Get an instant quote and see your monthly payments
-                </p>
+                {/* <p className="text-wise-content-secondary text-wise-title-body">
+                  See your monthly payments
+                </p> */}
               </div>
 
               <div className="space-y-8">
@@ -188,7 +175,7 @@ const Hero: React.FC = () => {
                   <input
                     type="range"
                     min="500"
-                    max="50000"
+                    max="5000"
                     step="500"
                     value={amount}
                     onChange={(e) => setAmount(parseInt(e.target.value))}
@@ -196,46 +183,7 @@ const Hero: React.FC = () => {
                   />
                   <div className="flex justify-between text-wise-body-large text-wise-content-tertiary mt-2 font-medium">
                     <span>$500</span>
-                    <span>$50,000</span>
-                  </div>
-                </div>
-
-                {/* Term selector */}
-                <div>
-                  <label className="block text-wise-body-large-bold text-wise-content-primary mb-4">
-                    Repayment period
-                  </label>
-                  <ChipGroup scrollable={false} className="!grid !grid-cols-2 lg:!grid-cols-4 !gap-3">
-                    {[
-                      { value: 6, label: '6m' },
-                      { value: 12, label: '12m' },
-                      { value: 24, label: '24m' },
-                      { value: 36, label: '36m' }
-                    ].map((termOption) => (
-                      <Chip
-                        key={termOption.value}
-                        variant="choice"
-                        size="medium"
-                        selected={term === termOption.value}
-                        onClick={() => setTerm(termOption.value)}
-                        className="!h-12 !justify-center !w-full !min-w-0"
-                      >
-                        {termOption.label}
-                      </Chip>
-                    ))}
-                  </ChipGroup>
-                </div>
-
-                {/* Results */}
-                <div className="bg-wise-gray50 rounded-[10px] p-6 border border-wise-gray200">
-                  <div className="text-center">
-                    <div className="text-wise-body-large-bold text-wise-content-secondary mb-2">Monthly payment</div>
-                    <div className="text-wise-heading-1 font-bold text-wise-content-primary font-mono">
-                      ${calculateMonthlyPayment()}
-                    </div>
-                    <div className="text-wise-body-large text-wise-content-tertiary mt-2">
-                      Representative example at 3.5% p.a.
-                    </div>
+                    <span>$5,000</span>
                   </div>
                 </div>
 
@@ -245,14 +193,19 @@ const Hero: React.FC = () => {
                   size="large"
                   fullWidth
                 >
-                  Apply for this loan
+                  Apply Now
                 </Button>
                 
-                <p className="text-wise-body-default text-wise-content-tertiary text-center">
-                  Representative example only. Your rate may vary based on personal circumstances.
-                </p>
+                <div className="flex items-center justify-center">
+                  <svg className="w-5 h-5 text-wise-bright-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
+                  </svg>
+                  <p className="text-wise-navy font-medium text-wise-body-default">
+                    Secure & fast, 5-minute application
+                  </p>
+                </div>
               </div>
-            </Card>
+            </div>
 
             {/* Floating elements for visual interest */}
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-wise-bright-green opacity-5 rounded-full -z-10"></div>

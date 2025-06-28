@@ -20,7 +20,7 @@ const Application: React.FC = () => {
 
   const [currentStep, setCurrentStep] = useState(() => {
     try {
-      return localStorage.getItem('quickloan-current-step') || 'loan-details';
+      return localStorage.getItem('middlepay-current-step') || 'loan-details';
     } catch {
       return 'loan-details';
     }
@@ -28,7 +28,7 @@ const Application: React.FC = () => {
   
   const [completedSteps, setCompletedSteps] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem('quickloan-completed-steps');
+      const saved = localStorage.getItem('middlepay-completed-steps');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -37,7 +37,7 @@ const Application: React.FC = () => {
   
   const [applicationData, setApplicationData] = useState(() => {
     try {
-      const savedData = localStorage.getItem('quickloan-application-data');
+      const savedData = localStorage.getItem('middlepay-application-data');
       
       if (savedData) {
         const parsedData = JSON.parse(savedData);
@@ -79,7 +79,7 @@ const Application: React.FC = () => {
   // Save data to localStorage whenever applicationData changes
   useEffect(() => {
     try {
-      localStorage.setItem('quickloan-application-data', JSON.stringify(applicationData));
+      localStorage.setItem('middlepay-application-data', JSON.stringify(applicationData));
     } catch (error) {
       console.error('Error saving application data:', error);
     }
@@ -88,7 +88,7 @@ const Application: React.FC = () => {
   // Save current step to localStorage whenever it changes
   useEffect(() => {
     try {
-      localStorage.setItem('quickloan-current-step', currentStep);
+      localStorage.setItem('middlepay-current-step', currentStep);
     } catch (error) {
       console.error('Error saving current step:', error);
     }
@@ -97,7 +97,7 @@ const Application: React.FC = () => {
   // Save completed steps to localStorage whenever they change
   useEffect(() => {
     try {
-      localStorage.setItem('quickloan-completed-steps', JSON.stringify(completedSteps));
+      localStorage.setItem('middlepay-completed-steps', JSON.stringify(completedSteps));
     } catch (error) {
       console.error('Error saving completed steps:', error);
     }
@@ -135,9 +135,9 @@ const Application: React.FC = () => {
   // Clear saved application data (call this when application is successfully submitted)
   const clearSavedData = () => {
     try {
-      localStorage.removeItem('quickloan-application-data');
-      localStorage.removeItem('quickloan-current-step');
-      localStorage.removeItem('quickloan-completed-steps');
+      localStorage.removeItem('middlepay-application-data');
+      localStorage.removeItem('middlepay-current-step');
+      localStorage.removeItem('middlepay-completed-steps');
     } catch (error) {
       console.error('Error clearing saved application data:', error);
     }

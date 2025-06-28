@@ -10,7 +10,7 @@ const Loans: React.FC = () => {
       name: 'Personal Loans',
       description: 'Flexible loans for any purpose',
       rates: '3.5% - 12.9%',
-      amounts: '$1,000 - $50,000',
+      amounts: '$1,000 - $5,000',
       terms: '6 - 60 months',
       features: [
         'No collateral required',

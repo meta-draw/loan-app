@@ -66,10 +66,10 @@ const Features: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-wise-forest-green mb-4">
-              Trusted by thousands of customers
+              Repayment period
             </h2>
             <p className="text-2xl text-wise-content-secondary max-w-3xl mx-auto">
-              We're committed to providing fast, secure, and transparent lending solutions that put you first.
+              Choose flexible repayment terms that work for your budget and lifestyle.
             </p>
           </div>
 
@@ -131,13 +131,13 @@ const Features: React.FC = () => {
               variant="primary"
               size="large"
             >
-              Start your application
+              Apply Now
             </Button>
             <Button 
               variant="secondary"
               size="large"
             >
-              Learn more
+              Apply Now
             </Button>
           </div>
         </div>

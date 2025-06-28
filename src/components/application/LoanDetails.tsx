@@ -80,14 +80,14 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
                   onChange={(e) => setFormData({...formData, amount: parseInt(e.target.value) || 0})}
                   className="w-full pl-8 pr-4 py-4 text-xl font-semibold border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none bg-white shadow-sm"
                   min="500"
-                  max="50000"
+                  max="5000"
                   step="100"
                 />
               </div>
               <input
                 type="range"
                 min="500"
-                max="50000"
+                max="5000"
                 step="500"
                 value={formData.amount}
                 onChange={(e) => setFormData({...formData, amount: parseInt(e.target.value)})}
@@ -95,7 +95,7 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
               />
               <div className="flex justify-between text-sm text-wise-text-muted mt-2 font-medium">
                 <span>$500</span>
-                <span>$50,000</span>
+                <span>$5,000</span>
               </div>
             </div>
 
@@ -206,7 +206,12 @@ const LoanDetails: React.FC<LoanDetailsProps> = ({ data, onNext, isFirstStep }) 
               
               <div className="bg-white rounded-[10px] p-4 mt-6 border border-wise-gray200">
                 <div className="text-xs text-wise-text-muted space-y-1">
-                  <p>• Representative example at 3.5% p.a.</p>
+                  <div className="flex items-center">
+                    <svg className="w-3 h-3 text-wise-bright-green mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
+                    </svg>
+                    <span className="text-wise-navy font-medium">Secure & fast, 5-minute application</span>
+                  </div>
                   <p>• Total repayment: ${(parseFloat(calculateMonthlyPayment()) * formData.term).toFixed(2)}</p>
                   <p>• No hidden fees or charges</p>
                 </div>

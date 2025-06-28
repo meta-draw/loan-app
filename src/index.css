@@ -18,10 +18,28 @@ body {
 
 /* Typography Hierarchy */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'DM Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 600;
+  font-family: 'Montserrat', 'DM Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
   line-height: 1.25;
   color: #0E0F0C;
+}
+
+/* Extra styling for main headings */
+.text-wise-heading-1,
+.text-wise-display-medium {
+  font-family: 'Montserrat', 'DM Sans', Inter, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+.text-wise-heading-2 {
+  font-family: 'Montserrat', 'DM Sans', Inter, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.text-wise-heading-3 {
+  font-family: 'Montserrat', 'DM Sans', Inter, sans-serif !important;
+  font-weight: 700 !important;
 }
 
 /* Code and monospace elements */
