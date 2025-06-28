@@ -27,7 +27,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'How much can I borrow?',
-      answer: 'You can borrow between $500 and $50,000, depending on your individual circumstances, income, and creditworthiness. The exact amount will be determined during the application process.'
+      answer: 'You can borrow between $500 and $5,000, depending on your individual circumstances, income, and creditworthiness. The exact amount will be determined during the application process.'
     },
     {
       question: 'What can I use the loan for?',
