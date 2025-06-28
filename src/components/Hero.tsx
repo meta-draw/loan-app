@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               <span className="text-wise-body-large-bold text-wise-button-secondary underline decoration-wise-button-secondary underline-offset-2">
-                Funds up to $50,000 today
+                Funds in 60 seconds - $500 to $5,000
               </span>
             </div>
             
@@ -80,8 +80,8 @@ const Hero: React.FC = () => {
               <div><span className="text-wise-forest-green">Loan.</span></div>
             </h1>
             <p className="text-wise-title-body lg:text-wise-title-section text-wise-content-secondary mb-10 leading-relaxed max-w-lg">
-              Same day funds up to $50,000. Quick approval, transparent rates, 
-              and money in your account when you need it most.
+              Get $500 to $5,000 in your account in just 60 seconds. 5-minute application,
+              instant approval, and transparent fees. Australian owned and operated.
             </p>
             
             {/* Key Benefits */}
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-wise-content-secondary text-wise-body-large-bold">Same day funds</span>
+                <span className="text-wise-content-secondary text-wise-body-large-bold">60-second funding</span>
               </div>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-wise-bright-green/10 rounded-full flex items-center justify-center mr-4">
@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <span className="text-wise-content-secondary text-wise-body-large-bold">Lightning fast approval</span>
+                <span className="text-wise-content-secondary text-wise-body-large-bold">5-minute application</span>
               </div>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-wise-bright-green/10 rounded-full flex items-center justify-center mr-4">
@@ -108,7 +108,7 @@ const Hero: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-wise-content-secondary text-wise-body-large-bold">No hidden fees</span>
+                <span className="text-wise-content-secondary text-wise-body-large-bold">100% transparent fees</span>
               </div>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-wise-bright-green/10 rounded-full flex items-center justify-center mr-4">
@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
                 </div>
-                <span className="text-wise-content-secondary text-wise-body-large-bold">100% secure & safe</span>
+                <span className="text-wise-content-secondary text-wise-body-large-bold">Bad credit considered</span>
               </div>
             </div>
             
@@ -130,11 +130,11 @@ const Hero: React.FC = () => {
                     </svg>
                   ))}
                 </div>
-                <span className="ml-2 text-wise-body-large-bold text-wise-content-secondary">4.8/5 on Trustpilot</span>
+                <span className="ml-2 text-wise-body-large-bold text-wise-content-secondary">4.8/5 from 15,000+ reviews</span>
               </div>
               
               <div className="text-wise-body-large-bold text-wise-content-secondary text-center lg:text-left">
-                🔒 Bank-level security
+                🏆 Australian Credit Licence: 491418
               </div>
               
               <div className="text-wise-body-large-bold text-wise-success text-center lg:text-left">
@@ -188,15 +188,15 @@ const Hero: React.FC = () => {
                   <input
                     type="range"
                     min="500"
-                    max="50000"
-                    step="500"
+                    max="5000"
+                    step="100"
                     value={amount}
                     onChange={(e) => setAmount(parseInt(e.target.value))}
                     className="slider w-full mt-4"
                   />
                   <div className="flex justify-between text-wise-body-large text-wise-content-tertiary mt-2 font-medium">
                     <span>$500</span>
-                    <span>$50,000</span>
+                    <span>$5,000</span>
                   </div>
                 </div>
 
@@ -234,7 +234,7 @@ const Hero: React.FC = () => {
                       ${calculateMonthlyPayment()}
                     </div>
                     <div className="text-wise-body-large text-wise-content-tertiary mt-2">
-                      Representative example at 3.5% p.a.
+                      Based on Fundo Score rewards system
                     </div>
                   </div>
                 </div>
@@ -249,7 +249,7 @@ const Hero: React.FC = () => {
                 </Button>
                 
                 <p className="text-wise-body-default text-wise-content-tertiary text-center">
-                  Representative example only. Your rate may vary based on personal circumstances.
+                  Earn Fundo Score points for better rates and faster approvals.
                 </p>
               </div>
             </Card>

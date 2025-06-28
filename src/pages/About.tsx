@@ -28,13 +28,13 @@ const About: React.FC = () => {
       <section className="bg-gradient-to-br from-wise-lightblue to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-wise-heading-1 lg:text-wise-display-medium font-bold text-wise-navy mb-6">
-            We're making loans
-            <span className="text-wise-green"> accessible to everyone</span>
+            Get funds in
+            <span className="text-wise-green"> 60 seconds</span>
           </h1>
           <p className="text-wise-title-body text-wise-gray leading-relaxed">
-            Our mission is to provide transparent, fast, and fair lending solutions 
-            that help people achieve their financial goals without the complexity 
-            of traditional banking.
+            We're an Australian-owned lender providing instant approvals and 
+            60-second funding. Bad credit considered. No hidden fees. 
+            5-minute applications that actually take 5 minutes.
           </p>
         </div>
       </section>
@@ -47,8 +47,9 @@ const About: React.FC = () => {
               <h2 className="text-wise-heading-2 font-bold text-wise-navy mb-6">Our story</h2>
               <div className="space-y-4 text-wise-gray leading-relaxed">
                 <p>
-                  QuickLoan was founded in 2020 with a simple idea: getting a loan 
-                  shouldn't be complicated, time-consuming, or filled with hidden fees.
+                  Fundo was founded in 2020 with a simple idea: Australians deserve 
+                  fast, transparent lending with instant approvals and funding in seconds, 
+                  not days.
                 </p>
                 <p>
                   After experiencing the frustrating traditional lending process firsthand, 
@@ -57,9 +58,9 @@ const About: React.FC = () => {
                   that traditional banks have lost.
                 </p>
                 <p>
-                  Today, we've helped over 500,000 customers access more than $2 billion 
-                  in funding, all while maintaining industry-leading approval times 
-                  and customer satisfaction scores.
+                  Today, we've helped over 15,000 Australians access fast funding 
+                  when they need it most. Our Fundo Score system rewards responsible 
+                  borrowers with better rates and even faster approvals.
                 </p>
               </div>
             </div>
@@ -107,10 +108,10 @@ const About: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-wise-title-body font-semibold text-wise-navy mb-4">Speed</h3>
+              <h3 className="text-wise-title-body font-semibold text-wise-navy mb-4">Instant Funding</h3>
               <p className="text-wise-gray">
-                Life doesn't wait, and neither should you. Our technology 
-                enables fast decisions without compromising on security.
+                60-second funding after approval. 5-minute applications. 
+                Instant decisions. Because when you need money, you need it now.
               </p>
             </div>
 
@@ -120,10 +121,10 @@ const About: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-wise-title-body font-semibold text-wise-navy mb-4">Customer First</h3>
+              <h3 className="text-wise-title-body font-semibold text-wise-navy mb-4">Bad Credit OK</h3>
               <p className="text-wise-gray">
-                Every decision we make is centered around what's best for our customers, 
-                not what's most profitable for us.
+                We look beyond your credit score. If you can show you can repay, 
+                we'll consider your application. Everyone deserves a second chance.
               </p>
             </div>
           </div>
@@ -165,6 +166,77 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* Eligibility Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-wise-heading-2 lg:text-wise-heading-1 font-bold text-wise-navy mb-4">
+              Am I eligible?
+            </h2>
+            <p className="text-wise-title-body text-wise-gray">
+              Simple requirements, fast approvals
+            </p>
+          </div>
+          
+          <div className="bg-wise-lightblue rounded-wise-x-large p-8 mb-8">
+            <h3 className="text-wise-title-body font-bold text-wise-navy mb-6">
+              To apply for a Fundo loan, you need to:
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <svg className="w-6 h-6 text-wise-green mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-wise-gray text-wise-body-large">
+                  Be at least 18 years old
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-6 h-6 text-wise-green mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-wise-gray text-wise-body-large">
+                  Have a regular income (employment or government benefits)
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-6 h-6 text-wise-green mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-wise-gray text-wise-body-large">
+                  Be able to demonstrate your ability to repay
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-6 h-6 text-wise-green mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-wise-gray text-wise-body-large">
+                  Be an Australian resident with a valid Australian bank account
+                </span>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="bg-wise-green/10 rounded-wise-x-large p-8">
+            <div className="flex items-start">
+              <svg className="w-8 h-8 text-wise-green mt-0.5 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 className="text-wise-title-body font-bold text-wise-navy mb-2">
+                  Bad credit? No problem!
+                </h3>
+                <p className="text-wise-gray text-wise-body-large">
+                  We consider applications from people with less-than-perfect credit. 
+                  Your current ability to repay matters more than your past.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-20 bg-wise-navy">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,20 +248,20 @@ const About: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-wise-heading-1 font-bold text-wise-green mb-2">$2B+</div>
-              <div className="text-white/80">Total loans funded</div>
+              <div className="text-wise-heading-1 font-bold text-wise-green mb-2">60 sec</div>
+              <div className="text-white/80">Funding time</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-wise-green mb-2">500K+</div>
-              <div className="text-white/80">Customers served</div>
+              <div className="text-4xl font-bold text-wise-green mb-2">15K+</div>
+              <div className="text-white/80">Happy customers</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-wise-green mb-2">4.8★</div>
               <div className="text-white/80">Average rating</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-wise-green mb-2">99.5%</div>
-              <div className="text-white/80">Uptime</div>
+              <div className="text-4xl font-bold text-wise-green mb-2">5 min</div>
+              <div className="text-white/80">Application time</div>
             </div>
           </div>
         </div>

@@ -9,9 +9,9 @@ const Loans: React.FC = () => {
       id: 'personal',
       name: 'Personal Loans',
       description: 'Flexible loans for any purpose',
-      rates: '3.5% - 12.9%',
-      amounts: '$1,000 - $50,000',
-      terms: '6 - 60 months',
+      rates: 'From 5.95%',
+      amounts: '$500 - $5,000',
+      terms: '5 - 20 weeks',
       features: [
         'No collateral required',
         'Fixed interest rates',
@@ -28,9 +28,9 @@ const Loans: React.FC = () => {
       id: 'debt',
       name: 'Debt Consolidation',
       description: 'Combine multiple debts into one payment',
-      rates: '3.2% - 11.9%',
-      amounts: '$5,000 - $100,000',
-      terms: '12 - 84 months',
+      rates: 'From 5.95%',
+      amounts: '$500 - $5,000',
+      terms: '5 - 20 weeks',
       features: [
         'Lower monthly payments',
         'Simplified debt management',
@@ -44,21 +44,24 @@ const Loans: React.FC = () => {
       )
     },
     {
-      id: 'home',
-      name: 'Home Improvement',
-      description: 'Loans for renovations and repairs',
-      rates: '3.8% - 13.9%',
-      amounts: '$2,000 - $75,000',
-      terms: '12 - 144 months',
+      id: 'education',
+      name: 'Education Loans',
+      description: 'Fund your studies or training courses',
+      rates: 'From 5.95%',
+      amounts: '$500 - $5,000',
+      terms: '5 - 20 weeks',
       features: [
-        'Increase home value',
-        'Tax deductible options',
-        'Competitive rates',
-        'Quick funding'
+        'Cover course fees',
+        'Buy textbooks & supplies',
+        'Flexible repayments',
+        '60-second funding'
       ],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V19C9 20.6569 10.3431 22 12 22C13.6569 22 15 20.6569 15 19V17" />
         </svg>
       )
     },
@@ -66,9 +69,9 @@ const Loans: React.FC = () => {
       id: 'emergency',
       name: 'Emergency Loans',
       description: 'Quick cash for unexpected expenses',
-      rates: '4.9% - 15.9%',
-      amounts: '$500 - $25,000',
-      terms: '3 - 36 months',
+      rates: 'From 5.95%',
+      amounts: '$500 - $5,000',
+      terms: '5 - 20 weeks',
       features: [
         'Same-day funding',
         'Minimal documentation',
@@ -78,6 +81,44 @@ const Loans: React.FC = () => {
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+      )
+    },
+    {
+      id: 'dental',
+      name: 'Dental Loans',
+      description: 'Cover dental procedures and treatments',
+      rates: 'From 5.95%',
+      amounts: '$500 - $5,000',
+      terms: '5 - 20 weeks',
+      features: [
+        'Instant approval',
+        'Cover any dental work',
+        'No credit check required',
+        'Fundo Score rewards'
+      ],
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
+    },
+    {
+      id: 'furniture',
+      name: 'Furniture Loans',
+      description: 'Furnish your home without the wait',
+      rates: 'From 5.95%',
+      amounts: '$500 - $5,000',
+      terms: '5 - 20 weeks',
+      features: [
+        'Buy now, pay later',
+        'Quick approval process',
+        'Flexible payment plans',
+        'No hidden fees'
+      ],
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       )
     }
@@ -95,8 +136,8 @@ const Loans: React.FC = () => {
             <span className="text-wise-green"> for your needs</span>
           </h1>
           <p className="text-xl text-wise-gray leading-relaxed">
-            Compare our loan options and find competitive rates with transparent terms. 
-            No hidden fees, no surprises.
+            Get $500 to $5,000 in 60 seconds. Bad credit considered. 
+            100% online with transparent fees.
           </p>
         </div>
       </section>
@@ -104,7 +145,7 @@ const Loans: React.FC = () => {
       {/* Loan Types Navigation */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ChipGroup className="justify-center" scrollable={false}>
+          <ChipGroup className="justify-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3" scrollable={false}>
             {loanTypes.map((loan) => (
               <Chip
                 key={loan.id}
@@ -143,7 +184,7 @@ const Loans: React.FC = () => {
                   <div className="bg-wise-lightblue p-6 rounded-wise-medium">
                     <div className="text-sm text-wise-gray mb-1">Interest Rates</div>
                     <div className="text-xl font-bold text-wise-navy">
-                      {selectedLoanData.rates}
+                      5.95% fixed
                     </div>
                   </div>
                   <div className="bg-wise-lightblue p-6 rounded-wise-medium">
@@ -205,13 +246,13 @@ const Loans: React.FC = () => {
 
                     <div>
                       <label className="block text-sm font-medium text-wise-navy mb-2">
-                        Credit Score Range
+                        Employment Status
                       </label>
                       <select className="w-full px-4 py-3 border border-gray-300 rounded-[10px] focus:ring-2 focus:ring-wise-green focus:border-transparent">
-                        <option>Excellent (720+)</option>
-                        <option>Good (680-719)</option>
-                        <option>Fair (640-679)</option>
-                        <option>Poor (Below 640)</option>
+                        <option>Full-time employed</option>
+                        <option>Part-time employed</option>
+                        <option>Self-employed</option>
+                        <option>Government benefits</option>
                       </select>
                     </div>
 
@@ -236,7 +277,7 @@ const Loans: React.FC = () => {
                     </Button>
 
                     <p className="text-xs text-wise-gray text-center">
-                      Checking your rate won't affect your credit score
+                      Bad credit considered - we look beyond your credit score
                     </p>
                   </form>
                 </div>
@@ -267,8 +308,8 @@ const Loans: React.FC = () => {
                 Apply Online
               </h3>
               <p className="text-wise-gray">
-                Complete our secure application in just a few minutes. 
-                No paperwork required.
+                Complete our 5-minute application online. 
+                100% digital, no paperwork needed.
               </p>
             </div>
 
@@ -280,8 +321,8 @@ const Loans: React.FC = () => {
                 Get Approved
               </h3>
               <p className="text-wise-gray">
-                Receive an instant decision. Our advanced algorithms 
-                evaluate your application quickly and fairly.
+                Get instant approval decision. We consider 
+                bad credit and look at your ability to repay.
               </p>
             </div>
 
@@ -293,8 +334,8 @@ const Loans: React.FC = () => {
                 Receive Funds
               </h3>
               <p className="text-wise-gray">
-                Money deposited directly into your account as soon as 
-                the next business day.
+                Funds transferred to your account in 60 seconds. 
+                Available 24/7, even on weekends.
               </p>
             </div>
           </div>

@@ -9,22 +9,32 @@ interface LoanData {
 
 const LoanCalculator: React.FC = () => {
   const [loanData, setLoanData] = useState<LoanData>({
-    amount: 10000,
+    amount: 1000,
     term: 12,
     rate: 3.5
   });
+  const [useFlatFee, setUseFlatFee] = useState(false);
 
   const calculateMonthlyPayment = () => {
-    const monthlyRate = loanData.rate / 100 / 12;
-    const monthlyPayment = 
-      (loanData.amount * monthlyRate * Math.pow(1 + monthlyRate, loanData.term)) /
-      (Math.pow(1 + monthlyRate, loanData.term) - 1);
-    return monthlyPayment.toFixed(2);
+    if (useFlatFee) {
+      const totalWithFee = loanData.amount * 1.05;
+      return (totalWithFee / loanData.term).toFixed(2);
+    } else {
+      const monthlyRate = loanData.rate / 100 / 12;
+      const monthlyPayment = 
+        (loanData.amount * monthlyRate * Math.pow(1 + monthlyRate, loanData.term)) /
+        (Math.pow(1 + monthlyRate, loanData.term) - 1);
+      return monthlyPayment.toFixed(2);
+    }
   };
 
   const totalInterest = () => {
-    const monthly = parseFloat(calculateMonthlyPayment());
-    return (monthly * loanData.term - loanData.amount).toFixed(2);
+    if (useFlatFee) {
+      return (loanData.amount * 0.05).toFixed(2);
+    } else {
+      const monthly = parseFloat(calculateMonthlyPayment());
+      return (monthly * loanData.term - loanData.amount).toFixed(2);
+    }
   };
 
   return (
@@ -61,16 +71,16 @@ const LoanCalculator: React.FC = () => {
                   <div className="mt-2">
                     <input
                       type="range"
-                      min="1000"
-                      max="100000"
-                      step="1000"
+                      min="500"
+                      max="5000"
+                      step="100"
                       value={loanData.amount}
                       onChange={(e) => setLoanData({...loanData, amount: parseInt(e.target.value)})}
                       className="w-full"
                     />
                     <div className="flex justify-between text-sm text-wise-content-tertiary mt-1">
-                      <span>$1,000</span>
-                      <span>$100,000</span>
+                      <span>$500</span>
+                      <span>$5,000</span>
                     </div>
                   </div>
                 </div>
@@ -84,28 +94,59 @@ const LoanCalculator: React.FC = () => {
                     onChange={(e) => setLoanData({...loanData, term: parseInt(e.target.value)})}
                     className="w-full px-4 py-3 border border-wise-gray200 rounded-[10px] focus:ring-2 focus:ring-primary-blue focus:border-transparent"
                   >
-                    <option value={3}>3 months</option>
+                    <option value={1}>5 weeks</option>
+                    <option value={2}>10 weeks</option>
+                    <option value={3}>15 weeks</option>
+                    <option value={4}>20 weeks</option>
                     <option value={6}>6 months</option>
                     <option value={12}>12 months</option>
-                    <option value={24}>24 months</option>
-                    <option value={36}>36 months</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-wise-content-primary mb-2">
-                    Annual Interest Rate
+                    Fee Structure
                   </label>
-                  <div className="relative">
-                    <input
-                      type="number"
-                      step="0.1"
-                      value={loanData.rate}
-                      onChange={(e) => setLoanData({...loanData, rate: parseFloat(e.target.value) || 0})}
-                      className="w-full px-4 py-3 border border-wise-gray200 rounded-[10px] focus:ring-2 focus:ring-wise-bright-green focus:border-transparent"
-                    />
-                    <span className="absolute right-3 top-3 text-wise-content-tertiary">%</span>
+                  <div className="space-y-3">
+                    <label className="flex items-center space-x-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="feeType"
+                        checked={useFlatFee}
+                        onChange={() => setUseFlatFee(true)}
+                        className="w-4 h-4 text-wise-bright-green focus:ring-wise-bright-green"
+                      />
+                      <span className="text-wise-content-primary">
+                        5% Fixed Fee (BeforePay style)
+                      </span>
+                    </label>
+                    <label className="flex items-center space-x-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="feeType"
+                        checked={!useFlatFee}
+                        onChange={() => setUseFlatFee(false)}
+                        className="w-4 h-4 text-wise-bright-green focus:ring-wise-bright-green"
+                      />
+                      <span className="text-wise-content-primary">
+                        Traditional Interest ({loanData.rate}% APR)
+                      </span>
+                    </label>
                   </div>
+                  {!useFlatFee && (
+                    <div className="mt-3">
+                      <div className="relative">
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={loanData.rate}
+                          onChange={(e) => setLoanData({...loanData, rate: parseFloat(e.target.value) || 0})}
+                          className="w-full px-4 py-3 border border-wise-gray200 rounded-[10px] focus:ring-2 focus:ring-wise-bright-green focus:border-transparent"
+                        />
+                        <span className="absolute right-3 top-3 text-wise-content-tertiary">%</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -131,7 +172,7 @@ const LoanCalculator: React.FC = () => {
                     </p>
                   </div>
                   <div className="bg-wise-gray50 rounded-[10px] p-4">
-                    <p className="text-sm text-wise-content-secondary mb-1">Total Interest</p>
+                    <p className="text-sm text-wise-content-secondary mb-1">{useFlatFee ? 'Total Fee' : 'Total Interest'}</p>
                     <p className="text-xl font-semibold text-wise-forest-green font-mono">
                       ${totalInterest()}
                     </p>
