@@ -165,7 +165,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   type="text"
                   value={formData.firstName}
                   onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-wise-small focus:outline-none transition-colors ${
                     errors.firstName ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
@@ -180,7 +180,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   type="text"
                   value={formData.lastName}
                   onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-wise-small focus:outline-none transition-colors ${
                     errors.lastName ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
@@ -197,7 +197,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="date"
                 value={formData.dateOfBirth}
                 onChange={(e) => setFormData({...formData, dateOfBirth: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-wise-small focus:outline-none transition-colors ${
                   errors.dateOfBirth ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
               />
@@ -212,7 +212,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-wise-small focus:outline-none transition-colors ${
                   errors.email ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="your.email@example.com"
@@ -228,7 +228,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="tel"
                 value={formData.mobile}
                 onChange={(e) => setFormData({...formData, mobile: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-wise-small focus:outline-none transition-colors ${
                   errors.mobile ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="04XX XXX XXX"
@@ -264,7 +264,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="text"
                 value={formData.address.street}
                 onChange={(e) => setFormData({...formData, address: {...formData.address, street: e.target.value}})}
-                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-wise-small focus:outline-none transition-colors ${
                   errors.street ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="123 Main Street"
@@ -281,7 +281,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                   type="text"
                   value={formData.address.suburb}
                   onChange={(e) => setFormData({...formData, address: {...formData.address, suburb: e.target.value}})}
-                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 border-2 rounded-wise-small focus:outline-none transition-colors ${
                     errors.suburb ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                   }`}
                 />
@@ -313,7 +313,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 type="text"
                 value={formData.address.postcode}
                 onChange={(e) => setFormData({...formData, address: {...formData.address, postcode: e.target.value}})}
-                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-wise-small focus:outline-none transition-colors ${
                   errors.postcode ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
                 }`}
                 placeholder="2000"

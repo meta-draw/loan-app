@@ -15,7 +15,7 @@ export const Select: React.FC<SelectProps> = ({
   return (
     <div className="relative">
       <select
-        className={`w-full px-3 py-3 pr-10 border-2 rounded-[10px] focus:outline-none transition-colors appearance-none bg-white ${
+        className={`w-full px-3 py-3 pr-10 border-2 rounded-wise-small focus:outline-none transition-colors appearance-none bg-white ${
           error ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
         } ${className}`}
         {...props}

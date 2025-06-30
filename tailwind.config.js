@@ -78,21 +78,6 @@ module.exports = {
         }
       },
       
-      // Wise Design System Border Radius Tokens
-      borderRadius: {
-        'wise-small': '16px',
-        'wise-medium': '20px', 
-        'wise-large': '30px',
-        'wise-x-large': '40px',
-        'wise-2x-large': '60px',
-        // Mobile versions (for responsive design)
-        'wise-small-mobile': '10px',
-        'wise-medium-mobile': '16px',
-        'wise-large-mobile': '24px', 
-        'wise-x-large-mobile': '32px',
-        'wise-2x-large-mobile': '48px',
-      },
-      
       fontFamily: {
         // Primary font family for body text and general content
         'sans': [
@@ -218,7 +203,7 @@ module.exports = {
         'mobile-margin': '1.5rem', // 24px - mobile screen margins
       },
       borderRadius: {
-        // Official Wise Border Radius System - Updated to minimum 16px
+        // Official Wise Border Radius System
         'none': '0',
         'xs': '1rem',       // 16px - minimum Wise radius (wise-small)
         'sm': '1rem',       // 16px - minimum Wise radius (wise-small)
@@ -228,6 +213,18 @@ module.exports = {
         '2xl': '2.5rem',    // 40px - wise-x-large
         '3xl': '3.75rem',   // 60px - wise-2x-large
         'full': '9999px',   // Perfect circles
+        // Wise Design System Border Radius Tokens
+        'wise-small': '16px',
+        'wise-medium': '20px', 
+        'wise-large': '30px',
+        'wise-x-large': '40px',
+        'wise-2x-large': '60px',
+        // Mobile versions (for responsive design)
+        'wise-small-mobile': '10px',
+        'wise-medium-mobile': '16px',
+        'wise-large-mobile': '24px', 
+        'wise-x-large-mobile': '32px',
+        'wise-2x-large-mobile': '48px',
       },
       boxShadow: {
         // Wise's shadow system
