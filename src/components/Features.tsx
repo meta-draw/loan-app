@@ -133,12 +133,6 @@ const Features: React.FC = () => {
             >
               Apply Now
             </Button>
-            <Button 
-              variant="secondary"
-              size="large"
-            >
-              Apply Now
-            </Button>
           </div>
         </div>
       </section>
