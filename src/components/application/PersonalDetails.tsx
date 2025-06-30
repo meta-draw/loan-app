@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../ui';
+import { Select } from '../ui/Select';
 
 interface PersonalDetailsProps {
   data: any;
@@ -144,18 +145,15 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <label className="block text-base font-medium text-wise-forest-green mb-2">
                   Title *
                 </label>
-                <select
+                <Select
                   value={formData.title}
                   onChange={(e) => setFormData({...formData, title: e.target.value})}
-                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
-                    errors.title ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
-                  }`}
-                >
-                  <option value="">Select</option>
-                  {titles.map(title => (
-                    <option key={title} value={title}>{title}</option>
-                  ))}
-                </select>
+                  error={!!errors.title}
+                  options={[
+                    { value: '', label: 'Select' },
+                    ...titles.map(title => ({ value: title, label: title }))
+                  ]}
+                />
                 {errors.title && <p className="text-wise-error text-sm mt-1">{errors.title}</p>}
               </div>
               
@@ -246,18 +244,15 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               <label className="block text-base font-medium text-wise-navy mb-2">
                 Residential status *
               </label>
-              <select
+              <Select
                 value={formData.residentialStatus}
                 onChange={(e) => setFormData({...formData, residentialStatus: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
-                  errors.residentialStatus ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
-                }`}
-              >
-                <option value="">Select residential status</option>
-                {residentialStatuses.map(status => (
-                  <option key={status} value={status}>{status}</option>
-                ))}
-              </select>
+                error={!!errors.residentialStatus}
+                options={[
+                  { value: '', label: 'Select residential status' },
+                  ...residentialStatuses.map(status => ({ value: status, label: status }))
+                ]}
+              />
               {errors.residentialStatus && <p className="text-wise-error text-xs mt-1">{errors.residentialStatus}</p>}
             </div>
 
@@ -297,18 +292,15 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <label className="block text-base font-medium text-wise-forest-green mb-2">
                   State *
                 </label>
-                <select
+                <Select
                   value={formData.address.state}
                   onChange={(e) => setFormData({...formData, address: {...formData.address, state: e.target.value}})}
-                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
-                    errors.state ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
-                  }`}
-                >
-                  <option value="">State</option>
-                  {states.map(state => (
-                    <option key={state} value={state}>{state}</option>
-                  ))}
-                </select>
+                  error={!!errors.state}
+                  options={[
+                    { value: '', label: 'State' },
+                    ...states.map(state => ({ value: state, label: state }))
+                  ]}
+                />
                 {errors.state && <p className="text-wise-error text-xs mt-1">{errors.state}</p>}
               </div>
             </div>
@@ -333,18 +325,15 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
               <label className="block text-base font-medium text-wise-navy mb-2">
                 Time at current address *
               </label>
-              <select
+              <Select
                 value={formData.timeAtAddress}
                 onChange={(e) => setFormData({...formData, timeAtAddress: e.target.value})}
-                className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
-                  errors.timeAtAddress ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
-                }`}
-              >
-                <option value="">Select time period</option>
-                {timeAtAddressOptions.map(option => (
-                  <option key={option} value={option}>{option}</option>
-                ))}
-              </select>
+                error={!!errors.timeAtAddress}
+                options={[
+                  { value: '', label: 'Select time period' },
+                  ...timeAtAddressOptions.map(option => ({ value: option, label: option }))
+                ]}
+              />
               {errors.timeAtAddress && <p className="text-wise-error text-xs mt-1">{errors.timeAtAddress}</p>}
             </div>
 
@@ -353,18 +342,15 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <label className="block text-base font-medium text-wise-forest-green mb-2">
                   Marital status *
                 </label>
-                <select
+                <Select
                   value={formData.maritalStatus}
                   onChange={(e) => setFormData({...formData, maritalStatus: e.target.value})}
-                  className={`w-full px-3 py-3 border-2 rounded-[10px] focus:outline-none transition-colors ${
-                    errors.maritalStatus ? 'border-wise-error focus:border-wise-error' : 'border-wise-gray200 focus:border-wise-green'
-                  }`}
-                >
-                  <option value="">Select status</option>
-                  {maritalStatuses.map(status => (
-                    <option key={status} value={status}>{status}</option>
-                  ))}
-                </select>
+                  error={!!errors.maritalStatus}
+                  options={[
+                    { value: '', label: 'Select status' },
+                    ...maritalStatuses.map(status => ({ value: status, label: status }))
+                  ]}
+                />
                 {errors.maritalStatus && <p className="text-wise-error text-xs mt-1">{errors.maritalStatus}</p>}
               </div>
               
@@ -372,15 +358,12 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ data, onNext, onBack 
                 <label className="block text-base font-medium text-wise-forest-green mb-2">
                   Number of dependents
                 </label>
-                <select
+                <Select
                   value={formData.dependents}
                   onChange={(e) => setFormData({...formData, dependents: e.target.value})}
-                  className="w-full px-3 py-3 border-2 border-wise-gray200 rounded-[10px] focus:border-wise-green focus:outline-none transition-colors"
-                >
-                  {[0,1,2,3,4,5].map(num => (
-                    <option key={num} value={num.toString()}>{num}</option>
-                  ))}
-                </select>
+                  error={false}
+                  options={[0,1,2,3,4,5].map(num => ({ value: num.toString(), label: num.toString() }))}
+                />
               </div>
             </div>
           </div>

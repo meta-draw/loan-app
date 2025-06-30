@@ -131,7 +131,7 @@ const Login: React.FC = () => {
                   autoComplete="current-password"
                   value={formData.password}
                   onChange={handleInputChange('password')}
-                  className={`w-full px-3 py-3 pr-10 border-2 rounded-[10px] text-wise-body-large placeholder-wise-content-tertiary focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 pr-12 border-2 rounded-[10px] text-wise-body-large placeholder-wise-content-tertiary focus:outline-none transition-colors ${
                     errors.password 
                       ? 'border-wise-error focus:border-wise-error' 
                       : 'border-wise-gray200 focus:border-wise-bright-green'
@@ -140,7 +140,7 @@ const Login: React.FC = () => {
                 />
                 <button
                   type="button"
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  className="absolute inset-y-0 right-2 flex items-center px-2"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   <svg 
