@@ -1,4 +1,5 @@
 import React from 'react';
+import { Avatar } from '../components/ui';
 
 const About: React.FC = () => {
   const team = [
@@ -145,11 +146,12 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <div key={index} className="text-center">
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
-                />
+                <div className="mx-auto mb-6">
+                  <Avatar 
+                    name={member.name}
+                    size="md"
+                  />
+                </div>
                 <h3 className="text-wise-title-body font-semibold text-wise-navy mb-2">
                   {member.name}
                 </h3>

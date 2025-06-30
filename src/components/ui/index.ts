@@ -8,3 +8,5 @@ export { Chip, ChipGroup } from './Chip';
 export type { ChipVariant, ChipSize } from './Chip';
 
 export { Select } from './Select';
+
+export { Avatar } from './Avatar';

@@ -81,7 +81,13 @@ const CustomerReviews: React.FC = () => {
             </div>
             
             <div className="flex items-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_logo.svg/1024px-Google_logo.svg.png" alt="Google" className="h-6 mr-2" />
+              <svg className="h-6 mr-2" viewBox="0 0 92 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.3 15.3c0-.9-.1-1.8-.3-2.6H9v4.9h4.6c-.2 1.2-.9 2.2-1.9 2.9v2.3h3.1c1.8-1.7 2.8-4.1 2.8-7.1z" fill="#4285F4"/>
+                <path d="M9 20c2.6 0 4.7-.9 6.3-2.4l-3.1-2.3c-.9.6-2 .9-3.2.9-2.4 0-4.5-1.6-5.2-3.9H.8v2.4C2.4 17.8 5.5 20 9 20z" fill="#34A853"/>
+                <path d="M3.8 12.3c-.2-.6-.3-1.2-.3-1.8s.1-1.2.3-1.8V6.3H.8C.3 7.4 0 8.7 0 10s.3 2.6.8 3.7l3-2.4z" fill="#FBBC05"/>
+                <path d="M9 4.1c1.4 0 2.6.5 3.6 1.4l2.7-2.7C13.7 1.1 11.5 0 9 0 5.5 0 2.4 2.2.8 5.3l3 2.4C4.5 5.7 6.6 4.1 9 4.1z" fill="#EA4335"/>
+                <text x="22" y="18" font-family="Arial, sans-serif" font-size="12" fill="#5F6368">Google</text>
+              </svg>
               <div className="text-left">
                 <div className="text-wise-heading-2 font-bold text-wise-navy">4.7/5</div>
                 <div className="text-wise-body-large text-wise-gray">Google Reviews</div>
