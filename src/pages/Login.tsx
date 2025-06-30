@@ -54,7 +54,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-wise-gray50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-wise-gray50 flex flex-col justify-start pt-16 pb-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         {/* Logo */}
         <Link to="/" className="flex justify-center">
@@ -67,7 +67,7 @@ const Login: React.FC = () => {
         </Link>
         
         {/* Header */}
-        <div className="mt-8 text-center">
+        <div className="mt-6 text-center">
           <h2 className="text-wise-heading-2 font-bold text-wise-forest-green">
             Welcome back
           </h2>
@@ -77,7 +77,7 @@ const Login: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-6 shadow-card rounded-wise-large border border-wise-gray200">
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* General error */}
@@ -106,7 +106,7 @@ const Login: React.FC = () => {
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleInputChange('email')}
-                className={`w-full px-3 py-3 border-2 rounded-[10px] text-wise-body-large placeholder-wise-content-tertiary focus:outline-none transition-colors ${
+                className={`w-full px-3 py-3 border-2 rounded-wise-small text-wise-body-large placeholder-wise-content-tertiary focus:outline-none transition-colors ${
                   errors.email 
                     ? 'border-wise-error focus:border-wise-error' 
                     : 'border-wise-gray200 focus:border-wise-bright-green'
@@ -131,7 +131,7 @@ const Login: React.FC = () => {
                   autoComplete="current-password"
                   value={formData.password}
                   onChange={handleInputChange('password')}
-                  className={`w-full px-3 py-3 pr-10 border-2 rounded-[10px] text-wise-body-large placeholder-wise-content-tertiary focus:outline-none transition-colors ${
+                  className={`w-full px-3 py-3 pr-12 border-2 rounded-wise-small text-wise-body-large placeholder-wise-content-tertiary focus:outline-none transition-colors ${
                     errors.password 
                       ? 'border-wise-error focus:border-wise-error' 
                       : 'border-wise-gray200 focus:border-wise-bright-green'
@@ -140,7 +140,7 @@ const Login: React.FC = () => {
                 />
                 <button
                   type="button"
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  className="absolute inset-y-0 right-2 flex items-center px-2"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   <svg 
@@ -169,7 +169,7 @@ const Login: React.FC = () => {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-wise-bright-green focus:ring-wise-bright-green border-wise-gray200 rounded"
+                  className="h-4 w-4 text-wise-bright-green focus:ring-wise-bright-green border-wise-gray200 rounded-sm"
                 />
                 <label htmlFor="remember-me" className="ml-2 block text-wise-body-default text-wise-content-secondary">
                   Remember me

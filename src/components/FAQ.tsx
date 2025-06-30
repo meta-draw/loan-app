@@ -70,7 +70,7 @@ const FAQ: React.FC = () => {
               className="border border-wise-gray200 rounded-wise-medium overflow-hidden hover:border-wise-green/30 transition-colors card-wise-small"
             >
               <button
-                className="w-full px-6 py-4 text-left focus:outline-none focus:ring-2 focus:ring-wise-green focus:ring-inset"
+                className="w-full px-6 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-wise-green focus-visible:ring-inset"
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex justify-between items-center">

@@ -156,13 +156,33 @@ input[type="range"].slider::-ms-thumb {
   box-shadow: 0 2px 8px rgba(159, 232, 112, 0.3);
 }
 
-/* Focus styles for accessibility */
-input:focus,
-button:focus,
-textarea:focus,
-select:focus {
+/* Focus styles for accessibility - only show for keyboard navigation */
+input:focus-visible,
+button:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: 2px solid #9FE870;
   outline-offset: 2px;
+}
+
+/* Remove default focus outline for mouse/touch interaction */
+input:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Special handling for radio buttons and checkboxes */
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+input[type="radio"]:focus-visible,
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid #9FE870;
+  outline-offset: 4px;
 }
 
 /* Custom button animations */
